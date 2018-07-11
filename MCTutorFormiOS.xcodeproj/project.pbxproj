@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B5A43F320F6B555003A1B2E /* vBanner1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A43F220F6B555003A1B2E /* vBanner1.txt */; };
 		7BA05AD220E5791200724470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA05AD120E5791200724470 /* AppDelegate.swift */; };
 		7BA05AD420E5791200724470 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA05AD320E5791200724470 /* ViewController.swift */; };
 		7BA05AD720E5791200724470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA05AD520E5791200724470 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B5A43F220F6B555003A1B2E /* vBanner1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner1.txt; path = "../../../../Downloads/ipad-project/vBanner1.txt"; sourceTree = "<group>"; };
 		7BA05ACE20E5791200724470 /* MCTutorFormiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCTutorFormiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA05AD120E5791200724470 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BA05AD320E5791200724470 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		7BA05AD020E5791200724470 /* MCTutorFormiOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B5A43F220F6B555003A1B2E /* vBanner1.txt */,
 				7BA05AD120E5791200724470 /* AppDelegate.swift */,
 				7BA05AD320E5791200724470 /* ViewController.swift */,
 				7BA05AD520E5791200724470 /* Main.storyboard */,
@@ -180,6 +183,7 @@
 				7BA05ADC20E5791300724470 /* LaunchScreen.storyboard in Resources */,
 				7BA05AD920E5791300724470 /* Assets.xcassets in Resources */,
 				7BA05AD720E5791200724470 /* Main.storyboard in Resources */,
+				7B5A43F320F6B555003A1B2E /* vBanner1.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
