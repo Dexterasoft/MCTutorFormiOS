@@ -9,12 +9,15 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var tutorNameLabel: UILabel!
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var studentIDTextField: UITextField!
+    
     
     let tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
@@ -32,7 +35,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         //note: will need to revisit this later
         tutorNameTextField.allowsEditingTextAttributes = false
+        
+        //DATE FIELD
+        //To set the current date
+        dateField.text = convertDateFormatter()
+        
+        //to restrict user input
+        dateField.isUserInteractionEnabled = false
+        
+        //Continue working: numberpad input
+        self.studentIDTextField.delegate = self
+        studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
+        studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
     }
+    
+    
     
     func numberOfComponents(in tutorPickerView: UIPickerView) -> Int {
         return 1
@@ -60,6 +77,21 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //To hide keyboard
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func convertDateFormatter() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy" // change format as per needs
+        let result = formatter.string(from: date)
+        return result
     }
     
     //MARK: Actions
