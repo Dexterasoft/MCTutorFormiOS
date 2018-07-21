@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import Foundation
 
 class FormViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
-    
     @IBOutlet weak var studentIDTextField2: UITextField!
     @IBOutlet weak var studentFNameTextField: UITextField!
     @IBOutlet weak var studentLNameTextField: UITextField!
+    @IBOutlet weak var courseNameTextField: UITextField!
+    @IBOutlet weak var courseSectionTextField: UITextField!
+    @IBOutlet weak var professorNameTextField: UITextField!
+    
+    
+    //MARK: Actions
     @IBAction func backButton(_ sender: UIButton) {
         performSegue(withIdentifier: "segue_back", sender: self)
     }
