@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+var studentID = ""
+
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     
@@ -17,6 +19,28 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var tutorNameLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
+    @IBAction func submitAction(_ sender: Any) {
+        if (studentIDTextField.text != nil){
+            studentID = studentIDTextField.text!
+            performSegue(withIdentifier: "segue", sender: self)
+        }
+    }
+    
+    /*@IBAction func submitButtonAction(_ sender: UIButton) {
+        if (studentIDTextField.text != nil){
+            studentID = studentIDTextField.text!
+            performSegue(withIdentifier: "segue", sender: self)
+        }
+    }*/
+    
+    /*@IBAction func confirmStudentID(_ sender: Any) {
+        if (studentIDTextField.text != nil){
+            studentID = studentIDTextField.text!
+            performSegue(withIdentifier: "segue", sender: self)
+        }
+    }*/
+    
+    
     
     
     let tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
@@ -47,6 +71,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.studentIDTextField.delegate = self
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
+        
+        //stuIDTextField2(studentIDTextField) = grabStudentID()
     }
     
     
