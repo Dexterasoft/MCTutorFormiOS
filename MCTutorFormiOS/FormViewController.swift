@@ -19,6 +19,11 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var courseSectionTextField: UITextField!
     @IBOutlet weak var professorNameTextField: UITextField!
     
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     //MARK: Actions
     @IBAction func backButton(_ sender: UIButton) {

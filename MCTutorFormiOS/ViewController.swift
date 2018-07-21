@@ -40,9 +40,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
-    
-    
-    
     let tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
     override func viewDidLoad() {
