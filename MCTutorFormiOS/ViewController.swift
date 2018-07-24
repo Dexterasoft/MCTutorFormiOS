@@ -36,7 +36,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
-    //Should
+    //Should read in from text file 
     let tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
     override func viewDidLoad() {
@@ -45,6 +45,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let tutorPickerView = UIPickerView()
         tutorPickerView.delegate = self
+    
+        //let fileName = "vBanner1"
+        //let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        //let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
         
         tutorNameTextField.inputView = tutorPickerView
         
@@ -67,6 +71,45 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
         //stuIDTextField2(studentIDTextField) = grabStudentID()
+       /* var readString = ""
+        do {
+            readString = try String(contentsOf: fileURL)
+        } catch let error as NSError {
+            print("Failed")
+            print(error)
+        }
+        print("Contents in file include \(readString)")
+        */
+        
+        //To read in from
+        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let rows = data.components(separatedBy: .newlines)
+                var result: [[String]] = []
+                //let columns = data.components(separatedBy: ",")
+                //studentIDTextField.text = rows.joined(separator: ", ")
+                
+                for row in rows {
+                    let columuns = row.components(separatedBy: ",")
+                    result.append(columuns)
+                }
+                //print(rows[0])
+                print(result[8][4])
+                print(result[8][3])
+               // print(columns[2])
+            } catch {
+                print(error)
+            }
+        }
+
+        //print(getDocumentsDirectory())
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
     }
     
     
@@ -136,7 +179,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return nil
     }
     
-    //
+    //Read from file
     
 
 
