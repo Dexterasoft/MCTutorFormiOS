@@ -14,6 +14,12 @@ var studentID = ""
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    // Key values for dictionary
+    let STUDENT_ID = "student_id"
+    let COURSE = "course"
+    let TUTOR_ID = "tutor_id"
+    let TUTOR_NAME = "tutor_name"
+    let STUDENT_NAME = "student_name"
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -92,6 +98,25 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 
                 for row in rows {
                     let columuns = row.components(separatedBy: ",")
+                    var tokens = row.split(separator: ",")
+                    
+                    if tokens.count > 0 {
+                        
+                        if tokens.count == 6{
+                            print(tokens)
+                        }
+                        
+                        let studentFName = tokens[5].replacingOccurrences(of: "\"", with: "")
+                        let studnetLName = tokens[6].replacingOccurrences(of: "\"", with: "")
+                        
+                        print("\(STUDENT_ID): \(tokens[0])")
+                        print("\(COURSE): \(tokens[1])")
+                        print("\(TUTOR_ID): \(tokens[2])")
+                        print("\(TUTOR_NAME): \(tokens[3]) \(tokens[4])")
+                        print("\(STUDENT_NAME): \(studentFName) \(studnetLName)")
+                        print()
+                    }
+                    
                     result.append(columuns)
                 }
                 //print(rows[0])
