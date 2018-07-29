@@ -11,6 +11,8 @@ import Foundation
 
 //Global variables for testing and passing to other ViewControllers
 var studentID = ""
+var stuFName = ""
+var stuLName = ""
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
@@ -81,7 +83,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print("Contents in file include \(readString)")
         */
         
-        //To read in from
+        //To read in from file
         if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
             do {
                 let data = try String(contentsOfFile: path, encoding: .utf8)
@@ -164,17 +166,34 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             studentID = studentIDTextField.text!
             performSegue(withIdentifier: "segue", sender: self)
         }
+        
     }
     
     
     //MARK: Data import
     func readData(file:String) ->String! {
-        let a:String? = nil
-        if a != nil {
-            let b = a!
-            print(b)
-        } else {
-            print ("That was nil")
+        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
+            do {
+                let data = try String(contentsOfFile: path, encoding: .utf8)
+                let rows = data.components(separatedBy: .newlines)
+                var result: [[String]] = []
+                //let columns = data.components(separatedBy: ",")
+                //studentIDTextField.text = rows.joined(separator: ", ")
+                
+                for row in rows {
+                    let columuns = row.components(separatedBy: ",")
+                    result.append(columuns)
+                }
+                //print(rows[0])
+                print(result[8][4])
+                print(result[8][3])
+                return result[9][0]
+                
+                // print(columns[2])
+            } catch {
+                print(error)
+            }
+            
         }
         return nil
     }
