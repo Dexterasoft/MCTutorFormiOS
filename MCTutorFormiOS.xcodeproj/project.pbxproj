@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B321C08210CD75700932559 /* 868142-200.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B321C07210CD75700932559 /* 868142-200.png */; };
 		7B321C0A210E006E00932559 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C09210E006E00932559 /* RadioButton.swift */; };
+		7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C0B210E1BEB00932559 /* CheckBox.swift */; };
 		7B5A43F52102CABC003A1B2E /* vBanner1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A43F42102CABC003A1B2E /* vBanner1.txt */; };
 		7B5A43F72102D618003A1B2E /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5A43F62102D618003A1B2E /* FormViewController.swift */; };
 		7BA05AD220E5791200724470 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA05AD120E5791200724470 /* AppDelegate.swift */; };
@@ -30,8 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7B321C07210CD75700932559 /* 868142-200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "868142-200.png"; path = "Photos/868142-200.png"; sourceTree = SOURCE_ROOT; };
 		7B321C09210E006E00932559 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		7B321C0B210E1BEB00932559 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		7B5A43F42102CABC003A1B2E /* vBanner1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner1.txt; path = "ipad-project/vBanner1.txt"; sourceTree = SOURCE_ROOT; };
 		7B5A43F62102D618003A1B2E /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		7BA05ACE20E5791200724470 /* MCTutorFormiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCTutorFormiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,9 +90,9 @@
 				7BA05AD320E5791200724470 /* ViewController.swift */,
 				7B5A43F62102D618003A1B2E /* FormViewController.swift */,
 				7B321C09210E006E00932559 /* RadioButton.swift */,
+				7B321C0B210E1BEB00932559 /* CheckBox.swift */,
 				7BA05AD520E5791200724470 /* Main.storyboard */,
 				7BA05AD820E5791300724470 /* Assets.xcassets */,
-				7B321C07210CD75700932559 /* 868142-200.png */,
 				7BA05ADA20E5791300724470 /* LaunchScreen.storyboard */,
 				7BA05ADD20E5791300724470 /* Info.plist */,
 			);
@@ -193,7 +193,6 @@
 				7BA05AD920E5791300724470 /* Assets.xcassets in Resources */,
 				7BA05AD720E5791200724470 /* Main.storyboard in Resources */,
 				7B5A43F52102CABC003A1B2E /* vBanner1.txt in Resources */,
-				7B321C08210CD75700932559 /* 868142-200.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +214,7 @@
 				7BA05AD420E5791200724470 /* ViewController.swift in Sources */,
 				7BA05AD220E5791200724470 /* AppDelegate.swift in Sources */,
 				7B321C0A210E006E00932559 /* RadioButton.swift in Sources */,
+				7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

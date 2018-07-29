@@ -21,6 +21,10 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     //@IBOutlet var myRadioYesButton:DownStateButton?
     //@IBOutlet var myRadioNoButton:DownStateButton?
     @IBOutlet var label: UILabel!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var tutorNameTextField: UITextField!
+    @IBOutlet weak var btnCheckBox: UIButton!
+    
     
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
@@ -46,11 +50,17 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
         
+        dateTextField.isUserInteractionEnabled = false
+        dateTextField.text = convertDateFormatter()
+        
         button.addTarget(self, action: #selector(manualAction(sender:)), for: .touchUpInside)
         button.innerCircleCircleColor = UIColor.red
         self.view.addSubview(button)
         label2.text = "Not Selected"
         self.view.addSubview(label2)
+        
+        btnCheckBox.setImage(UIImage(named:"CheckMarkEmpty"), for: .normal)
+        btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
         
     }
     
@@ -62,6 +72,20 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- checkMarkTapped
+    @IBAction func checkMarkTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                sender.isSelected = !sender.isSelected
+                sender.transform = .identity
+            }, completion: nil)
+        }
+        
     }
     
     @objc func manualAction (sender: RadioButton) {
@@ -83,6 +107,15 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         } else{
             label.text = "Not Selected"
         }
+    }
+    
+    //MARK: Date Format (Foundations library)
+    func convertDateFormatter() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy" // change format as per needs
+        let result = formatter.string(from: date)
+        return result
     }
 }
     

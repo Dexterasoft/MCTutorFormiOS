@@ -51,7 +51,6 @@ public class RadioButton: UIButton {
     //MARK: Initiaklization
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        fatalError("init(coder:) has not been implemented")
     }
     
     internal var setCircleRadius: CGFloat {
