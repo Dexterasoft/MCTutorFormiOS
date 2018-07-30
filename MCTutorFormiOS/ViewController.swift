@@ -23,6 +23,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
+    let TARGET_FILE_NAME = "vBanner1"
+    
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var tutorNameLabel: UILabel!
@@ -90,46 +92,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         */
         
         //To read in from file
-        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
-            do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-//                let rows = data.components(separatedBy: .newlines)
-//                var result: [[String]] = []
-//                //let columns = data.components(separatedBy: ",")
-//                //studentIDTextField.text = rows.joined(separator: ", ")
-//                
-//                for row in rows {
-//                    let columuns = row.components(separatedBy: ",")
-//                    var tokens = row.split(separator: ",")
-//                    
-//                    if tokens.count > 0 {
-//                        
-//                        if tokens.count == 6{
-//                            print(tokens)
-//                        }
-//                        
-//                        let studentFName = tokens[5].replacingOccurrences(of: "\"", with: "")
-//                        let studnetLName = tokens[6].replacingOccurrences(of: "\"", with: "")
-//                        
-//                        print("\(STUDENT_ID): \(tokens[0])")
-//                        print("\(COURSE): \(tokens[1])")
-//                        print("\(TUTOR_ID): \(tokens[2])")
-//                        print("\(TUTOR_NAME): \(tokens[3]) \(tokens[4])")
-//                        print("\(STUDENT_NAME): \(studentFName) \(studnetLName)")
-//                        print()
-//                    }
-//                    
-//                    result.append(columuns)
-//                }
-//                //print(rows[0])
-//                print(result[8][4])
-//                print(result[8][3])
-//               // print(columns[2])
-            } catch {
-                print(error)
-            }
+        if let path = Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") {
+           let mcLookup = MCLookup(file: path)
+//           mcLookup.dump()
+        } else {
+            print("\(Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") ?? "unparsable file path")")
         }
-
+        
         //print(getDocumentsDirectory())
     }
     
