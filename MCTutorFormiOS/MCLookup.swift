@@ -8,6 +8,32 @@
 
 import Foundation
 
+extension String {
+    func indicesOf(string: String) -> [Int] {
+        var indices = [Int]()
+        var searchStartIndex = self.startIndex
+        
+        while searchStartIndex < self.endIndex,
+            let range = self.range(of: string, range: searchStartIndex..<self.endIndex),
+            !range.isEmpty
+        {
+            let index = distance(from: self.startIndex, to: range.lowerBound)
+            indices.append(index)
+            searchStartIndex = range.upperBound
+        }
+        
+        return indices
+    }
+    
+    func slice(from: String, to: String) -> String? {
+        return (range(of: from)?.upperBound).flatMap { substringFrom in
+            (range(of: to, range: substringFrom..<endIndex)?.lowerBound).map { substringTo in
+                String(self[substringFrom..<substringTo])
+            }
+        }
+    }
+}
+
 class MCLookup {
     private let STUDENT_ID = "student_id"
     private let COURSE = "course"
@@ -55,49 +81,51 @@ class MCLookup {
      @return the dictionary containing all the data retrieved from the CSV
      */
     public func readCSVData(data: String, delimiter: Character = ",") -> [String : [String]]{
-        var strIdentifier = ""     // Build a string until delimiter is found
-        var quoteMode = false      // Toggle quote mode when quotes are found to extract data between quotes (omitting delimiters)
-        var charNum = 0            // Keep track of the character number
-        var keyIndex = 0           // Iterate through the keys with wrap-around functionality
+        var keyIndex = 0                                        // Iterate through the keys with wrap-around functionality
+        var csvDict: [String : [String]] = [:]                  // A dictionary to store separate lists with respect to the given keys
+        let rows = data.components(separatedBy: .newlines)      // Get all the rows to parse data from
         
-        var csvDict: [String : [String]] = [:] // A dictionary to store separate lists with respect to the given keys
-        
-        // Read 1-grams
-        // Delimiters to look for: \" \n \t \, (tab or comma will be specified in delimiter variable)
-        for char in data {
-            if char == "\"" {
-                quoteMode = !quoteMode
+        for row in rows {
+            let quotes = row.indicesOf(string: "\"")
+            var modRow = row
+            var professor = "" // May want to initialize to N/A or None so that it won't be inserted as blank into dictionary
+            
+            // Extract tokens between quotes, i.e., professor names before tokenizing entire row
+            if row.contains("\"") {
+                // EXAMPLE:
+                // Original row: 20949014,ENGL190,20320,Anewo-Ande,Coswhawpe,"Rosado, Emily K.",D
+                // Extracted part I: 20949014,ENGL190,20320,Anewo-Ande,Coswhawpe
+                // Extracted part II: ,D
+                // Concatonated part I and part II: 20949014,ENGL190,20320,Anewo-Ande,Coswhawpe,D
+                // Extracted professor: Rosado, Emily K.
+                
+                modRow = "\(row.prefix(quotes[0] - 1))\(row.suffix(row.count - quotes[1] - 1))"
+                professor = row.slice(from: "\"", to: "\"")!
             }
             
-            if char != delimiter || quoteMode {
-                // Get rid of quotation marks
-                if char != "\"" {
-                    strIdentifier.append(char)
-                }
-            }else{
+            // Extract tokens from modded row based on specified delimited, i.e., commas or tabs
+            let tokens = modRow.split(separator: delimiter)
+            
+            for token in tokens {
+                // Check to ensure current key in csv dictionary exists
                 if csvDict[m_keys[keyIndex]] == nil {
                     csvDict[m_keys[keyIndex]] = []
                 }
                 
-                csvDict[m_keys[keyIndex]]?.append(strIdentifier)
+                // Insert professor when current key is the professor name and jump to the next index to properly capture the campus code
+                if m_keys[keyIndex] == PROF_NAME {
+                    csvDict[m_keys[keyIndex]]?.append(professor)
+                    keyIndex = (keyIndex + 1) % m_keys.count
+                }
                 
-                keyIndex = (keyIndex + 1) % m_keys.count
-                strIdentifier = ""
-            }
-            
-            // Extract last item when CRLF, LF, or last character in data is found outside any of the items, i.e., not within a pair of quotes
-            if (char == "\n" && !quoteMode) || charNum == data.count - 1 {
+                // Check one more time to handle case when key index was professor name
                 if csvDict[m_keys[keyIndex]] == nil {
                     csvDict[m_keys[keyIndex]] = []
                 }
                 
-                csvDict[m_keys[keyIndex]]?.append(strIdentifier)
-                
+                csvDict[m_keys[keyIndex]]?.append(String(token))
                 keyIndex = (keyIndex + 1) % m_keys.count
-                strIdentifier = ""
             }
-            
-            charNum += 1
         }
         
         return csvDict
