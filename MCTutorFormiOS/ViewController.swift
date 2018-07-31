@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_FILE_NAME = "vBanner1"
+    let TARGET_FILE_NAME = "vBanner_Test" //vBanner1
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -80,26 +80,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        //stuIDTextField2(studentIDTextField) = grabStudentID()
-       /* var readString = ""
-        do {
-            readString = try String(contentsOf: fileURL)
-        } catch let error as NSError {
-            print("Failed")
-            print(error)
-        }
-        print("Contents in file include \(readString)")
-        */
-        
         //To read in from file
         if let path = Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") {
            let mcLookup = MCLookup(file: path)
-//           mcLookup.dump()
+           mcLookup.dump()
         } else {
             print("\(Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") ?? "unparsable file path")")
         }
-        
-        //print(getDocumentsDirectory())
     }
     
     func getDocumentsDirectory() -> URL {
@@ -107,8 +94,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
-    
-    
     
     func numberOfComponents(in tutorPickerView: UIPickerView) -> Int {
         return 1
@@ -121,7 +106,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return tutors[row]
-        
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
@@ -129,9 +113,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tutorNameTextField.text = tutors[row]
     }
-    
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
