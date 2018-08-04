@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_FILE_NAME = "vBanner_Test" //vBanner1
+    let TARGET_CSV_NAME = "vBanner1" //vBanner1
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -55,10 +55,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let tutorPickerView = UIPickerView()
         tutorPickerView.delegate = self
-    
-        //let fileName = "vBanner1"
-        //let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        //let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
         
         tutorNameTextField.inputView = tutorPickerView
         
@@ -80,13 +76,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        //To read in from file
-        if let path = Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") {
-           let mcLookup = MCLookup(file: path)
-           mcLookup.dump()
-        } else {
-            print("\(Bundle.main.path(forResource: TARGET_FILE_NAME, ofType: "txt") ?? "unparsable file path")")
-        }
+        // Read data from csv and/or database
+        readData()
     }
     
     func getDocumentsDirectory() -> URL {
@@ -144,38 +135,36 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    
-    //MARK: Data import
-    func readData(file:String) ->String! {
-        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
+    //MARK: Data import/querying
+    func readData() {
+        // TEST CODE vvvvv
+        if let path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") {
             do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let rows = data.components(separatedBy: .newlines)
-                var result: [[String]] = []
-                //let columns = data.components(separatedBy: ",")
-                //studentIDTextField.text = rows.joined(separator: ", ")
+                let timer = ParkBenchTimer()
+                let mcLookup = try MCLookup(file: path) // vBanner1.txt
                 
-                for row in rows {
-                    let columuns = row.components(separatedBy: ",")
-                    result.append(columuns)
+                // try mcLookup.initDatabase()
+                
+                let results = mcLookup.getKeyDataByStudentID(id: "20859287")
+                
+                // Display all results
+                for result in results {
+                    print("Student's First Name: \(result.stuFName) \tLast Name: \(result.stuLName)")
+                    print("MC# M\(result.stuID)")
+                    print("Course (E.g., ENGL101A): \(result.course) \tSection: \(result.section)")
+                    print("Professor (LAST NAME, First name): \(result.profName)")
+                    print("Campus: \(result.mcCampus)")
+                    print()
                 }
-                //print(rows[0])
-                print(result[8][4])
-                print(result[8][3])
-                return result[9][0]
                 
-                // print(columns[2])
+                print("\nDone.")
+                print("Took \(timer.stop()) seconds.")
             } catch {
-                print(error)
+                print("Database request failed")
             }
-            
+        } else {
+            print("\(Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? "unparsable file path")")
         }
-        return nil
     }
-    
-    //Read from file
-    
-
-
 }
 

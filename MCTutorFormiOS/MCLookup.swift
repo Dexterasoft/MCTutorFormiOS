@@ -9,8 +9,8 @@
 import Foundation
 import SQLite3
 
-let TEST_PATH = "/Users/brett/GitHub/MCTutorFormiOS/ipad-project"
 let DEBUG_MODE = false
+let DATABASE_NAME = "MCDatabase"
 
 /*
  dictBannerData[“StuID”] = “\(vBanner1[0])”
@@ -449,7 +449,7 @@ class MCLookup {
     private let PROF_NAME = "professor_name"
     private let CAMPUS_CODE = "campus_code"
     
-    public let TARGET_DB = "/Users/brett/Desktop/SQLiteDatabases/MCDatabase.sqlite"
+    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite")!
     
     private var m_db: SQLiteDatabase
     
@@ -500,6 +500,13 @@ class MCLookup {
         
         // Read csv and load data into database
         readCSV(file: m_csvFile)
+    }
+    
+    /**
+     Get the core database object to gain access to raw database function such as the query function
+     */
+    public func getDB() -> SQLiteDatabase {
+        return m_db
     }
     
     /**
