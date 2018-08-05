@@ -16,6 +16,14 @@ var stuLName = ""
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
+    // Key values for dictionary
+    let STUDENT_ID = "student_id"
+    let COURSE = "course"
+    let TUTOR_ID = "tutor_id"
+    let TUTOR_NAME = "tutor_name"
+    let STUDENT_NAME = "student_name"
+    
+    let TARGET_CSV_NAME = "vBanner1" //vBanner1
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -47,10 +55,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let tutorPickerView = UIPickerView()
         tutorPickerView.delegate = self
-    
-        //let fileName = "vBanner1"
-        //let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        //let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
         
         tutorNameTextField.inputView = tutorPickerView
         
@@ -72,40 +76,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        //stuIDTextField2(studentIDTextField) = grabStudentID()
-       /* var readString = ""
-        do {
-            readString = try String(contentsOf: fileURL)
-        } catch let error as NSError {
-            print("Failed")
-            print(error)
-        }
-        print("Contents in file include \(readString)")
-        */
-        
-        //To read in from file
-        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
-            do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let rows = data.components(separatedBy: .newlines)
-                var result: [[String]] = []
-                //let columns = data.components(separatedBy: ",")
-                //studentIDTextField.text = rows.joined(separator: ", ")
-                
-                for row in rows {
-                    let columuns = row.components(separatedBy: ",")
-                    result.append(columuns)
-                }
-                //print(rows[0])
-                print(result[8][4])
-                print(result[8][3])
-               // print(columns[2])
-            } catch {
-                print(error)
-            }
-        }
-
-        //print(getDocumentsDirectory())
+        // Read data from csv and/or database
+        readData()
     }
     
     func getDocumentsDirectory() -> URL {
@@ -113,8 +85,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let documentsDirectory = paths[0]
         return documentsDirectory
     }
-    
-    
     
     func numberOfComponents(in tutorPickerView: UIPickerView) -> Int {
         return 1
@@ -127,7 +97,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return tutors[row]
-        
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
@@ -135,9 +104,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tutorNameTextField.text = tutors[row]
     }
-    
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -169,38 +135,36 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    
-    //MARK: Data import
-    func readData(file:String) ->String! {
-        if let path = Bundle.main.path(forResource: "vBanner1", ofType: "txt") {
+    //MARK: Data import/querying
+    func readData() {
+        // TEST CODE vvvvv
+        if let path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") {
             do {
-                let data = try String(contentsOfFile: path, encoding: .utf8)
-                let rows = data.components(separatedBy: .newlines)
-                var result: [[String]] = []
-                //let columns = data.components(separatedBy: ",")
-                //studentIDTextField.text = rows.joined(separator: ", ")
+                let timer = ParkBenchTimer()
+                let mcLookup = try MCLookup(file: path) // vBanner1.txt
                 
-                for row in rows {
-                    let columuns = row.components(separatedBy: ",")
-                    result.append(columuns)
+                // try mcLookup.initDatabase()
+                
+                let results = mcLookup.getKeyDataByStudentID(id: "20859287")
+                
+                // Display all results
+                for result in results {
+                    print("Student's First Name: \(result.stuFName) \tLast Name: \(result.stuLName)")
+                    print("MC# M\(result.stuID)")
+                    print("Course (E.g., ENGL101A): \(result.course) \tSection: \(result.section)")
+                    print("Professor (LAST NAME, First name): \(result.profName)")
+                    print("Campus: \(result.mcCampus)")
+                    print()
                 }
-                //print(rows[0])
-                print(result[8][4])
-                print(result[8][3])
-                return result[9][0]
                 
-                // print(columns[2])
+                print("\nDone.")
+                print("Took \(timer.stop()) seconds.")
             } catch {
-                print(error)
+                print("Database request failed")
             }
-            
+        } else {
+            print("\(Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? "unparsable file path")")
         }
-        return nil
     }
-    
-    //Read from file
-    
-
-
 }
 

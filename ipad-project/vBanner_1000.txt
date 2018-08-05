@@ -1,0 +1,1000 @@
+20949014,ENGL190,20320,Anewo-Ande,Coswhawpe,"Rosado, Emily K.",D
+20949014,MATH132,22844,Anewo-Ande,Coswhawpe,"Spieler, Barry",G
+20240084,ELAW980,24625,Anela,Sawrodev,"Marbury, Donald L.",G
+20859287,BIOL101,24019,Andir,Eru,"Khan, Abdul Quayum",G
+20859287,BIOL101L,24020,Andir,Eru,"Khan, Abdul Quayum",G
+20859287,ENGL102,23472,Andir,Eru,"Pryor, Chester E.",G
+20859287,NUTR101,21075,Andir,Eru,"Buxbaum, Amanda K.",R
+20713309,NUTR101,21070,Ahamowece,Navigea,"Escobar, Alyson",D
+20713309,BIOL212,22614,Ahamowece,Navigea,"Mason, Gregg B.",R
+20713309,BIOL212L,22623,Ahamowece,Navigea,"Mason, Gregg B.",R
+20096111,EDUC136,25005,Atwise Bascisdi,Masalit,"Pruneda-Hernandez, Sonia G.",D
+20096111,EDUC136,24329,Atwise Bascisdi,Masalit,,T
+20096111,EDUC201,20156,Atwise Bascisdi,Masalit,"York, Wanda F.",T
+20096111,PSCI101,20219,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI101D,20220,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI101L,20221,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI102,24165,Atwise Bascisdi,Masalit,,T
+20096111,PSCI102D,24166,Atwise Bascisdi,Masalit,,T
+20096111,PSCI102L,24167,Atwise Bascisdi,Masalit,,T
+21971096,EDUC119,22071,Atwes,Awawda,"Flank, Estelle G.",R
+21971096,ENGL101,24368,Atwes,Awawda,"Rodrick, Karin E.",R
+21971096,MATH080,23388,Atwes,Awawda,"Chon, Sera Yoo",R
+21971096,PSYC102,21217,Atwes,Awawda,"Herdoiza Hernandez, Patricia C.",R
+20888679,EDUC119,22071,Arave-Bolhb,Dasaakdo,"Flank, Estelle G.",R
+20888679,GEOG130,20978,Arave-Bolhb,Dasaakdo,"St. John, Jeffrey Richard",R
+20888679,MATH130,23357,Arave-Bolhb,Dasaakdo,"Sibilska, Krystyna Anna",R
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,ENGL102,24777,Ad-Honan,Robekagae,"Rindler, Mercia O.",R
+20044753,ENGL102,24777,Ad-Honan,Robekagae,"Rindler, Mercia O.",R
+20044753,MATH132,23171,Ad-Honan,Robekagae,"Brunett, Maria R.",R
+20044753,MATH132,23171,Ad-Honan,Robekagae,"Brunett, Maria R.",R
+20833897,EDUC136,24301,Adasi,Sawirfte,"Parlakian, Rebecca",G
+20833897,EDUC136,24301,Adasi,Sawirfte,"Parlakian, Rebecca",G
+20833897,EDUC136,25142,Adasi,Sawirfte,,G
+20833897,EDUC201,22464,Adasi,Sawirfte,"Fisher, Sonja L.",G
+20833897,EDUC201,22464,Adasi,Sawirfte,"Fisher, Sonja L.",G
+20833897,MATH131,22842,Adasi,Sawirfte,"Alraee, Mais Mouaffak",G
+20833897,MATH131,22842,Adasi,Sawirfte,"Alraee, Mais Mouaffak",G
+20833897,PSCI101,23372,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101,23372,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101D,23373,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101D,23373,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101L,23374,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101L,23374,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20622635,EDUC119,20151,Adlev,Marneweo,"McLean, Marsha J.",T
+20622635,EDUC135,20152,Adlev,Marneweo,,T
+20622635,MATH096,21379,Adlev,Marneweo,"Kcenich, Stephen",T
+20622635,SOCY100,20494,Adlev,Marneweo,"Neuhauser, Laura A",T
+20002004,MATH117,21405,Adkivahi,Laubsei,"Kotz, Brian C.",D
+20002004,MATH117,22667,Adkivahi,Laubsei,"Kotz, Brian C.",D
+20711791,BIOL130,22943,Adkivahi,Veplewee,"Tavassoli, Afshin",G
+20711791,BIOL131,22944,Adkivahi,Veplewee,"Tavassoli, Afshin",G
+20711791,HLTH100,22315,Adkivahi,Veplewee,"Clark, Michael Gerard",R
+20711791,HLTH200,22391,Adkivahi,Veplewee,"Hutchins, Loraine A.",R
+20711791,PSYC216,21279,Adkivahi,Veplewee,"Palmer, Donald",R
+20874463,HLTH100,22329,Adkiviwci,Jaquakese,"Wasilko, Lesley",D
+20874463,PSCI102,23091,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20874463,PSCI102D,23093,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20874463,PSCI102L,23094,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20014804,ELAR980,24538,Adkiviwci,Cdeusea,"Maunaga Trajkovic, Dijana",T
+20014804,ELAW980,24562,Adkiviwci,Cdeusea,"Murray, James T.",T
+20811600,PHED149,22436,Ady,Nibso,"Tooher, Lenora A",R
+20811600,PHED156,22445,Ady,Nibso,"Wasilko, Lesley",R
+20840720,PSYC102,21828,Ajeyo,Temcoly,"McCeney, Melissa K.",G
+20885406,BIOL101,22488,Ajeyo,Milirei,"Allen, Leah M.",R
+20885406,BIOL101L,22504,Ajeyo,Milirei,"Allen, Leah M.",R
+20885406,EDUC243,22096,Ajeyo,Milirei,"Smith, Zeporia N.",R
+20840720,EDUC243,22096,Ajeyo,Temcoly,"Smith, Zeporia N.",R
+20840720,EDUC243,22096,Ajeyo,Temcoly,"Smith, Zeporia N.",R
+20885406,ENGL233,20600,Ajeyo,Milirei,"Lemmond, David B.",R
+20840720,HIST200,21536,Ajeyo,Temcoly,"Moran, Michelle T.",R
+20840720,MATH080,20803,Ajeyo,Temcoly,"Khurshid, Sadaf",R
+20798138,BIOL101,22489,Ajeyo Bobifiz,Ehe,"Raafat, Ahmed M.",R
+20798138,BIOL101L,22510,Ajeyo Bobifiz,Ehe,"Raafat, Ahmed M.",R
+20798138,MATH130,23357,Ajeyo Bobifiz,Ehe,"Sibilska, Krystyna Anna",R
+20804368,ENGL190,20690,Ajirin,Sasdva,"Gillan, Jamie B.",R
+20804368,HIST200,21536,Ajirin,Sasdva,"Moran, Michelle T.",R
+20804368,HLTH125,22376,Ajirin,Sasdva,"Schwanke, Douglas C.",R
+20832829,EDUC135,22079,Awnrovi,Ttead,"Ho, Jeannie",D
+20832829,ENGL102,20963,Awnrovi,Ttead,"Ash, Brandes S.G.",T
+20832829,ENGL190,26750,Awnrovi,Ttead,"Wahl, Gregory R.",T
+20832829,MATH080,21367,Awnrovi,Ttead,"Sims, Harriett O.",T
+20706544,BIOL101,22490,Awnrad,Johirla,"Khan, Mohammad Ali",R
+20706544,BIOL101L,22511,Awnrad,Johirla,"Khan, Mohammad Ali",R
+20706544,MATH131,24735,Awnrad,Johirla,"Fouche, Kimberly A.",T
+20706544,PSCI101,20219,Awnrad,Johirla,"Fermo, Raymond",T
+20706544,PSCI101D,20220,Awnrad,Johirla,"Fermo, Raymond",T
+20706544,PSCI101L,20221,Awnrad,Johirla,"Fermo, Raymond",T
+20672673,PSYC102,23864,Aperimei,Karara,"Herst, Andrew N.",D
+20672673,ENGL102,20625,Aperimei,Karara,"Adams, Krista K",R
+20138391,ISTD173,22028,Agebo,Lysbafbo,"Espinoza, Jennifer D.",R
+20888112,PSCI102,23091,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20888112,PSCI102D,23093,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20888112,PSCI102L,23094,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20850648,MATH080,22682,Agraafa,Dasaaka,"Thompson, Michael A.",G
+20873151,EDUC136,22081,Agroyo Sigpano,Lupaolwo,"Ho, Jeannie",R
+20873151,HIST201,21558,Agroyo Sigpano,Lupaolwo,"Hernandez-Fujigaki, Jorge",R
+20873151,MATH130,23358,Agroyo Sigpano,Lupaolwo,"Poese, Debra A.",R
+20873151,PSCI101,23084,Agroyo Sigpano,Lupaolwo,"Cutler, Alan H",R
+20873151,PSCI101D,23088,Agroyo Sigpano,Lupaolwo,"Cutler, Alan H",R
+20873151,PSCI101L,23090,Agroyo Sigpano,Lupaolwo,"Cutler, Alan H",R
+20873151,PSYC102,21219,Agroyo Sigpano,Lupaolwo,"Morales Picard, Alejandra",R
+20849268,EDUC135,22076,Acac,Awus,"Funk, Suzanne R.",R
+20849268,GEOG130,23855,Acac,Awus,"St. John, Jeffrey Richard",T
+20849268,HLTH125,23550,Acac,Awus,"Baca, Alberto J.",T
+20849268,ISTD173,24909,Acac,Awus,"Stoll, Anita Kuykendall",T
+20874465,GEOG130,23506,Aclik,Etlik,"Coronado, Sonia R",G
+20874465,HLTH113,21508,Aclik,Etlik,"Kropetz, Nancy B.",G
+20874465,MATH132,23667,Aclik,Etlik,"Cornell, Carol L.",G
+20874465,NUTR101,22756,Aclik,Etlik,"Engel, Dorelle",G
+20879698,CHEM131,22774,Aucudfese,Kave,"Bontems, Susan L.",G
+20879698,CHEM131D,22779,Aucudfese,Kave,"Bontems, Susan L.",G
+20879698,CHEM131L,22782,Aucudfese,Kave,"Wood, Elena S.",G
+20879698,POLI101,23402,Aucudfese,Kave,"Haydel, Jennifer P.",G
+20152287,SOCY100,22269,Ayeho,Merbo,"Twombly, Charlotte H.",D
+20152287,SPAN216,21472,Ayeho,Merbo,"Fechter, Sharon A.",D
+20152287,MATH132,23667,Ayeho,Merbo,"Cornell, Carol L.",G
+20035116,ISTD173,24298,Balagowiwe,Maraa-Cliiwi,"Preciado, Soma S.",G
+20035116,EDUC201,22087,Balagowiwe,Maraa-Cliiwi,"Hernandez Baca, Glenda",R
+20035116,HIST200,21536,Balagowiwe,Maraa-Cliiwi,"Moran, Michelle T.",R
+20859338,EDUC119,22074,Barveza,Karho,"Mukherjee, Mary Elizabeth McDevitt",D
+20859338,ENGL190,20319,Barveza,Karho,,D
+20859338,ENGL190,20320,Barveza,Karho,"Rosado, Emily K.",D
+20859338,HIST200,24925,Barveza,Karho,"Johnstone, Andrew David",D
+20859338,SOCY100,22269,Barveza,Karho,"Twombly, Charlotte H.",D
+20847218,IERW001,24834,Barroza,Kewvawdy,"Teuben-Rowe, Sharon",T
+20847218,MATH080,21351,Barroza,Kewvawdy,"Nash, Milton H",T
+20847218,READ095,20079,Barroza,Kewvawdy,,T
+20843227,ELAI990,24660,Barra,Digi,,R
+20843227,ELAI990,24661,Barra,Digi,"Jain, Rashi",R
+20885607,ENGL102,20615,Barreb,Navigea,"Howard, Megan Vandergrift",R
+20885607,FREN101,21463,Barreb,Navigea,"Demougeot, Kately",R
+21924339,HIST260,23654,Bausnagvbaw,Mactii,,R
+21924339,HIST260,26143,Bausnagvbaw,Mactii,"Riedl, John M.",R
+21929299,EDUC119,20151,Baulibbe,Baahay,"McLean, Marsha J.",T
+21929299,ENGL101,20932,Baulibbe,Baahay,,T
+21929299,MATH080,21355,Baulibbe,Baahay,"Jun, Yoonja",T
+21929299,PSYC102,21282,Baulibbe,Baahay,"Herst, Andrew N.",T
+20850628,ENGL101,20314,Bayhil,Harrib,"Portis, Rebecca",D
+20850628,HIST117,21469,Bayhil,Harrib,"Stumpf, Joseph A.",R
+20850628,HIST201,21559,Bayhil,Harrib,"Hernandez-Fujigaki, Jorge",R
+20850628,MATH130,23358,Bayhil,Harrib,"Poese, Debra A.",R
+20850628,THET110,20979,Bayhil,Harrib,"Olinick, Aaron A.",R
+20844560,ENGL102,24129,Bipmwebh,Dikyr,"Edwards, Kamala",R
+20844560,MATH080,20803,Bipmwebh,Dikyr,"Khurshid, Sadaf",R
+21929093,EDUC102,22447,Binaoto,Sarij,"Downey, Dawn C.",G
+21929093,ISTD173,22439,Binaoto,Sarij,"Preciado, Soma S.",G
+21929093,MATH132,22844,Binaoto,Sarij,"Spieler, Barry",G
+21929093,PSCI101,23394,Binaoto,Sarij,"McDaniel, Diane K.",G
+21929093,PSCI101D,23396,Binaoto,Sarij,"McDaniel, Diane K.",G
+21929093,PSCI101L,23398,Binaoto,Sarij,"McDaniel, Diane K.",G
+20892485,EDUC119,22074,Biswal,Kavegyw,"Mukherjee, Mary Elizabeth McDevitt",D
+20892485,EDUC119,22074,Biswal,Kavegyw,"Mukherjee, Mary Elizabeth McDevitt",D
+20892485,BIOL101,23807,Biswal,Kavegyw,"Wesley, Gina D.",R
+20892485,BIOL101,23807,Biswal,Kavegyw,"Wesley, Gina D.",R
+20892485,BIOL101L,22507,Biswal,Kavegyw,"Wesley, Gina D.",R
+20892485,BIOL101L,22507,Biswal,Kavegyw,"Wesley, Gina D.",R
+20892485,MATH096,23214,Biswal,Kavegyw,"Rowley, Claudinna P.",R
+20892485,MATH096,23214,Biswal,Kavegyw,"Rowley, Claudinna P.",R
+20386174,GEOG130,23855,Birljeir,Sbofjawae,"St. John, Jeffrey Richard",T
+20386174,PSCI101,20219,Birljeir,Sbofjawae,"Fermo, Raymond",T
+20386174,PSCI101D,20220,Birljeir,Sbofjawae,"Fermo, Raymond",T
+20386174,PSCI101L,20221,Birljeir,Sbofjawae,"Fermo, Raymond",T
+20877382,STSU114,20521,Bikevky,Mosea,"Sallie, Jack Edgar",D
+20877382,BIOL101,22927,Bikevky,Mosea,"Freitag, Patricia",G
+20877382,BIOL101L,22928,Bikevky,Mosea,"Freitag, Patricia",G
+20877382,SPAN101,23111,Bikevky,Mosea,"Naranjo, Carla I.",G
+20817450,EDUC135,22079,Berdwidl,Anatoed,"Ho, Jeannie",D
+20817450,BIOL101,22927,Berdwidl,Anatoed,"Freitag, Patricia",G
+20817450,BIOL101L,22928,Berdwidl,Anatoed,"Freitag, Patricia",G
+20817450,EDUC243,25115,Berdwidl,Anatoed,"Fisher, Sonja L.",G
+20817450,MATH131,22842,Berdwidl,Anatoed,"Alraee, Mais Mouaffak",G
+20817450,PSCI101,23394,Berdwidl,Anatoed,"McDaniel, Diane K.",G
+20817450,PSCI101D,23396,Berdwidl,Anatoed,"McDaniel, Diane K.",G
+20817450,PSCI101L,23398,Berdwidl,Anatoed,"McDaniel, Diane K.",G
+20113988,EDUC201,22465,Bdegmdilh,Bawvi,"Jiron, Kelly",G
+21982770,ENGL101A,24986,Bgeltcir,Ajdev,"Smith, Katherine",G
+21982770,MATH080,22692,Bgeltcir,Ajdev,"Binder, Terri",G
+20876957,BIOL101,22492,Bgeje,Kilgii,"Crichton, Virginia Z.",R
+20876957,BIOL101L,22503,Bgeje,Kilgii,"Alam, Rashidul",R
+21924310,EDUC119,22071,Bgeje,Pavrimee,"Flank, Estelle G.",R
+21924310,ENGL101A,25097,Bgeje,Pavrimee,"Slacks, Jarvis Jay",R
+20876957,ISTD173,22029,Bgeje,Kilgii,"Espinoza, Jennifer D.",R
+21924310,MATH096,23231,Bgeje,Pavrimee,"Arrindell, Pamela P.",R
+20876957,MATH130,23358,Bgeje,Kilgii,"Poese, Debra A.",R
+21924310,PSYC102,21209,Bgeje,Pavrimee,"Williams, Michelle H.",R
+20891108,MATH115A,21394,Bgipr,Favakat,"Subedi, Ram P.",D
+20891108,HINM115,23565,Bgipr,Favakat,"Kee, Christopher Morgan",R
+20891108,BIOL150,20543,Bgipr,Favakat,"Lantz, Valerie A.",T
+20891108,BIOL150L,20544,Bgipr,Favakat,"Lantz, Valerie A.",T
+20891108,PHYS010,20698,Bgipr,Favakat,"Nam, Max Sang",T
+20891108,PHYS010L,20699,Bgipr,Favakat,"Nam, Max Sang",T
+20501204,EDUC119,20151,Bgiprig,Kavaa,"McLean, Marsha J.",T
+20501204,EDUC119,20151,Bgiprig,Kavaa,"McLean, Marsha J.",T
+20501204,EDUC119,20151,Bgiprig,Kavaa,"McLean, Marsha J.",T
+20822442,EDUC119,20151,Bgixhow,Kayho,"McLean, Marsha J.",T
+20822442,ENGL102,24132,Bgixhow,Kayho,"Weston, Charmaine L.",T
+20822442,HIST200,24106,Bgixhow,Kayho,,T
+20823510,HLTH100,24352,Buae,Stargiwo,"Kropetz, Nancy B.",G
+20823510,MATH096,23238,Buae,Stargiwo,"Choi, InYong",R
+20851506,STSU122,20548,Burrubc,Jabor,"Drain, Kimberly M.",D
+20851506,STSU122,20548,Burrubc,Jabor,"Drain, Kimberly M.",D
+20851506,BIOL101,22929,Burrubc,Jabor,"Park, Hankyel T",G
+20851506,BIOL101L,22930,Burrubc,Jabor,"Park, Hankyel T",G
+20851506,HIST201,21559,Burrubc,Jabor,"Hernandez-Fujigaki, Jorge",R
+20851506,MATH131,23359,Burrubc,Jabor,"Rosenberg, Sandra Dillard",R
+20877560,EDUC135,22079,Cadiguwe,Ehe,"Ho, Jeannie",D
+20877560,EDUC153,24381,Cadiguwe,Ehe,"McLean, Marsha J.",D
+20856759,EDUC136,25005,Cafiyow,Ma Baabraz,"Pruneda-Hernandez, Sonia G.",D
+20856759,ENGL102,20616,Cafiyow,Ma Baabraz,"Wallentiny, Pamela L.",R
+20856759,ISTD173,22029,Cafiyow,Ma Baabraz,"Espinoza, Jennifer D.",R
+20856759,EDUC243,24203,Cafiyow,Ma Baabraz,"Smith, Zeporia N.",T
+20865987,ENGL102,23471,Casehi,Ciledfi Ivupo,"Pryor, Chester E.",G
+20865987,MATH131,22843,Casehi,Ciledfi Ivupo,"Strickland, Candace",G
+20865987,EDUC135,22076,Casehi,Ciledfi Ivupo,"Funk, Suzanne R.",R
+20865987,ISTD173,22028,Casehi,Ciledfi Ivupo,"Espinoza, Jennifer D.",R
+20322724,EDUC119,22455,Carrekd,Awsi,"Carey-Fletcher, Kathleen F.",G
+21987976,EDUC119,22455,Carrekd,Paata,"Carey-Fletcher, Kathleen F.",G
+21987976,ENGL101,23438,Carrekd,Paata,"Spero, Abby A.",G
+21987976,MATH096,22801,Carrekd,Paata,"Murphy, Carole S.",G
+20322724,MATH130,22841,Carrekd,Awsi,"Cornell, Carol L.",G
+20322724,PSYC102,21814,Carrekd,Awsi,"Pizzano, Lucretia R.",G
+21987976,PSYC102,21815,Carrekd,Paata,"Melley, Alison H.",G
+20850907,MATH131,22843,Carlaw,Kilway,"Strickland, Candace",G
+20850907,PSCI101,23394,Carlaw,Kilway,"McDaniel, Diane K.",G
+20850907,PSCI101D,23396,Carlaw,Kilway,"McDaniel, Diane K.",G
+20850907,PSCI101L,23398,Carlaw,Kilway,"McDaniel, Diane K.",G
+20850907,WMST101,23305,Carlaw,Kilway,"Bagshaw, Joanne",G
+20047361,ENGL102,24129,Carlaw,Jaler,"Edwards, Kamala",R
+20047361,MATH080,20804,Carlaw,Jaler,"Cho, Okkyung",R
+20877510,MATH092,24850,Cabwivy,Bgatj,"Abel, Linda L.",R
+20877510,MATH092,24850,Cabwivy,Bgatj,"Abel, Linda L.",R
+20877510,SOCY100,26621,Cabwivy,Bgatj,"Salmi, Katya",R
+20877510,SOCY100,26621,Cabwivy,Bgatj,"Salmi, Katya",R
+20894873,HIST200,21557,Cablakdi,Korigewe,,D
+20894873,HIST200,26754,Cablakdi,Korigewe,"Moran, Michelle T.",D
+20894873,HONR114AK,24008,Cablakdi,Korigewe,"Walsh, Mary-Paula",G
+20894873,COMM108,21024,Cablakdi,Korigewe,"Hill Roseboro, Ashla",R
+20894873,MATH130,23358,Cablakdi,Korigewe,"Poese, Debra A.",R
+20894873,GEOG130,23855,Cablakdi,Korigewe,"St. John, Jeffrey Richard",T
+20847089,IERW002,24839,Cablikdi,Miladba,"Sewell, Deborah M.",T
+20847089,IERW002,24839,Cablikdi,Miladba,"Sewell, Deborah M.",T
+20847089,STSU122,20291,Cablikdi,Miladba,"Boatman, Alice C.",T
+20847089,STSU122,20291,Cablikdi,Miladba,"Boatman, Alice C.",T
+20836684,BIOL213,23144,Ctehmkiy,Kilway,"Barrie, Abdulai T.",G
+20836684,BIOL213L,23145,Ctehmkiy,Kilway,"Barrie, Abdulai T.",G
+21983761,ENGL101A,23450,Ctebti,Tavaola,"Cocozzella, Christina M.",G
+21983761,HLTH125,21512,Ctebti,Tavaola,"McKelphin, Keith L.",G
+21983761,MATH096,22760,Ctebti,Tavaola,"Witte, William T.",G
+21983761,MATH096,22760,Ctebti,Tavaola,"Witte, William T.",G
+20836956,GEOG130,23505,Ctejaz Gorzaled,Luz,"Coronado, Sonia R",G
+20836956,GEOG130,23505,Ctejaz Gorzaled,Luz,"Coronado, Sonia R",G
+20836956,MATH130,22841,Ctejaz Gorzaled,Luz,"Cornell, Carol L.",G
+20836956,MATH130,22841,Ctejaz Gorzaled,Luz,"Cornell, Carol L.",G
+20836956,PSYC102,21835,Ctejaz Gorzaled,Luz,"Strauss, Matthew R.",G
+20836956,EDUC201,22088,Ctejaz Gorzaled,Luz,"Hernandez Baca, Glenda",R
+20800975,DANC101,24855,Ctob,Yai,,Off Campus - G
+20800975,ELAW980,24642,Ctob,Yai,"Alves, Mark J.",R
+20800975,MATH130,23355,Ctob,Yai,"Vaughnn, Lisa Marlene",R
+20814597,MATH130,23357,Ctob,Ctebwiw,"Sibilska, Krystyna Anna",R
+20814597,MATH130,23357,Ctob,Ctebwiw,"Sibilska, Krystyna Anna",R
+20815625,EDUC170,22086,Ctab,Mepkakdo,"Shawver, Christina M.",R
+20815625,EDUC243,20159,Ctab,Mepkakdo,"Johnson, Mary Beth",R
+20051009,ENGL102,24777,Ctab Lio,Mepkakdo,"Rindler, Mercia O.",R
+20051009,HIST200,21536,Ctab Lio,Mepkakdo,"Moran, Michelle T.",R
+20051009,MATH131,23359,Ctab Lio,Mepkakdo,"Rosenberg, Sandra Dillard",R
+21922783,EDUC119,22071,Cepkemre,Marlo Toraba,"Flank, Estelle G.",R
+21922783,ENGL101,20332,Cepkemre,Marlo Toraba,"Howard, Megan Vandergrift",R
+21922783,ISTD173,22028,Cepkemre,Marlo Toraba,"Espinoza, Jennifer D.",R
+21922783,PSYC102,21216,Cepkemre,Marlo Toraba,"Stearns, Deborah C.",R
+20012265,PSCI102,23091,Cebwak,Micir,"Maghami, Behzad",R
+20012265,PSCI102D,23093,Cebwak,Micir,"Maghami, Behzad",R
+20012265,PSCI102L,23094,Cebwak,Micir,"Maghami, Behzad",R
+21924055,IERW002,24771,Colarvgow,Awcaa,"Farley, Constance L.",R
+21924055,MATH080,23939,Colarvgow,Awcaa,"Brunett, Maria R.",R
+20851583,ENGL190,20691,Colhilc,Kisbavy,"Dickison, Swift Stiles",R
+20015566,BIOL101,22491,Cosdewe,Karer,"Coscaron, Cecilia Laura",R
+20015566,BIOL101L,22514,Cosdewe,Karer,"Coscaron, Cecilia Laura",R
+20015566,EDUC243,22096,Cosdewe,Karer,"Smith, Zeporia N.",R
+21922583,ENGL101,24905,Coslvigew,Sbofjawae,"Couch, Joseph Dennis",T
+21922583,HIST200,20135,Coslvigew,Sbofjawae,"Johnson, Terence L.",T
+21922583,MATH096,21380,Coslvigew,Sbofjawae,"Eric Ngang Che, Fnu",T
+21922583,PSYC102,21274,Coslvigew,Sbofjawae,"Blumenthal, Judy G.",T
+21983930,EDUC119,22455,Coim Lepgiagnegko,Kabey,"Carey-Fletcher, Kathleen F.",G
+21983930,ENGL101,23445,Coim Lepgiagnegko,Kabey,"Pryor, Chester E.",G
+21983930,HLTH125,21512,Coim Lepgiagnegko,Kabey,"McKelphin, Keith L.",G
+21983930,MATH130,22841,Coim Lepgiagnegko,Kabey,"Cornell, Carol L.",G
+21983930,PSYC102,21816,Coim Lepgiagnegko,Kabey,"Bergmann, Sam Allen",G
+20833555,ARTT201,20140,Coisfb,Lari,"Melanson, Elizabeth G.",R
+20833555,BIOL101,22485,Coisfb,Lari,"Smith, Aubrey A.",R
+20833555,BIOL101L,22500,Coisfb,Lari,"Smith, Aubrey A.",R
+20833555,IDES222,24966,Coisfb,Lari,"Bonness, Jessica G.",R
+20833555,IDES222L,24967,Coisfb,Lari,"Bonness, Jessica G.",R
+20833555,IDES248,21032,Coisfb,Lari,,R
+20833555,MATH130,23358,Coisfb,Lari,"Poese, Debra A.",R
+21983379,COMM108,21023,Cordel,Marao,"Theophile-LaFond, Anestine",R
+21983379,EDUC101,22038,Cordel,Marao,"Hernandez Baca, Glenda",R
+21983379,EDUC102,22040,Cordel,Marao,"Lewis, Lisa Beth",R
+21983379,ENGL101A,24797,Cordel,Marao,"Howard, Megan Vandergrift",R
+21983379,MATH096,23224,Cordel,Marao,"Salzberg, Helen E.",R
+21922924,IERW001,24985,Coreob,Gebwak,"Lawver, Angie L.",G
+21922924,MATH080,22692,Coreob,Gebwak,"Binder, Terri",G
+21922924,STSU100,23525,Coreob,Gebwak,"Keeley, Marilyn Rolleston",G
+20828705,SOCY100,22269,Cororahi,Cesljya,"Twombly, Charlotte H.",D
+20828705,MATH132,23667,Cororahi,Cesljya,"Cornell, Carol L.",G
+20025998,MATH132,23171,Covok,Cibao,"Brunett, Maria R.",R
+20025998,PSCI102,23091,Covok,Cibao,"Maghami, Behzad",R
+20025998,PSCI102D,23093,Covok,Cibao,"Maghami, Behzad",R
+20025998,PSCI102L,23094,Covok,Cibao,"Maghami, Behzad",R
+20025998,EDUC243,24203,Covok,Cibao,"Smith, Zeporia N.",T
+20861593,EDUC136,25005,Covlel,Kewvawdy,"Pruneda-Hernandez, Sonia G.",D
+20861593,MATH131,22842,Covlel,Kewvawdy,"Alraee, Mais Mouaffak",G
+20885314,EDUC153,24381,Cgawhoneh,Jabsili,"McLean, Marsha J.",D
+20885314,EDUC224,22095,Cgawhoneh,Jabsili,"Ho, Jeannie",D
+20885314,EDUC227,24890,Cgawhoneh,Jabsili,"McLean, Marsha J.",D
+20885314,BIOL101,22496,Cgawhoneh,Jabsili,"Freitag, Patricia",R
+20885314,BIOL101,22496,Cgawhoneh,Jabsili,"Freitag, Patricia",R
+20885314,BIOL101L,22508,Cgawhoneh,Jabsili,"Freitag, Patricia",R
+20885314,BIOL101L,22508,Cgawhoneh,Jabsili,"Freitag, Patricia",R
+20885314,GEOG130,20978,Cgawhoneh,Jabsili,"St. John, Jeffrey Richard",R
+20885314,GEOG130,20978,Cgawhoneh,Jabsili,"St. John, Jeffrey Richard",R
+20885314,MATH130,23355,Cgawhoneh,Jabsili,"Vaughnn, Lisa Marlene",R
+20885314,MATH130,23355,Cgawhoneh,Jabsili,"Vaughnn, Lisa Marlene",R
+20885314,MATH130,23355,Cgawhoneh,Jabsili,"Vaughnn, Lisa Marlene",R
+20821545,EDUC119,22074,Cguz,Karho,"Mukherjee, Mary Elizabeth McDevitt",D
+20821545,ENGL101,20349,Cguz,Karho,,R
+20826130,MATH130,23357,Cutaso,Navige,"Sibilska, Krystyna Anna",R
+20826130,MATH130,23357,Cutaso,Navige,"Sibilska, Krystyna Anna",R
+20826130,PSCI101,20219,Cutaso,Navige,"Fermo, Raymond",T
+20826130,PSCI101,20219,Cutaso,Navige,"Fermo, Raymond",T
+20826130,PSCI101D,20220,Cutaso,Navige,"Fermo, Raymond",T
+20826130,PSCI101D,20220,Cutaso,Navige,"Fermo, Raymond",T
+20826130,PSCI101L,20221,Cutaso,Navige,"Fermo, Raymond",T
+20826130,PSCI101L,20221,Cutaso,Navige,"Fermo, Raymond",T
+20420270,EDUC119,22074,Dawag,Awe,"Mukherjee, Mary Elizabeth McDevitt",D
+20420270,ENGL002,26235,Dawag,Awe,"Canada, Shireen A.",R
+21984209,ENGL101A,24369,Dakad,Adoxolhri,"Stefanon, Dyon",R
+21984209,PSYC102,21226,Dakad,Adoxolhri,"Morales Picard, Alejandra",R
+21984209,STSU100,20044,Dakad,Adoxolhri,"Baker, Dana L.",R
+21984209,EDUC119,20151,Dakad,Adoxolhri,"McLean, Marsha J.",T
+20899490,HLTH100,22334,Dakoeveeb,Marnol,"Elkins, Katherine L.",D
+20899490,BIOL101,20401,Dakoeveeb,Marnol,"Agbottah, Emmanuel T.",T
+20899490,BIOL101L,20402,Dakoeveeb,Marnol,"Agbottah, Emmanuel T.",T
+20899490,PSCI101,20219,Dakoeveeb,Marnol,"Fermo, Raymond",T
+20899490,PSCI101D,20220,Dakoeveeb,Marnol,"Fermo, Raymond",T
+20899490,PSCI101L,20221,Dakoeveeb,Marnol,"Fermo, Raymond",T
+21927116,EDUC119,22071,Dil Rocerio,Eebhay,"Flank, Estelle G.",R
+21927116,ENGL102,24086,Dil Rocerio,Eebhay,"Johnson, Courtney R.",R
+21927116,MATH096,23192,Dil Rocerio,Eebhay,"Mokhtari, Faramarz B.",R
+20893654,ENGL101,23424,DiRenpe,Agaegki,"Hare, John L",G
+20893654,MATH096,22799,DiRenpe,Agaegki,"Byrne, Patrick L.",G
+20893654,STSU100,20487,DiRenpe,Agaegki,"LaPilusa, Barbara C.",G
+20010587,ELAW970,24640,Deemifi,Mawi,"Welch, Christopher",R
+20889992,MATH080,22676,Deeseka,Lesdday,"South, Gail A.Z.",G
+20078325,GEOG130,23505,Deew,Lorerla,"Coronado, Sonia R",G
+20078325,MATH131,22843,Deew,Lorerla,"Strickland, Candace",G
+20078325,EDUC201,22088,Deew,Lorerla,"Hernandez Baca, Glenda",R
+20078325,PSCI102,23091,Deew,Lorerla,"Maghami, Behzad",R
+20078325,PSCI102D,23093,Deew,Lorerla,"Maghami, Behzad",R
+20078325,PSCI102L,23094,Deew,Lorerla,"Maghami, Behzad",R
+20899372,EDUC135,22076,Deez,Awcaa,"Funk, Suzanne R.",R
+20899372,EDUC135,22076,Deez,Awcaa,"Funk, Suzanne R.",R
+20899372,ELAI990,24668,Deez,Awcaa,"Okechukwu, Christiana",R
+20899372,ELAI990,24668,Deez,Awcaa,"Okechukwu, Christiana",R
+20861516,EDUC136,22081,Depmilcib,Paata,"Ho, Jeannie",R
+20861516,GEOG130,20978,Depmilcib,Paata,"St. John, Jeffrey Richard",R
+20861516,HIST201,21560,Depmilcib,Paata,"Moran, Michelle T.",R
+20861516,ISTD173,22029,Depmilcib,Paata,"Espinoza, Jennifer D.",R
+20861516,PSCI102,23091,Depmilcib,Paata,"Maghami, Behzad",R
+20861516,PSCI102D,23093,Depmilcib,Paata,"Maghami, Behzad",R
+20861516,PSCI102L,23094,Depmilcib,Paata,"Maghami, Behzad",R
+21924880,ENGL102,20318,Dusb,Adayoc,"Huergo, Elizabeth M.",D
+21924880,HIST201,21563,Dusb,Adayoc,,D
+21924880,MATH080,22657,Dusb,Adayoc,"Rogers, Julie F.",D
+21924880,HLTH125,22376,Dusb,Adayoc,"Schwanke, Douglas C.",R
+21925870,EDUC119,22455,Egsedf,Sbofjawae,"Carey-Fletcher, Kathleen F.",G
+21925870,ENGL101,24504,Egsedf,Sbofjawae,"Pulju, Anne M.",G
+21925870,MATH080,22693,Egsedf,Sbofjawae,"England, Ellen B.",G
+21925870,PSYC102,21811,Egsedf,Sbofjawae,"Sallie, Jack Edgar",G
+20853057,MATH132,23667,Ectaroze,Ajebsa,"Cornell, Carol L.",G
+20853057,PSCI101,23372,Ectaroze,Ajebsa,"McDaniel, Diane K.",G
+20853057,PSCI101D,23373,Ectaroze,Ajebsa,"McDaniel, Diane K.",G
+20853057,PSCI101L,23374,Ectaroze,Ajebsa,"McDaniel, Diane K.",G
+20853057,EDUC136,22081,Ectaroze,Ajebsa,"Ho, Jeannie",R
+20853057,EDUC201,22087,Ectaroze,Ajebsa,"Hernandez Baca, Glenda",R
+20853057,ISTD173,22028,Ectaroze,Ajebsa,"Espinoza, Jennifer D.",R
+20876889,ENGL001,20302,Ecquihil,Awe,,R
+20815941,BIOL150,24431,Ebpkab,Calhii,"Birney, Margaret A.",G
+20815941,BIOL150L,24432,Ebpkab,Calhii,"Birney, Margaret A.",G
+20815941,ENGL102,23464,Ebpkab,Calhii,"McClean, Sally E.",G
+20815941,NUTR101,22763,Ebpkab,Calhii,"Escobar, Alyson",G
+20815941,PSYC102,21834,Ebpkab,Calhii,"McCeney, Melissa K.",G
+21974575,EDUC119,22074,Euceri,Kayho,"Mukherjee, Mary Elizabeth McDevitt",D
+21974575,EDUC135,22079,Euceri,Kayho,"Ho, Jeannie",D
+21974575,MATH080,20835,Euceri,Kayho,"Samuels, Michael P.",R
+20805835,ENGL101,20367,Fast,Xeebjua,"Archer-Melville, Christine",R
+21921354,EDUC119,20151,Fabugo,Nesi,"McLean, Marsha J.",T
+21921354,ENGL101,20929,Fabugo,Nesi,"Mortellaro, Katherine",T
+21921354,MATH130,21409,Fabugo,Nesi,"Mahaney, Ralph E.",T
+21921354,PSYC102,21291,Fabugo,Nesi,"Herst, Andrew N.",T
+20805617,MATH080,22673,Favo,Ajohia,"Willard, Ronald C.",G
+20798235,PHED156,22443,Firrureso-Lotez,Deebo,"Solano, Holly Faith",R
+20798235,PHED156,22443,Firrureso-Lotez,Deebo,"Solano, Holly Faith",R
+20891111,IERW001,24784,Feehgoc,Tavaolwe,"Simpson, Susan R.",R
+20512561,ENGL190,20320,Feowhac,Navkokeo,"Rosado, Emily K.",D
+20512561,BIOL101,22491,Feowhac,Navkokeo,"Coscaron, Cecilia Laura",R
+20512561,BIOL101L,22514,Feowhac,Navkokeo,"Coscaron, Cecilia Laura",R
+20512561,EDUC243,22096,Feowhac,Navkokeo,"Smith, Zeporia N.",R
+20512561,MATH130,23358,Feowhac,Navkokeo,"Poese, Debra A.",R
+20093546,GEOG130,20978,FevzPabratt,Nepogi,"St. John, Jeffrey Richard",R
+20093546,MATH130,23358,FevzPabratt,Nepogi,"Poese, Debra A.",R
+20093546,PSYC203,21256,FevzPabratt,Nepogi,"Morales Picard, Alejandra",R
+20089761,PSCI102,23091,Fdiys Svahf,Jazzkew,"Maghami, Behzad",R
+20089761,PSCI102D,23093,Fdiys Svahf,Jazzkew,"Maghami, Behzad",R
+20089761,PSCI102L,23094,Fdiys Svahf,Jazzkew,"Maghami, Behzad",R
+20854256,BIOL101,20392,Folace,Marael,"Oniya, Opeyemi",T
+20854256,BIOL101L,20393,Folace,Marael,"Oniya, Opeyemi",T
+20854256,HLTH100,20270,Folace,Marael,"Chapman, Tarik O.",T
+20854256,ISTD173,24909,Folace,Marael,"Stoll, Anita Kuykendall",T
+20854256,MATH130,21409,Folace,Marael,"Mahaney, Ralph E.",T
+20102254,EDUC136,22081,Foblaw,Awsehfi,"Ho, Jeannie",R
+20801253,ENGL101A,20374,Fgebto,Nenao,"Portis, Rebecca",R
+20801253,HIST201,21559,Fgebto,Nenao,"Hernandez-Fujigaki, Jorge",R
+20801253,MATH080,23377,Fgebto,Nenao,"Baxter, Mary E.",R
+20801253,STSU100,20042,Fgebto,Nenao,"Wright, Gail D.",R
+20844512,ENGL101A,24986,Fuobhic,Awe,"Smith, Katherine",G
+20844512,MATH080,22676,Fuobhic,Awe,"South, Gail A.Z.",G
+20835418,BIOL101,22925,Gahhab,Cabwivy,"Smith, James L.",G
+20835418,BIOL101L,22926,Gahhab,Cabwivy,"Smith, James L.",G
+20835418,EDUC136,24301,Gahhab,Cabwivy,"Parlakian, Rebecca",G
+20835418,EDUC136,25142,Gahhab,Cabwivy,,G
+20835418,ENGL102,23466,Gahhab,Cabwivy,,G
+20835418,MATH096,22801,Gahhab,Cabwivy,"Murphy, Carole S.",G
+20886623,EDUC135,22079,Galeob,Edazogivk,"Ho, Jeannie",D
+20886623,PSCI101,23086,Galeob,Edazogivk,"De, Tania",R
+20886623,PSCI101D,23087,Galeob,Edazogivk,"De, Tania",R
+20886623,PSCI101L,23089,Galeob,Edazogivk,"De, Tania",R
+20886623,ENGL190,20772,Galeob,Edazogivk,,T
+20886623,ENGL190,26750,Galeob,Edazogivk,"Wahl, Gregory R.",T
+20886623,ISTD173,24909,Galeob,Edazogivk,"Stoll, Anita Kuykendall",T
+20886623,MATH130,21409,Galeob,Edazogivk,"Mahaney, Ralph E.",T
+20891431,EDUC201,22464,Gdiettdor,Caalgyw,"Fisher, Sonja L.",G
+20891431,GEOG130,23505,Gdiettdor,Caalgyw,"Coronado, Sonia R",G
+20891431,MATH131,22842,Gdiettdor,Caalgyw,"Alraee, Mais Mouaffak",G
+20891431,PSCI101,23394,Gdiettdor,Caalgyw,"McDaniel, Diane K.",G
+20891431,PSCI101D,23396,Gdiettdor,Caalgyw,"McDaniel, Diane K.",G
+20891431,PSCI101L,23398,Gdiettdor,Caalgyw,"McDaniel, Diane K.",G
+20853431,MATH096,23202,Gonoy,Iwcry,"Cho, Okkyung",R
+20818777,EDUC119,22071,Gowez,Mavee,"Flank, Estelle G.",R
+20818777,ENGL101A,20412,Gowez,Mavee,"Friel, Brianne W.",R
+20818777,MATH080,23375,Gowez,Mavee,"Poese, Debra A.",R
+20818777,PSYC102,21216,Gowez,Mavee,"Stearns, Deborah C.",R
+20062545,EDUC136,25142,Goszokiz,Bivlzayni,,G
+21982281,EDUC119,22071,Goszokiz,Suyiba,"Flank, Estelle G.",R
+21982281,ENGL101,20327,Goszokiz,Suyiba,"Weinstein, Dorothy J.",R
+21982281,MATH096,23240,Goszokiz,Suyiba,"Katiraie, Farajollah Fred",R
+21982281,PSYC102,21211,Goszokiz,Suyiba,"Williams, Michelle H.",R
+20748359,MATH132,23667,Ggesojo,Nasgy,"Cornell, Carol L.",G
+20748359,COMM108,21041,Ggesojo,Nasgy,"Moody, Mary Elizabeth",R
+20748359,ISTD173,24909,Ggesojo,Nasgy,"Stoll, Anita Kuykendall",T
+20761369,MATH132,23667,Ggebh,Japquidaba,"Cornell, Carol L.",G
+20889360,MATH132,23667,Ggebh,Kewvawdoy,"Cornell, Carol L.",G
+20082062,MATH132,23667,Ggebh,Nepogibve,"Cornell, Carol L.",G
+20761369,PSCI102,23091,Ggebh,Japquidaba,"Maghami, Behzad",R
+20889360,PSCI102,23091,Ggebh,Kewvawdoy,"Maghami, Behzad",R
+20082062,PSCI102,23091,Ggebh,Nepogibve,"Maghami, Behzad",R
+20761369,PSCI102D,23093,Ggebh,Japquidaba,"Maghami, Behzad",R
+20889360,PSCI102D,23093,Ggebh,Kewvawdoy,"Maghami, Behzad",R
+20082062,PSCI102D,23093,Ggebh,Nepogibve,"Maghami, Behzad",R
+20761369,PSCI102L,23094,Ggebh,Japquidaba,"Maghami, Behzad",R
+20889360,PSCI102L,23094,Ggebh,Kewvawdoy,"Maghami, Behzad",R
+20082062,PSCI102L,23094,Ggebh,Nepogibve,"Maghami, Behzad",R
+20366825,ISTD173,22028,Ggejab,Ejahy,"Espinoza, Jennifer D.",R
+20366825,PSCI101,23084,Ggejab,Ejahy,"Cutler, Alan H",R
+20366825,PSCI101D,23088,Ggejab,Ejahy,"Cutler, Alan H",R
+20366825,PSCI101L,23090,Ggejab,Ejahy,"Cutler, Alan H",R
+20890678,EDUC119,20151,Ggejab,Jazzkewo,"McLean, Marsha J.",T
+20890678,ENGL102,20951,Ggejab,Jazzkewo,"Korr, Rachel E.",T
+20890678,MATH130,21409,Ggejab,Jazzkewo,"Mahaney, Ralph E.",T
+20890678,PSYC102,23964,Ggejab,Jazzkewo,"Herst, Andrew N.",T
+20052964,HIST201,24006,Ggey,Carogewe,"Furgol, James P.",D
+20052964,SOCY100,22266,Ggey,Carogewe,"Twombly, Charlotte H.",D
+20668151,PSCI101,23394,Ggatnb,Coswhawpe,"McDaniel, Diane K.",G
+20668151,PSCI101D,23396,Ggatnb,Coswhawpe,"McDaniel, Diane K.",G
+20668151,PSCI101L,23398,Ggatnb,Coswhawpe,"McDaniel, Diane K.",G
+20668151,MATH131,24735,Ggatnb,Coswhawpe,"Fouche, Kimberly A.",T
+20893063,ENGL101A,23621,Guersahi,Ahraol,"Archer-Melville, Christine",R
+20893063,HLTH100,22307,Guersahi,Ahraol,"Heffernan, Kimberly",R
+20893063,HLTH100,22307,Guersahi,Ahraol,"Heffernan, Kimberly",R
+20893063,HLTH100,22307,Guersahi,Ahraol,"Heffernan, Kimberly",R
+20893063,MATH080,23377,Guersahi,Ahraol,"Baxter, Mary E.",R
+20096250,EDUC135,22075,Guojowa,Japquidaba,"Flank, Estelle G.",R
+20096250,ENGL102,20630,Guojowa,Japquidaba,"Carminati, Genevieve E.",R
+20096250,MATH096,23200,Guojowa,Japquidaba,"Talbot, Stephanie D.",R
+20096250,PSYC102,21224,Guojowa,Japquidaba,"Spernak, Stephanie M.",R
+20834845,EDUC135,22462,Gusdawjeb,Ejahy,,G
+20834845,GEOG130,23506,Gusdawjeb,Ejahy,"Coronado, Sonia R",G
+20834845,HIST200,23428,Gusdawjeb,Ejahy,"Thompson, Joseph Conan",G
+20834845,PSYC102,21836,Gusdawjeb,Ejahy,"McCeney, Melissa K.",G
+20847638,BIOL101,22925,Guzsol,Awavok,"Smith, James L.",G
+20847638,BIOL101L,22926,Guzsol,Awavok,"Smith, James L.",G
+20847638,ENGL102,23477,Guzsol,Awavok,"Smith, Katherine",G
+20847638,EDUC119,22071,Guzsol,Awavok,"Flank, Estelle G.",R
+20847638,MATH131,23359,Guzsol,Awavok,"Rosenberg, Sandra Dillard",R
+20747970,MATH098,22663,Handov,Julao,"Roy, Atul N",D
+20747970,CHEM131,22245,Handov,Julao,"Pritchett, Jeanita S.",R
+20747970,CHEM131D,22246,Handov,Julao,"Pritchett, Jeanita S.",R
+20747970,CHEM131L,22247,Handov,Julao,"Pritchett, Jeanita S.",R
+20827743,MATH131,23359,Handov,Jabsili,"Rosenberg, Sandra Dillard",R
+20827743,MATH131,23359,Handov,Jabsili,"Rosenberg, Sandra Dillard",R
+20827743,MATH132,23171,Handov,Jabsili,"Brunett, Maria R.",R
+20827743,MATH132,23171,Handov,Jabsili,"Brunett, Maria R.",R
+20827743,GEOG130,23855,Handov,Jabsili,"St. John, Jeffrey Richard",T
+20816783,EDUC136,22081,Hankinas,Riybo,"Ho, Jeannie",R
+20816783,ENGL102,20579,Hankinas,Riybo,"Wilson, Pamela Rachael",R
+20816783,MATH131,23359,Hankinas,Riybo,"Rosenberg, Sandra Dillard",R
+20816783,PSCI101,23084,Hankinas,Riybo,"Cutler, Alan H",R
+20816783,PSCI101D,23088,Hankinas,Riybo,"Cutler, Alan H",R
+20816783,PSCI101L,23090,Hankinas,Riybo,"Cutler, Alan H",R
+20882530,BSAD101,20226,Hafa-Saad,Inrijej,"Carroll, Robert A.",D
+20882530,ECON202,25948,Hafa-Saad,Inrijej,"Madariaga, Bruce",D
+20882530,EDUC119,22074,Hafa-Saad,Inrijej,"Mukherjee, Mary Elizabeth McDevitt",D
+20882530,MATH132,23667,Hafa-Saad,Inrijej,"Cornell, Carol L.",G
+20059084,MATH132,23667,Haro,Karho,"Cornell, Carol L.",G
+20059084,ARTT120,20033,Haro,Karho,"McCracken, Jennifer J",T
+20059084,PSCI102,24165,Haro,Karho,,T
+20059084,PSCI102D,24166,Haro,Karho,,T
+20059084,PSCI102L,24167,Haro,Karho,,T
+20090416,BIOL101,22490,Harriic,Tosao,"Khan, Mohammad Ali",R
+20090416,BIOL101L,22511,Harriic,Tosao,"Khan, Mohammad Ali",R
+20090416,HINM134,24732,Harriic,Tosao,"Smith, Corinne M.",T
+20090416,HINM144,24873,Harriic,Tosao,"Powell, Tonya D.",T
+20090416,HINM144L,24872,Harriic,Tosao,"Powell, Tonya D.",T
+20090416,HINM144L,24874,Harriic,Tosao,,T
+20090416,HINM154,24877,Harriic,Tosao,"Powell, Tonya D.",T
+20090416,HINM154L,24876,Harriic,Tosao,"Powell, Tonya D.",T
+20090416,HINM154L,24878,Harriic,Tosao,,T
+20936032,MATH080,22642,Harrilvvor,Mibevib,"Peters, Monique A.",D
+20936032,EDUC243,20159,Harrilvvor,Mibevib,"Johnson, Mary Beth",R
+20936032,ISTD173,24909,Harrilvvor,Mibevib,"Stoll, Anita Kuykendall",T
+20006235,PSYC102,21240,Harl,Jteral,"Richards, Soyini Ayanna",R
+20757075,EDUC135,22076,Hakev,Courhliy,"Funk, Suzanne R.",R
+20757075,ENGL101,20340,Hakev,Courhliy,"Edwards, Kamala",R
+20886620,BSAD101,22885,Hirvawb,Moseh,"Smith, Jane C.",G
+20886620,PSYC102,21830,Hirvawb,Moseh,"Pelham, Brett",G
+20866728,BIOL150,22532,Hirbolhoz,Achhay,"Smith, Aubrey A.",R
+20866728,BIOL150L,22552,Hirbolhoz,Achhay,"Smith, Aubrey A.",R
+20866728,MATH110,23289,Hirbolhoz,Achhay,"Boudhraa, Zineddine",R
+20858503,EDUC136,25005,Henigpo,Jazsil,"Pruneda-Hernandez, Sonia G.",D
+20858503,EDUC201,22087,Henigpo,Jazsil,"Hernandez Baca, Glenda",R
+20858503,MATH131,23359,Henigpo,Jazsil,"Rosenberg, Sandra Dillard",R
+20884368,MATH132,23667,Hevgjiwb,Filatea,"Cornell, Carol L.",G
+20854948,COMM108,23098,Hoow,Stebimi,"Banks, Tiffany D.",G
+20854948,EDUC135,22462,Hoow,Stebimi,,G
+20854948,PSYC102,21829,Hoow,Stebimi,"Pizzano, Lucretia R.",G
+20854948,EDUC115,22083,Hoow,Stebimi,"Salour, Ellie N.",R
+20837698,MUSC172,24518,Holholh,Diliriy,,R
+20837698,MUSC172,24518,Holholh,Diliriy,,R
+20837698,PHED201,22469,Holholh,Diliriy,"Wasilko, Lesley",R
+20837698,PHED201,22469,Holholh,Diliriy,"Wasilko, Lesley",R
+20894097,ISTD173,22029,Hunwel,Dabao,"Espinoza, Jennifer D.",R
+20894097,STSU100,20053,Hunwel,Dabao,"Robinson, Linda D.",R
+20894097,IERW002,25057,Hunwel,Dabao,"Simon, Miriam W.",T
+20894097,MATH080,21357,Hunwel,Dabao,"Johnson, Kevin F.",T
+20022265,EDUC201,22465,Jeror,Noosi,"Jiron, Kelly",G
+20022265,MATH130,23357,Jeror,Noosi,"Sibilska, Krystyna Anna",R
+20878688,STSU120,20516,Joker Murtea,Yesi Kavkawese,"Hildreth, Jacy Kathleen",D
+20878688,ELAR980,24590,Joker Murtea,Yesi Kavkawese,"Nieves, Domingo",R
+20878688,ELAW970,24640,Joker Murtea,Yesi Kavkawese,"Welch, Christopher",R
+20800508,BIOL101,22490,Kaawaw,Navigei,"Khan, Mohammad Ali",R
+20800508,BIOL101L,22511,Kaawaw,Navigei,"Khan, Mohammad Ali",R
+20800508,MATH130,23358,Kaawaw,Navigei,"Poese, Debra A.",R
+20800508,PSYC102,21234,Kaawaw,Navigei,"Rosenthal, Arlene C",R
+20739195,EDUC201,22088,Kabwkaw,Kavkawese,"Hernandez Baca, Glenda",R
+20895106,ISTD173,22028,Kilhy,Edawogivk,"Espinoza, Jennifer D.",R
+20895106,MATH130,23358,Kilhy,Edawogivk,"Poese, Debra A.",R
+20744923,MATH132,23171,Ktebon,Zasbof,"Brunett, Maria R.",R
+20744923,ISTD173,24909,Ktebon,Zasbof,"Stoll, Anita Kuykendall",T
+20866285,DANC100,20231,Keswkaw-Bvofs,Sewori,"Shapiro, Meryl E.",T
+20866285,EDUC102,23725,Keswkaw-Bvofs,Sewori,"Johnson, Mary Beth",T
+20866285,EDUC119,20151,Keswkaw-Bvofs,Sewori,"McLean, Marsha J.",T
+20866285,EDUC136,24329,Keswkaw-Bvofs,Sewori,,T
+20866285,PSCI102,24165,Keswkaw-Bvofs,Sewori,,T
+20866285,PSCI102D,24166,Keswkaw-Bvofs,Sewori,,T
+20866285,PSCI102L,24167,Keswkaw-Bvofs,Sewori,,T
+21973546,EDUC135,22079,Kevlvei,Tasyo,"Ho, Jeannie",D
+21975632,EDUC101,25290,Kopkkaw,Julao,"Switlick, Diane M.",R
+21971380,ENGL101,23435,Kobonol,Adawel,"Hare, John L",G
+21971380,HIST200,23500,Kobonol,Adawel,"Stoliaroff, Peter N.",G
+21971380,MATH130,23358,Kobonol,Adawel,"Poese, Debra A.",R
+21971380,PSYC102,21223,Kobonol,Adawel,"Morales Picard, Alejandra",R
+20947621,EDUC243,20159,Kgofd,Ridetma,"Johnson, Mary Beth",R
+20947621,EDUC243,20159,Kgofd,Ridetma,"Johnson, Mary Beth",R
+20947621,EDUC243,20159,Kgofd,Ridetma,"Johnson, Mary Beth",R
+20947621,PSYC102,21239,Kgofd,Ridetma,"Richards, Soyini Ayanna",R
+20947621,PSYC102,21239,Kgofd,Ridetma,"Richards, Soyini Ayanna",R
+20834500,MATH131,23359,Kgiudtab,Marao,"Rosenberg, Sandra Dillard",R
+20834500,PSCI101,23086,Kgiudtab,Marao,"De, Tania",R
+20834500,PSCI101D,23087,Kgiudtab,Marao,"De, Tania",R
+20834500,PSCI101L,23089,Kgiudtab,Marao,"De, Tania",R
+20879896,EDUC136,22081,Kuokr,Ajebsa,"Ho, Jeannie",R
+20879896,ENGL190,20690,Kuokr,Ajebsa,"Gillan, Jamie B.",R
+20879896,GEOG130,20978,Kuokr,Ajebsa,"St. John, Jeffrey Richard",R
+20816163,ARTT105,20115,Lawi,Cthavewc Dodwi,"Harrington, Michaele M",R
+20816163,ELAW980,24642,Lawi,Cthavewc Dodwi,"Alves, Mark J.",R
+20854646,IERW002,24788,Lawi,Adox,"Rodrick, Karin E.",R
+20854646,IERW002,24788,Lawi,Adox,"Rodrick, Karin E.",R
+20816163,MATH096,23209,Lawi,Cthavewc Dodwi,"Bathula, Alexander",R
+21921721,PSYC102,21235,Lajwel,Keoro,"Herdoiza Hernandez, Patricia C.",R
+21921721,EDUC119,20151,Lajwel,Keoro,"McLean, Marsha J.",T
+21921721,ENGL101A,24070,Lajwel,Keoro,"Schwartz-McKinzie, Esther",T
+21921721,MATH080,21352,Lajwel,Keoro,"Quah, John T.",T
+20745754,GEOG130,20985,Lazivo,Mayro,"Ackerman, Carlton James",R
+20094850,MATH132,23667,Liesol,Sterel,"Cornell, Carol L.",G
+20094850,ISTD173,24909,Liesol,Sterel,"Stoll, Anita Kuykendall",T
+20092354,EDUC136,25005,Lio,Zoo,"Pruneda-Hernandez, Sonia G.",D
+20092354,EDUC136,25005,Lio,Zoo,"Pruneda-Hernandez, Sonia G.",D
+20092354,MATH131,22842,Lio,Zoo,"Alraee, Mais Mouaffak",G
+20092354,MATH131,22842,Lio,Zoo,"Alraee, Mais Mouaffak",G
+20092354,MATH131,22842,Lio,Zoo,"Alraee, Mais Mouaffak",G
+20860191,EDUC201,22088,Liwud,Deebo,"Hernandez Baca, Glenda",R
+20891706,EDUC119,22074,Liibowhi,Madeg,"Mukherjee, Mary Elizabeth McDevitt",D
+20891706,ENGL102,20635,Liibowhi,Madeg,"Sneider, Leah M.",R
+20891706,MATH130,23358,Liibowhi,Madeg,"Poese, Debra A.",R
+20891706,SOCY100,23968,Liibowhi,Madeg,"Boyd, Marcus",T
+20075429,PSYC203,21330,Le,Mist Jeeo,"Raphael-Howell, Frances J.",D
+20075429,PSYC203,21330,Le,Mist Jeeo,"Raphael-Howell, Frances J.",D
+20243962,ELAI990,24673,Lekegy,Syljia,"Hillman, Jennifer R.",R
+20750111,ELAR980,24584,Lezika Reyic,Bdebta,"Gonzales, Raymond E.",R
+20750111,ELAS970,24710,Lezika Reyic,Bdebta,"Piskapas, Rose W.",R
+20858330,EDUC243,22096,Lowege,Ekohil,"Smith, Zeporia N.",R
+20858330,EDUC243,22096,Lowege,Ekohil,"Smith, Zeporia N.",R
+20858330,ENGL233,20600,Lowege,Ekohil,"Lemmond, David B.",R
+20858330,ENGL233,20600,Lowege,Ekohil,"Lemmond, David B.",R
+20858330,MATH096,23202,Lowege,Ekohil,"Cho, Okkyung",R
+20879823,EDUC136,25005,Lotez,Zazzkew,"Pruneda-Hernandez, Sonia G.",D
+20879823,MATH096,22662,Lotez,Zazzkew,"Jadacki, Elaine M.",D
+20879823,EDUC243,22096,Lotez,Zazzkew,"Smith, Zeporia N.",R
+20879823,GEOG105,20973,Lotez,Zazzkew,"Allison, Tanya J.",R
+20845910,ENGL102,20947,Lupir,Calhiva Rebi,"March, Ian Sydney",T
+20833470,CMSC140,22385,Maldelano,Jisbirir,,R
+20833470,ISTD173,22028,Maldelano,Jisbirir,"Espinoza, Jennifer D.",R
+20851913,BIOL101,22488,Marmjaj,Kgawhiw,"Allen, Leah M.",R
+20851913,BIOL101L,22504,Marmjaj,Kgawhiw,"Allen, Leah M.",R
+20851913,EDUC136,22081,Marmjaj,Kgawhiw,"Ho, Jeannie",R
+20851913,MATH131,23359,Marmjaj,Kgawhiw,"Rosenberg, Sandra Dillard",R
+20851913,PSCI101,23084,Marmjaj,Kgawhiw,"Cutler, Alan H",R
+20851913,PSCI101D,23088,Marmjaj,Kgawhiw,"Cutler, Alan H",R
+20851913,PSCI101L,23090,Marmjaj,Kgawhiw,"Cutler, Alan H",R
+20851913,SOCY100,22232,Marmjaj,Kgawhiw,"Walsh, Mary-Paula",R
+20891955,IERW002,24796,Marquewe,Egagm,"Lutter, Catherine A.",R
+20891955,IERW002,26234,Marquewe,Egagm,"Rodrick, Karin E.",R
+20891955,IERW002,26234,Marquewe,Egagm,"Rodrick, Karin E.",R
+20891955,IERW002,26234,Marquewe,Egagm,"Rodrick, Karin E.",R
+20779587,EDUC243,20159,Marrequab,Sbegay,"Johnson, Mary Beth",R
+20779587,MATH096,23213,Marrequab,Sbegay,"Basu, Sudeshna",R
+20044777,EDUC243,20159,Mazzo,Maraolo,"Johnson, Mary Beth",R
+20044777,ENGL190,20691,Mazzo,Maraolo,"Dickison, Swift Stiles",R
+20044777,HIST201,21561,Mazzo,Maraolo,"Riedl, John M.",R
+20899198,EDUC136,22081,MsKerliy,Bgairla,"Ho, Jeannie",R
+20899198,ENGL102,20623,MsKerliy,Bgairla,"Bess, Stephen A.",R
+20899198,HLTH100,22316,MsKerliy,Bgairla,"Tooher, Lenora A",R
+20899198,MATH096,23200,MsKerliy,Bgairla,"Talbot, Stephanie D.",R
+20810647,ENGL101,24676,Minrolo,Fdiry,"Challenger, Cherise A.",D
+20810647,EDUC135,22076,Minrolo,Fdiry,"Funk, Suzanne R.",R
+20810647,HIST201,23841,Minrolo,Fdiry,"Ichile, Iyelli M.",R
+20810647,MATH080,20862,Minrolo,Fdiry,"Repeta, Julia A.",R
+20810647,PSYC102,21217,Minrolo,Fdiry,"Herdoiza Hernandez, Patricia C.",R
+20817420,ENGL102,20959,Mifao Poraz,Karho,"Weston, Charmaine L.",T
+20817420,HIST200,20135,Mifao Poraz,Karho,"Johnson, Terence L.",T
+20817420,HLTH105,20273,Mifao Poraz,Karho,"Baca, Alberto J.",T
+20817420,MATH080,21343,Mifao Poraz,Karho,"Early, Benjamin N.",T
+20805641,EDUC243,25115,Misi Zaldola,Kavkawese,"Fisher, Sonja L.",G
+20805641,EDUC243,25115,Misi Zaldola,Kavkawese,"Fisher, Sonja L.",G
+20805641,GEOG130,23506,Misi Zaldola,Kavkawese,"Coronado, Sonia R",G
+20805641,GEOG130,23506,Misi Zaldola,Kavkawese,"Coronado, Sonia R",G
+20805641,MATH131,22842,Misi Zaldola,Kavkawese,"Alraee, Mais Mouaffak",G
+20805641,MATH131,22842,Misi Zaldola,Kavkawese,"Alraee, Mais Mouaffak",G
+20558645,ELAR980,25088,Misdeza,Narvi,"Kapila, Anath Bandhu",R
+20558645,ELAW980,24565,Misdeza,Narvi,"Colson, Jonathan C",T
+20519926,PHED149,22437,Misedic,Cdeusea,"Levin, Michael Barnaby",R
+20519926,PHED149,22437,Misedic,Cdeusea,"Levin, Michael Barnaby",R
+20894091,ELAI990,24672,Molara,Karho,"Lux, Paul A.",R
+20894091,MATH080,21361,Molara,Karho,"Mahn, Daniel B.",T
+20868608,MATH096,23367,Morigic,Karer,"Steelman, Andrea Elizabeth",D
+20868608,MATH096,23367,Morigic,Karer,"Steelman, Andrea Elizabeth",D
+21983130,EDUC119,22455,Morigic,Lelaol,"Carey-Fletcher, Kathleen F.",G
+21983130,ENGL101A,23448,Morigic,Lelaol,"Spero, Abby A.",G
+21983130,MATH096,22786,Morigic,Lelaol,"Witte, William T.",G
+21983130,PSYC102,21814,Morigic,Lelaol,"Pizzano, Lucretia R.",G
+20868608,EDUC201,22088,Morigic,Karer,"Hernandez Baca, Glenda",R
+20868608,EDUC201,22088,Morigic,Karer,"Hernandez Baca, Glenda",R
+20868608,PSCI102,23091,Morigic,Karer,"Maghami, Behzad",R
+20868608,PSCI102D,23093,Morigic,Karer,"Maghami, Behzad",R
+20868608,PSCI102L,23094,Morigic,Karer,"Maghami, Behzad",R
+20868608,BIOL101,20396,Morigic,Karer,"Htet, Steven L.",T
+20868608,BIOL101,20396,Morigic,Karer,"Htet, Steven L.",T
+20868608,BIOL101L,20397,Morigic,Karer,"Htet, Steven L.",T
+20868608,BIOL101L,20397,Morigic,Karer,"Htet, Steven L.",T
+20868608,PSYC102,21301,Morigic,Karer,"Grace, Emma",T
+20868608,PSYC102,21301,Morigic,Karer,"Grace, Emma",T
+20786105,EDUC135,22079,Morir,Martowiv,"Ho, Jeannie",D
+20786105,MATH131,22843,Morir,Martowiv,"Strickland, Candace",G
+20786105,MATH131,22843,Morir,Martowiv,"Strickland, Candace",G
+21923828,ASLP100,24350,Morir,Ridetma,"Markel, Allen Lee",R
+21923828,ASLP121,21542,Morir,Ridetma,"Walker, Kristina L.",R
+21923828,ENGL101A,20565,Morir,Ridetma,"Marshall, Tuere Anne M.",R
+21923828,MATH080,23385,Morir,Ridetma,"Conaty, Agnes",R
+20014060,CHEM099,23554,Muco,Awnrad,"Nifiatis, Fotis",D
+20014060,PSYC203,21330,Muco,Awnrad,"Raphael-Howell, Frances J.",D
+20014060,SOCY240,22291,Muco,Awnrad,"Mori-Saunders, Takiko",D
+20827611,ENGL002,24939,Mulhil,Pivev,"Murphy, Kimberly L.",R
+20827611,PHED120,23817,Mulhil,Pivev,"Turnbow, Margaret M.",R
+20827611,PHED166,22448,Mulhil,Pivev,"Harrison, Christine H.",R
+20827611,READ120,21329,Mulhil,Pivev,"Johnson, Courtney R.",R
+20094936,EDUC135,22076,Mustuea,Cdeusea,"Funk, Suzanne R.",R
+20094936,HLTH125,22376,Mustuea,Cdeusea,"Schwanke, Douglas C.",R
+20094936,ISTD173,22028,Mustuea,Cdeusea,"Espinoza, Jennifer D.",R
+20281518,MATH132,23667,Musoz,Adonolhri,"Cornell, Carol L.",G
+20314333,ENGL102,23337,Murfjy,Martowiv,"Streamer, Virginia B.",D
+20872002,BIOL101,22489,Mubwa,Bivkoly,"Raafat, Ahmed M.",R
+20872002,BIOL101L,22510,Mubwa,Bivkoly,"Raafat, Ahmed M.",R
+20872002,ISTD173,22028,Mubwa,Bivkoly,"Espinoza, Jennifer D.",R
+20724552,MATH132,23171,Naki,Bgobsa,"Brunett, Maria R.",R
+20724552,MATH132,23171,Naki,Bgobsa,"Brunett, Maria R.",R
+20724552,MATH132,23171,Naki,Bgobsa,"Brunett, Maria R.",R
+20398258,EDUC243,20159,Nilwel,Cdeusea,"Johnson, Mary Beth",R
+20792666,ELAI990,24613,Nvi,Teob,"Lebleu, Amanda L.",T
+20792666,ELAI990,24615,Nvi,Teob,"Hernandez, Diego F",T
+20771750,EDUC153,24381,Nvi-Bouwwe,Manegiese,"McLean, Marsha J.",D
+20771750,EDUC224,22095,Nvi-Bouwwe,Manegiese,"Ho, Jeannie",D
+20771750,EDUC227,24890,Nvi-Bouwwe,Manegiese,"McLean, Marsha J.",D
+20771750,EDUC115,22083,Nvi-Bouwwe,Manegiese,"Salour, Ellie N.",R
+20771750,HLTH125,23550,Nvi-Bouwwe,Manegiese,"Baca, Alberto J.",T
+20846311,BIOL150,20530,Nepmalc,Tabao,"Lantz, Valerie A.",T
+20846311,BIOL150L,20531,Nepmalc,Tabao,"Lantz, Valerie A.",T
+20846311,ENGL102,20959,Nepmalc,Tabao,"Weston, Charmaine L.",T
+20878316,EDUC243,20159,Nebkio,Sapki,"Johnson, Mary Beth",R
+20836435,MATH131,22842,Norrib,Synbay,"Alraee, Mais Mouaffak",G
+20836435,EDUC136,22081,Norrib,Synbay,"Ho, Jeannie",R
+20836435,EDUC243,22096,Norrib,Synbay,"Smith, Zeporia N.",R
+20046827,ENGL233,20321,Oshoo,Mosata,"Downey, Dawn C.",D
+20046827,ENGL233,20321,Oshoo,Mosata,"Downey, Dawn C.",D
+20046827,ENGL233,20321,Oshoo,Mosata,"Downey, Dawn C.",D
+20046827,PSYC227,25111,Oshoo,Mosata,"Hernandez Baca, Glenda",D
+20046827,PSYC227,25111,Oshoo,Mosata,"Hernandez Baca, Glenda",D
+20046827,EDUC101,22444,Oshoo,Mosata,"Lawver, Angie L.",G
+20046827,EDUC101,22444,Oshoo,Mosata,"Lawver, Angie L.",G
+20046827,PSCI102,23400,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102,23400,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102,23400,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102D,23401,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102D,23401,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102D,23401,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102L,23403,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102L,23403,Oshoo,Mosata,"McDaniel, Diane K.",G
+20046827,PSCI102L,23403,Oshoo,Mosata,"McDaniel, Diane K.",G
+20730210,ENGL102,23485,Oruwopa,Ahanof,"Washington, Charles L.",G
+20730210,EDUC135,22076,Oruwopa,Ahanof,"Funk, Suzanne R.",R
+20043779,EDUC136,25005,Ogohgawe,Jisbirir,"Pruneda-Hernandez, Sonia G.",D
+20043779,BIOL101,23808,Ogohgawe,Jisbirir,"Gaber, Amina",R
+20043779,BIOL101L,22512,Ogohgawe,Jisbirir,"Gaber, Amina",R
+20043779,EDUC201,22087,Ogohgawe,Jisbirir,"Hernandez Baca, Glenda",R
+20043779,MATH132,23171,Ogohgawe,Jisbirir,"Brunett, Maria R.",R
+20786103,EDUC119,22074,Ogvena,Yibata,"Mukherjee, Mary Elizabeth McDevitt",D
+20786103,BIOL101,20401,Ogvena,Yibata,"Agbottah, Emmanuel T.",T
+20786103,BIOL101L,20402,Ogvena,Yibata,"Agbottah, Emmanuel T.",T
+20786103,ISTD173,24909,Ogvena,Yibata,"Stoll, Anita Kuykendall",T
+21927577,COMM108,23731,Ocoa,Risea,"Elson, Omowale T.",Off Campus - Takoma Park
+21927577,ENGL122,25032,Ocoa,Risea,,Off Campus - Takoma Park
+20024048,ENGL190,20320,Palokewi,Lebwafbo,"Rosado, Emily K.",D
+20024048,EDUC201,22465,Palokewi,Lebwafbo,"Jiron, Kelly",G
+20024048,ISTD173,22028,Palokewi,Lebwafbo,"Espinoza, Jennifer D.",R
+20024048,PSCI101,23086,Palokewi,Lebwafbo,"De, Tania",R
+20024048,PSCI101D,23087,Palokewi,Lebwafbo,"De, Tania",R
+20024048,PSCI101L,23089,Palokewi,Lebwafbo,"De, Tania",R
+20815354,ELAW980,24656,Pasagaveo,Rebko Asb,"Noel, Melvina",R
+20830968,ENGL101A,20553,Parde,Teobo,"Huergo, Elizabeth M.",R
+20830968,MATH080,23381,Parde,Teobo,"Baxter, Mary E.",R
+20833724,EDUC119,22455,Parm,Da Eul,"Carey-Fletcher, Kathleen F.",G
+20833724,HIST201,23502,Parm,Da Eul,"Thompson, Joseph Conan",G
+20833724,MATH130,22841,Parm,Da Eul,"Cornell, Carol L.",G
+20833724,PSYC102,21828,Parm,Da Eul,"McCeney, Melissa K.",G
+21981867,EDUC119,22071,Parro Llacecufo,Awevak Mivesoho,"Flank, Estelle G.",R
+21981867,ENGL101,20355,Parro Llacecufo,Awevak Mivesoho,"Bess, Stephen A.",R
+21981867,HLTH125,23954,Parro Llacecufo,Awevak Mivesoho,"Nickens-Gaither, Lakisha",R
+21981867,ISTD173,22029,Parro Llacecufo,Awevak Mivesoho,"Espinoza, Jennifer D.",R
+20783682,EDUC135,22076,Payba,Ekebnide,"Funk, Suzanne R.",R
+20783682,ENGL101A,20567,Payba,Ekebnide,,R
+20783682,HLTH100,22319,Payba,Ekebnide,"Tooher, Lenora A",R
+20783682,ISTD173,22028,Payba,Ekebnide,"Espinoza, Jennifer D.",R
+20783682,MATH096,23825,Payba,Ekebnide,"Winkler, Stephen J.",R
+20856205,MATH080,21345,Pioh,Naisi,"Fouche, Kimberly A.",T
+20856205,READ099,21007,Pioh,Naisi,"Jefferson-Jackson, Windy",T
+20124441,ASLP100,24385,Pilliig,Sasdva,"Eshgi, Maher A.",R
+20124441,ASLP106,21541,Pilliig,Sasdva,"Eshgi, Maher A.",R
+20276906,BIOL101,20401,Pirwel,Wasdo,"Agbottah, Emmanuel T.",T
+20276906,BIOL101,20401,Pirwel,Wasdo,"Agbottah, Emmanuel T.",T
+20276906,BIOL101L,20402,Pirwel,Wasdo,"Agbottah, Emmanuel T.",T
+20276906,BIOL101L,20402,Pirwel,Wasdo,"Agbottah, Emmanuel T.",T
+20741400,ENGL101A,21198,Peoreka,Stebhad,"Miller, Bruce D.",T
+20741400,ENGL101A,21198,Peoreka,Stebhad,"Miller, Bruce D.",T
+20889200,ENGL102,20569,Porlikdi,Gadriide,"Grosse, Eric Frank",R
+20889200,MATH080,24109,Porlikdi,Gadriide,"Burgener, Amy N.",R
+20813572,EDUC119,20151,Pgue,Jibwima,"McLean, Marsha J.",T
+20813572,ENGL102,20955,Pgue,Jibwima,"Barnes, Cinder C.",T
+20813572,MATH080,21356,Pgue,Jibwima,"Johnson, Kevin F.",T
+20813572,SOCY100,20490,Pgue,Jibwima,"Mokoli, Mondonga",T
+21985642,COMM108,21023,Pupmawes,Seeb,"Theophile-LaFond, Anestine",R
+21985642,ENGL101A,20412,Pupmawes,Seeb,"Friel, Brianne W.",R
+21985642,EDUC119,20151,Pupmawes,Seeb,"McLean, Marsha J.",T
+20704530,MATH131,22843,Pucivebe Pewvo,Hewagmi,"Strickland, Candace",G
+20704530,EDUC243,22096,Pucivebe Pewvo,Hewagmi,"Smith, Zeporia N.",R
+20704530,PSCI101,23084,Pucivebe Pewvo,Hewagmi,"Cutler, Alan H",R
+20704530,PSCI101D,23088,Pucivebe Pewvo,Hewagmi,"Cutler, Alan H",R
+20704530,PSCI101L,23090,Pucivebe Pewvo,Hewagmi,"Cutler, Alan H",R
+21987084,MATH130,23358,Quozova,Ibperea,"Poese, Debra A.",R
+21987084,ENGL101A,25095,Quozova,Ibperea,"Barnes, Cinder C.",T
+20870017,ENGL101A,20405,Quabhawe,Jopegyw,"Huergo, Elizabeth M.",R
+20870017,MATH080,20807,Quabhawe,Jopegyw,"Zhao, Yan",R
+20833098,MATH080,22679,Raabab,Ajohia,"Gupta, Vandita",G
+20897793,ARTT100,22957,Rawaviz,Agaeg,"Miller, Amanda G.",G
+20007058,PSCI102,23400,Rawaviz,Bgobsa,"McDaniel, Diane K.",G
+20007058,PSCI102D,23401,Rawaviz,Bgobsa,"McDaniel, Diane K.",G
+20007058,PSCI102L,23403,Rawaviz,Bgobsa,"McDaniel, Diane K.",G
+20841857,ARTT105,20113,Rawaviz,Sbocoly,"Sellmeyer, Michael J.",R
+20833720,CHEM132,22288,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20833720,CHEM132,22288,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20833720,CHEM132D,22289,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20833720,CHEM132D,22289,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20833720,CHEM132L,22290,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20833720,CHEM132L,22290,Rawaviz,Maryewe,"Yavuz Cular, Ayse Gul",R
+20841857,EDUC119,22071,Rawaviz,Sbocoly,"Flank, Estelle G.",R
+20007058,EDUC243,20159,Rawaviz,Bgobsa,"Johnson, Mary Beth",R
+20833720,ENES220,23064,Rawaviz,Maryewe,"He, Wendy",R
+20833720,ENES220,23064,Rawaviz,Maryewe,"He, Wendy",R
+20833720,ENES220,23064,Rawaviz,Maryewe,"He, Wendy",R
+20841857,ENGL101,20365,Rawaviz,Sbocoly,"Young, Thomas W.",R
+20841857,HLTH105,24952,Rawaviz,Sbocoly,"Hagan, Odella Dianne",R
+20897793,IERW001,24783,Rawaviz,Agaeg,"Hurst, Teri K.",R
+20897793,ITAL101,21457,Rawaviz,Agaeg,"D'Ambrosio, Bahie S.",R
+20833720,MATH280,23280,Rawaviz,Maryewe,"Roy, Atul N",R
+20833720,MATH280,23280,Rawaviz,Maryewe,"Roy, Atul N",R
+20833720,MATH280,23280,Rawaviz,Maryewe,"Roy, Atul N",R
+20014202,COMM108,22812,Rawod,Josihcas,"Casey, Jean A.",G
+20014202,MATH130,22841,Rawod,Josihcas,"Cornell, Carol L.",G
+20083643,MATH131,22843,Rasdokd,Tayhew,"Strickland, Candace",G
+20083643,MATH131,22843,Rasdokd,Tayhew,"Strickland, Candace",G
+20812041,ENGL102,20638,Riad,Mosyafbe,,R
+20812041,PSCI101,23084,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101,23084,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101,23084,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101D,23088,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101D,23088,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101D,23088,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101L,23090,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101L,23090,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,PSCI101L,23090,Riad,Mosyafbe,"Cutler, Alan H",R
+20812041,SOCY100,22235,Riad,Mosyafbe,"Johnson, Ann M.",R
+20812041,EDUC201,20156,Riad,Mosyafbe,"York, Wanda F.",T
+20812041,EDUC201,20156,Riad,Mosyafbe,"York, Wanda F.",T
+20812041,MATH130,21409,Riad,Mosyafbe,"Mahaney, Ralph E.",T
+20812041,MATH130,21409,Riad,Mosyafbe,"Mahaney, Ralph E.",T
+20227159,ENGL101A,20405,Riyed,Sbofjawae,"Huergo, Elizabeth M.",R
+20873341,ENGL101A,24768,Riyed,Kavkawese,"Eggenschwiler, Rebecca L.",R
+20873341,MATH080,20841,Riyed,Kavkawese,"Perencevich, Stephen C.",R
+20227159,MATH080,20866,Riyed,Sbofjawae,"Rogers, Julie F.",R
+20227159,PSYC102,21227,Riyed,Sbofjawae,"Ganginis Del Pino, Heather V.",R
+20851888,EDUC135,22075,Riyed Mehopos,Gadriide,"Flank, Estelle G.",R
+20851888,ENGL101A,20565,Riyed Mehopos,Gadriide,"Marshall, Tuere Anne M.",R
+20855305,EDUC101,22441,Rtoi,Adoaga,"Lewis, Lisa Beth",G
+20855305,EDUC102,22447,Rtoi,Adoaga,"Downey, Dawn C.",G
+20855305,MATH132,22844,Rtoi,Adoaga,"Spieler, Barry",G
+20855305,PSCI102,23400,Rtoi,Adoaga,"McDaniel, Diane K.",G
+20855305,PSCI102D,23401,Rtoi,Adoaga,"McDaniel, Diane K.",G
+20855305,PSCI102L,23403,Rtoi,Adoaga,"McDaniel, Diane K.",G
+20842874,EDUC119,22071,Resgel Hasadco,Dasaaka,"Flank, Estelle G.",R
+20842874,ENGL102,23955,Resgel Hasadco,Dasaaka,"Edwards, Kamala",R
+20842874,ENGL190,20690,Resgel Hasadco,Dasaaka,"Gillan, Jamie B.",R
+20842874,MATH096,23223,Resgel Hasadco,Dasaaka,"Gavilanez, Franklin H.",R
+20874744,ENGL101A,23448,Rekid,Bgeyol,"Spero, Abby A.",G
+20874744,MATH080,22691,Rekid,Bgeyol,"Gupta, Vandita",G
+20842283,EDUC135,22079,Rekeva,Jibwima,"Ho, Jeannie",D
+20842283,EDUC119,20151,Rekeva,Jibwima,"McLean, Marsha J.",T
+20842283,EDUC135,20152,Rekeva,Jibwima,,T
+20842283,MATH096,21375,Rekeva,Jibwima,"Amaduzzi, Carlotta",T
+20842283,PSYC102,21282,Rekeva,Jibwima,"Herst, Andrew N.",T
+20731712,EDUC153,24381,Ronripuoz,Jibwima,"McLean, Marsha J.",D
+20083185,GEOG130,20985,Ronripuoz,Vasedba,"Ackerman, Carlton James",R
+20083185,MATH132,23171,Ronripuoz,Vasedba,"Brunett, Maria R.",R
+20083185,PSCI102,23091,Ronripuoz,Vasedba,"Maghami, Behzad",R
+20083185,PSCI102D,23093,Ronripuoz,Vasedba,"Maghami, Behzad",R
+20083185,PSCI102L,23094,Ronripuoz,Vasedba,"Maghami, Behzad",R
+20275903,EDUC136,24301,Rofid Esgibo,Liibew,"Parlakian, Rebecca",G
+20275903,MATH130,23357,Rofid Esgibo,Liibew,"Sibilska, Krystyna Anna",R
+20790886,MATH131,22842,Rowevo,Awnraa,"Alraee, Mais Mouaffak",G
+20790886,PSCI101,23372,Rowevo,Awnraa,"McDaniel, Diane K.",G
+20790886,PSCI101D,23373,Rowevo,Awnraa,"McDaniel, Diane K.",G
+20790886,PSCI101L,23374,Rowevo,Awnraa,"McDaniel, Diane K.",G
+20790886,EDUC136,22081,Rowevo,Awnraa,"Ho, Jeannie",R
+20790886,EDUC201,22087,Rowevo,Awnraa,"Hernandez Baca, Glenda",R
+20858145,EDUC119,22074,Robe,Joeb,"Mukherjee, Mary Elizabeth McDevitt",D
+20858145,ENGL102,23332,Robe,Joeb,"Prendergast, Michelle Alisa",D
+20858145,MATH080,23365,Robe,Joeb,"Steelman, Andrea Elizabeth",D
+20835498,ENGL102,24052,Robar,Sawuak,"Jarrar, Rana Mamoun",D
+20835498,HIST200,24925,Robar,Sawuak,"Johnstone, Andrew David",D
+20856920,EDUC135,22079,Ruder,Sarij,"Ho, Jeannie",D
+20856920,ENGL190,20320,Ruder,Sarij,"Rosado, Emily K.",D
+20856920,ISTD173,24909,Ruder,Sarij,"Stoll, Anita Kuykendall",T
+21980658,ENGL101A,24078,Rudae,Fgebmkes,"Lemmond, David B.",R
+21980658,HLTH125,22386,Rudae,Fgebmkes,"Foehrkolb, Andrew J.",R
+21980658,MATH096,23210,Rudae,Fgebmkes,"Jackson, Lois M.",R
+21980658,PSYC102,21237,Rudae,Fgebmkes,"Lofton, Marie C.",R
+20865018,MATH096,23367,Rumc,Wtalriy,"Steelman, Andrea Elizabeth",D
+20865018,EDUC243,22096,Rumc,Wtalriy,"Smith, Zeporia N.",R
+20865018,GEOG130,20985,Rumc,Wtalriy,"Ackerman, Carlton James",R
+20865018,HLTH125,23954,Rumc,Wtalriy,"Nickens-Gaither, Lakisha",R
+20877150,IERW002,24988,Ryeb,Caradca,"Leopardi, Alejandro G.",G
+20858565,HLTH100,22315,Sallznas,Zapkowy,"Clark, Michael Gerard",R
+20858565,MATH130,23355,Sallznas,Zapkowy,"Vaughnn, Lisa Marlene",R
+21925246,IERW001,24895,Sasgjiz,Bgobsa,"Decker, Matthew S.",T
+21925246,MATH080,21352,Sasgjiz,Bgobsa,"Quah, John T.",T
+20878088,EDUC201,22464,Sasdehal,Japerva,"Fisher, Sonja L.",G
+20878088,EDUC201,22464,Sasdehal,Japerva,"Fisher, Sonja L.",G
+20004822,GEOG130,23506,Sasdehal,Lebvaft,"Coronado, Sonia R",G
+20878088,HIST201,23502,Sasdehal,Japerva,"Thompson, Joseph Conan",G
+20878088,HIST201,23502,Sasdehal,Japerva,"Thompson, Joseph Conan",G
+20878088,PSYC102,21829,Sasdehal,Japerva,"Pizzano, Lucretia R.",G
+20878088,PSYC102,21829,Sasdehal,Japerva,"Pizzano, Lucretia R.",G
+20878088,SPAN101,23104,Sasdehal,Japerva,"Estrada, Josefina B.",G
+20878088,SPAN101,23104,Sasdehal,Japerva,"Estrada, Josefina B.",G
+20004822,MATH096,23192,Sasdehal,Lebvaft,"Mokhtari, Faramarz B.",R
+20004822,SOCY100,22220,Sasdehal,Lebvaft,"Witte, Tracie L.",R
+20009555,EDUC119,22074,Saslizo,Wisdy,"Mukherjee, Mary Elizabeth McDevitt",D
+20009555,EDUC135,22079,Saslizo,Wisdy,"Ho, Jeannie",D
+20009555,ENGL102,20953,Saslizo,Wisdy,"Bronstein, Marcia M.",T
+20886738,MATH132,22844,Saur,Egamo,"Spieler, Barry",G
+20886738,PSCI101,23394,Saur,Egamo,"McDaniel, Diane K.",G
+20886738,PSCI101D,23396,Saur,Egamo,"McDaniel, Diane K.",G
+20886738,PSCI101L,23398,Saur,Egamo,"McDaniel, Diane K.",G
+20899789,ELAR980,24685,Stesi,Risiha,"Dunlap, Diane Hope",G
+20899789,ELAW970,24688,Stesi,Risiha,"Swope, Heather A.",G
+20899789,STSU101,20510,Stesi,Risiha,,G
+20822480,EDUC201,22465,Stocpeild,Deeselh,"Jiron, Kelly",G
+20822480,MATH130,23357,Stocpeild,Deeselh,"Sibilska, Krystyna Anna",R
+20841907,EDUC243,25115,Senieue,Ziabo Moryk,"Fisher, Sonja L.",G
+20841907,EDUC243,25115,Senieue,Ziabo Moryk,"Fisher, Sonja L.",G
+20841907,PSCI102,23400,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,PSCI102,23400,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,PSCI102D,23401,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,PSCI102D,23401,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,PSCI102L,23403,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,PSCI102L,23403,Senieue,Ziabo Moryk,"McDaniel, Diane K.",G
+20841907,MATH132,23171,Senieue,Ziabo Moryk,"Brunett, Maria R.",R
+20841907,MATH132,23171,Senieue,Ziabo Moryk,"Brunett, Maria R.",R
+20841907,GEOG130,23855,Senieue,Ziabo Moryk,"St. John, Jeffrey Richard",T
+20340788,CHEM109,23797,Seworvc,Manegiw,"Benson, Craig M.",D
+20340788,CHEM109,23797,Seworvc,Manegiw,"Benson, Craig M.",D
+20340788,CHEM109L,23695,Seworvc,Manegiw,"Benson, Craig M.",R
+20340788,CHEM109L,23695,Seworvc,Manegiw,"Benson, Craig M.",R
+20365495,EDUC119,22074,Sjalj,Jibwima,"Mukherjee, Mary Elizabeth McDevitt",D
+20365495,MATH080,22644,Sjalj,Jibwima,"Peters, Monique A.",D
+20365495,PSYC102,21326,Sjalj,Jibwima,"Smith-Bryant, Tracey",D
+20365495,ENGL101A,20547,Sjalj,Jibwima,"Hailegebriel, Mesfin Endrias",R
+20064167,MATH093,23189,Sjalj,Kiibra,"Gunjal, Sushama U.",R
+20871748,MATH132,23171,Sjalj,Disedcee,"Brunett, Maria R.",R
+20871748,BIOL101,20388,Sjalj,Disedcee,"Sagasti, Alessandra",T
+20871748,BIOL101L,20389,Sjalj,Disedcee,"Sagasti, Alessandra",T
+20407673,MATH131,23359,Solholo,Livatea,"Rosenberg, Sandra Dillard",R
+20407673,GEOG130,23855,Solholo,Livatea,"St. John, Jeffrey Richard",T
+20836738,CHIN101,21452,Sosmeui,Marg,,R
+20836738,ENGL101A,20557,Sosmeui,Marg,"Lemmond, David B.",R
+20836738,MATH096,23208,Sosmeui,Marg,"Bathula, Alexander",R
+21929835,ENGL101A,24073,Sbehciy,Adebo,"Schwartz-McKinzie, Esther",T
+21929835,MATH080,21340,Sbehciy,Adebo,"Early, Benjamin N.",T
+21929835,PSYC102,21291,Sbehciy,Adebo,"Herst, Andrew N.",T
+20801220,PSYC102,21828,Sbovfewb,Jibwima,"McCeney, Melissa K.",G
+20801220,ENGL102,24777,Sbovfewb,Jibwima,"Rindler, Mercia O.",R
+20801220,HIST200,21536,Sbovfewb,Jibwima,"Moran, Michelle T.",R
+20801220,MATH093,23185,Sbovfewb,Jibwima,"Basu, Sudeshna",R
+20896168,ANTH256,24321,Sbofat,Kavkvyw,"Jung, Laura",R
+20896168,EDUC136,22081,Sbofat,Kavkvyw,"Ho, Jeannie",R
+20896168,EDUC136,22081,Sbofat,Kavkvyw,"Ho, Jeannie",R
+20896168,EDUC260,23720,Sbofat,Kavkvyw,"Switlick, Diane M.",R
+20896168,MATH080,20791,Sbofat,Kavkvyw,"Sinatra, Richard L.",R
+20896168,MUSC138,21861,Sbofat,Kavkvyw,"Borg, Scott D.",R
+20896168,MUSC138,21861,Sbofat,Kavkvyw,"Borg, Scott D.",R
+20094963,EDUC135,22075,Sbofjiwb,Mirgavib,"Flank, Estelle G.",R
+20094963,EDUC135,22075,Sbofjiwb,Mirgavib,"Flank, Estelle G.",R
+20062661,EDUC119,22455,Sbaeci,Apagjaye,"Carey-Fletcher, Kathleen F.",G
+20062661,ENGL102,20573,Sbaeci,Apagjaye,"Bess, Stephen A.",R
+20117250,HIST201,23502,Syo,Wiblgiy,"Thompson, Joseph Conan",G
+20049295,EDUC101,23883,Syod,Nouraiw,"Fisher, Sonja L.",D
+20049295,MATH131,22843,Syod,Nouraiw,"Strickland, Candace",G
+20049295,PSCI102,23091,Syod,Nouraiw,"Maghami, Behzad",R
+20049295,PSCI102D,23093,Syod,Nouraiw,"Maghami, Behzad",R
+20049295,PSCI102L,23094,Syod,Nouraiw,"Maghami, Behzad",R
+20811286,EDUC119,22071,Tarinew,Laural,"Flank, Estelle G.",R
