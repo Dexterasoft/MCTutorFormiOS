@@ -288,31 +288,37 @@ extension SQLiteDatabase {
      This function can be used by itself or by a helper function to nest desired queries, i.e., to grab key data.
      
      @param querySql the SQL query to be executed.
-     @return an array of any datatype. This ensures the versatility and scalability of this function. Multiple rows can be returned
-     from a query and the datatype can be anything. It is dependant on the invoker to cast to the desired datatype
+     @return an array of dictionaries with keys and values of type NSString. This ensures the versatility and scalability
+     of this function. Multiple rows can be returned with a variable number of columns. It is dependant on the
+     invoker to perform any remaining parsing on the returned query results.
      */
-    func query(querySql: String) -> [Any?] {
-        var results: [Any?] = []
+    func query(querySql: String) -> [[NSString : NSString]] {
+        var results: [[NSString : NSString]] = []
         let queryStatement = try? prepareStatement(sql: querySql)
         
         defer {
             sqlite3_finalize(queryStatement!)
         }
         
+        // Get all columns
+        let columns = sqlite3_column_count(queryStatement!)
+        
+        if DEBUG_MODE {
+            print("Query selects \(sqlite3_column_count(queryStatement!)) columns")
+        }
+        
         // Get all rows
         while sqlite3_step(queryStatement!) == SQLITE_ROW {
-            // The indeces indicate the column number in the returned query
-            let stuID = String(cString: sqlite3_column_text(queryStatement!, 0)) as NSString
-            let stuFName = String(cString: sqlite3_column_text(queryStatement!, 1)) as NSString
-            let stuLName = String(cString: sqlite3_column_text(queryStatement!, 2)) as NSString
-            let course = String(cString: sqlite3_column_text(queryStatement!, 3)) as NSString
-            let section = String(cString: sqlite3_column_text(queryStatement!, 4)) as NSString
-            let profName = String(cString: sqlite3_column_text(queryStatement!, 5)) as NSString
-            let mcCampus = String(cString: sqlite3_column_text(queryStatement!, 6)) as NSString
+            // Each row will contain a dictionary with keys being the field names and values being the field content
+            var rowDict: [NSString : NSString] = [:]
             
-            let keyData = KeyData(stuID: stuID, stuFName: stuFName, stuLName: stuLName, course: course, section: section, profName: profName, mcCampus: mcCampus)
+            for col in 0...columns - 1 {
+                let key = String(cString: sqlite3_column_name(queryStatement!, col)) as NSString
+                let value = String(cString: sqlite3_column_text(queryStatement!, col)) as NSString
+                rowDict[key] = value
+            }
             
-            results.append(keyData)
+            results.append(rowDict)
         }
         
         if DEBUG_MODE {
@@ -654,8 +660,20 @@ class MCLookup {
         WHERE Student.stuID = \(id) AND Student.stuID = Course.stuID AND Course.section = CourseInfo.section
         """
         
+        let results = m_db.query(querySql: querySql)
+        
+        // To conform to KeyData array
+        var keyDataConformity: [KeyData] = []
+        
+        // NB: Keys derived from select statement
+        for result in results {
+            let keyData = KeyData(stuID: result["stuID"] ?? "NULL", stuFName: result["stuFName"] ?? "NULL", stuLName: result["stuLName"] ?? "NULL", course: result["course"] ?? "NULL", section: result["section"] ?? "NULL", profName: result["profName"] ?? "NULL", mcCampus: result["mcCampus"] ?? "NULL")
+            
+            keyDataConformity.append(keyData)
+        }
+        
         // Return the results of querying the database
-        return m_db.query(querySql: querySql) as! [KeyData]
+        return keyDataConformity
     }
     
     /**
