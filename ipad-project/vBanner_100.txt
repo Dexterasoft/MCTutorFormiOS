@@ -1,0 +1,100 @@
+20949014,ENGL190,20320,Anewo-Ande,Coswhawpe,"Rosado, Emily K.",D
+20949014,MATH132,22844,Anewo-Ande,Coswhawpe,"Spieler, Barry",G
+20240084,ELAW980,24625,Anela,Sawrodev,"Marbury, Donald L.",G
+20859287,BIOL101,24019,Andir,Eru,"Khan, Abdul Quayum",G
+20859287,BIOL101L,24020,Andir,Eru,"Khan, Abdul Quayum",G
+20859287,ENGL102,23472,Andir,Eru,"Pryor, Chester E.",G
+20859287,NUTR101,21075,Andir,Eru,"Buxbaum, Amanda K.",R
+20713309,NUTR101,21070,Ahamowece,Navigea,"Escobar, Alyson",D
+20713309,BIOL212,22614,Ahamowece,Navigea,"Mason, Gregg B.",R
+20713309,BIOL212L,22623,Ahamowece,Navigea,"Mason, Gregg B.",R
+20096111,EDUC136,25005,Atwise Bascisdi,Masalit,"Pruneda-Hernandez, Sonia G.",D
+20096111,EDUC136,24329,Atwise Bascisdi,Masalit,,T
+20096111,EDUC201,20156,Atwise Bascisdi,Masalit,"York, Wanda F.",T
+20096111,PSCI101,20219,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI101D,20220,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI101L,20221,Atwise Bascisdi,Masalit,"Fermo, Raymond",T
+20096111,PSCI102,24165,Atwise Bascisdi,Masalit,,T
+20096111,PSCI102D,24166,Atwise Bascisdi,Masalit,,T
+20096111,PSCI102L,24167,Atwise Bascisdi,Masalit,,T
+21971096,EDUC119,22071,Atwes,Awawda,"Flank, Estelle G.",R
+21971096,ENGL101,24368,Atwes,Awawda,"Rodrick, Karin E.",R
+21971096,MATH080,23388,Atwes,Awawda,"Chon, Sera Yoo",R
+21971096,PSYC102,21217,Atwes,Awawda,"Herdoiza Hernandez, Patricia C.",R
+20888679,EDUC119,22071,Arave-Bolhb,Dasaakdo,"Flank, Estelle G.",R
+20888679,GEOG130,20978,Arave-Bolhb,Dasaakdo,"St. John, Jeffrey Richard",R
+20888679,MATH130,23357,Arave-Bolhb,Dasaakdo,"Sibilska, Krystyna Anna",R
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,EDUC135,22079,Ad-Honan,Robekagae,"Ho, Jeannie",D
+20044753,ENGL102,24777,Ad-Honan,Robekagae,"Rindler, Mercia O.",R
+20044753,ENGL102,24777,Ad-Honan,Robekagae,"Rindler, Mercia O.",R
+20044753,MATH132,23171,Ad-Honan,Robekagae,"Brunett, Maria R.",R
+20044753,MATH132,23171,Ad-Honan,Robekagae,"Brunett, Maria R.",R
+20833897,EDUC136,24301,Adasi,Sawirfte,"Parlakian, Rebecca",G
+20833897,EDUC136,24301,Adasi,Sawirfte,"Parlakian, Rebecca",G
+20833897,EDUC136,25142,Adasi,Sawirfte,,G
+20833897,EDUC201,22464,Adasi,Sawirfte,"Fisher, Sonja L.",G
+20833897,EDUC201,22464,Adasi,Sawirfte,"Fisher, Sonja L.",G
+20833897,MATH131,22842,Adasi,Sawirfte,"Alraee, Mais Mouaffak",G
+20833897,MATH131,22842,Adasi,Sawirfte,"Alraee, Mais Mouaffak",G
+20833897,PSCI101,23372,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101,23372,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101D,23373,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101D,23373,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101L,23374,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20833897,PSCI101L,23374,Adasi,Sawirfte,"McDaniel, Diane K.",G
+20622635,EDUC119,20151,Adlev,Marneweo,"McLean, Marsha J.",T
+20622635,EDUC135,20152,Adlev,Marneweo,,T
+20622635,MATH096,21379,Adlev,Marneweo,"Kcenich, Stephen",T
+20622635,SOCY100,20494,Adlev,Marneweo,"Neuhauser, Laura A",T
+20002004,MATH117,21405,Adkivahi,Laubsei,"Kotz, Brian C.",D
+20002004,MATH117,22667,Adkivahi,Laubsei,"Kotz, Brian C.",D
+20711791,BIOL130,22943,Adkivahi,Veplewee,"Tavassoli, Afshin",G
+20711791,BIOL131,22944,Adkivahi,Veplewee,"Tavassoli, Afshin",G
+20711791,HLTH100,22315,Adkivahi,Veplewee,"Clark, Michael Gerard",R
+20711791,HLTH200,22391,Adkivahi,Veplewee,"Hutchins, Loraine A.",R
+20711791,PSYC216,21279,Adkivahi,Veplewee,"Palmer, Donald",R
+20874463,HLTH100,22329,Adkiviwci,Jaquakese,"Wasilko, Lesley",D
+20874463,PSCI102,23091,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20874463,PSCI102D,23093,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20874463,PSCI102L,23094,Adkiviwci,Jaquakese,"Maghami, Behzad",R
+20014804,ELAR980,24538,Adkiviwci,Cdeusea,"Maunaga Trajkovic, Dijana",T
+20014804,ELAW980,24562,Adkiviwci,Cdeusea,"Murray, James T.",T
+20811600,PHED149,22436,Ady,Nibso,"Tooher, Lenora A",R
+20811600,PHED156,22445,Ady,Nibso,"Wasilko, Lesley",R
+20840720,PSYC102,21828,Ajeyo,Temcoly,"McCeney, Melissa K.",G
+20885406,BIOL101,22488,Ajeyo,Milirei,"Allen, Leah M.",R
+20885406,BIOL101L,22504,Ajeyo,Milirei,"Allen, Leah M.",R
+20885406,EDUC243,22096,Ajeyo,Milirei,"Smith, Zeporia N.",R
+20840720,EDUC243,22096,Ajeyo,Temcoly,"Smith, Zeporia N.",R
+20840720,EDUC243,22096,Ajeyo,Temcoly,"Smith, Zeporia N.",R
+20885406,ENGL233,20600,Ajeyo,Milirei,"Lemmond, David B.",R
+20840720,HIST200,21536,Ajeyo,Temcoly,"Moran, Michelle T.",R
+20840720,MATH080,20803,Ajeyo,Temcoly,"Khurshid, Sadaf",R
+20798138,BIOL101,22489,Ajeyo Bobifiz,Ehe,"Raafat, Ahmed M.",R
+20798138,BIOL101L,22510,Ajeyo Bobifiz,Ehe,"Raafat, Ahmed M.",R
+20798138,MATH130,23357,Ajeyo Bobifiz,Ehe,"Sibilska, Krystyna Anna",R
+20804368,ENGL190,20690,Ajirin,Sasdva,"Gillan, Jamie B.",R
+20804368,HIST200,21536,Ajirin,Sasdva,"Moran, Michelle T.",R
+20804368,HLTH125,22376,Ajirin,Sasdva,"Schwanke, Douglas C.",R
+20832829,EDUC135,22079,Awnrovi,Ttead,"Ho, Jeannie",D
+20832829,ENGL102,20963,Awnrovi,Ttead,"Ash, Brandes S.G.",T
+20832829,ENGL190,26750,Awnrovi,Ttead,"Wahl, Gregory R.",T
+20832829,MATH080,21367,Awnrovi,Ttead,"Sims, Harriett O.",T
+20706544,BIOL101,22490,Awnrad,Johirla,"Khan, Mohammad Ali",R
+20706544,BIOL101L,22511,Awnrad,Johirla,"Khan, Mohammad Ali",R
+20706544,MATH131,24735,Awnrad,Johirla,"Fouche, Kimberly A.",T
+20706544,PSCI101,20219,Awnrad,Johirla,"Fermo, Raymond",T
+20706544,PSCI101D,20220,Awnrad,Johirla,"Fermo, Raymond",T
+20706544,PSCI101L,20221,Awnrad,Johirla,"Fermo, Raymond",T
+20672673,PSYC102,23864,Aperimei,Karara,"Herst, Andrew N.",D
+20672673,ENGL102,20625,Aperimei,Karara,"Adams, Krista K",R
+20138391,ISTD173,22028,Agebo,Lysbafbo,"Espinoza, Jennifer D.",R
+20888112,PSCI102,23091,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20888112,PSCI102D,23093,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20888112,PSCI102L,23094,Agwid Do Lios,Carho,"Maghami, Behzad",R
+20850648,MATH080,22682,Agraafa,Dasaaka,"Thompson, Michael A.",G
+20873151,EDUC136,22081,Agroyo Sigpano,Lupaolwo,"Ho, Jeannie",R
+20873151,HIST201,21558,Agroyo Sigpano,Lupaolwo,"Hernandez-Fujigaki, Jorge",R
+20873151,MATH130,23358,Agroyo Sigpano,Lupaolwo,"Poese, Debra A.",R
