@@ -25,6 +25,7 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
     
+    private var m_studentID: String = ""
     
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
@@ -39,8 +40,6 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBAction func backButton(_ sender: UIButton) {
         performSegue(withIdentifier: "segue_back", sender: self)
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +63,19 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    /**
+     Set the student ID so the respective field can be populated
+     
+     @param id the student's id
+     */
+    public func setStudentID(id: String) {
+        m_studentID = id
+        print("Successfully passed student id to FormViewController!")
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        studentIDTextField2.text = studentID
+        studentIDTextField2.text = m_studentID
+        //        studentIDTextField2.text = studentID
         //performSegue(withIdentifier: "segue", sender: self)
     }
 

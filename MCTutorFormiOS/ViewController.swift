@@ -129,7 +129,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     //MARK: Actions
     @IBAction func submitAction(_ sender: Any) {
         if (studentIDTextField.text != nil){
+            // Instantiate FormViewController
+            let formViewController = self.storyboard?.instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
+            
+            // Set student ID variable in the FormViewController to student ID value in the studentIDTextField of this view controller
+            formViewController.setStudentID(id: studentIDTextField.text!)
+            
             studentID = studentIDTextField.text!
+            
+            // Transition to the FormViewController
             performSegue(withIdentifier: "segue", sender: self)
         }
         
