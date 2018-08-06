@@ -9,6 +9,10 @@
 import UIKit
 import Foundation
 
+protocol FormViewProtocol {
+    func getData(data: String)
+}
+
 class FormViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
@@ -24,6 +28,8 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
+    
+    private var m_delegate: FormViewProtocol?
     
     private var m_studentID: String = ""
     
@@ -46,6 +52,7 @@ class FormViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
+        
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
         
@@ -63,6 +70,17 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        studentIDTextField2.text = m_studentID
+//        studentIDTextField2.text = studentID
+        //performSegue(withIdentifier: "segue", sender: self)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     /**
      Set the student ID so the respective field can be populated
      
@@ -73,15 +91,8 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         print("Successfully passed student id to FormViewController!")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        studentIDTextField2.text = m_studentID
-        //        studentIDTextField2.text = studentID
-        //performSegue(withIdentifier: "segue", sender: self)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    public func setDelegate(delegate: FormViewProtocol) {
+        m_delegate = delegate
     }
     
     //MARK:- checkMarkTapped

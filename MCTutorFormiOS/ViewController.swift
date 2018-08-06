@@ -14,8 +14,7 @@ var studentID = ""
 var stuFName = ""
 var stuLName = ""
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-    
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FormViewProtocol {
     // Key values for dictionary
     let STUDENT_ID = "student_id"
     let COURSE = "course"
@@ -134,11 +133,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
             // Set student ID variable in the FormViewController to student ID value in the studentIDTextField of this view controller
             formViewController.setStudentID(id: studentIDTextField.text!)
+            formViewController.setDelegate(delegate: self)
             
-            studentID = studentIDTextField.text!
-            
-            // Transition to the FormViewController
-            performSegue(withIdentifier: "segue", sender: self)
+//            studentID = studentIDTextField.text!
+//
+//            // Transition to the FormViewController
+//            performSegue(withIdentifier: "segue", sender: self)
         }
         
     }
@@ -174,5 +174,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             print("\(Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? "unparsable file path")")
         }
     }
+    
+    /**
+     Protocol Function:
+     Conform to FormViewProtocol to get data back from FormViewController if necessary
+     */
+    func getData(data: String) {}
 }
 
