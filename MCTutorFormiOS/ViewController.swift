@@ -9,11 +9,6 @@
 import UIKit
 import Foundation
 
-//Global variables for testing and passing to other ViewControllers
-var studentID = ""
-var stuFName = ""
-var stuLName = ""
-
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FormViewProtocol {
     // Key values for dictionary
     let STUDENT_ID = "student_id"
@@ -29,7 +24,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var tutorNameLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
-    
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -127,7 +121,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //MARK: Actions
     @IBAction func submitAction(_ sender: Any) {
-        if (studentIDTextField.text != nil){
+        if (!(studentIDTextField.text?.isEmpty)!){
             // Instantiate FormViewController
             let formViewController = self.storyboard?.instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
             
@@ -135,12 +129,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             formViewController.setStudentID(id: studentIDTextField.text!)
             formViewController.setDelegate(delegate: self)
             
-//            studentID = studentIDTextField.text!
-//
-//            // Transition to the FormViewController
-//            performSegue(withIdentifier: "segue", sender: self)
+            self.navigationController?.pushViewController(formViewController, animated: true)
+        } else {
+            print("You must enter the student ID!")
         }
-        
     }
     
     //MARK: Data import/querying

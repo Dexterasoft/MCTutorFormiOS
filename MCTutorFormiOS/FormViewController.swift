@@ -44,7 +44,8 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     @IBAction func backButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "segue_back", sender: self)
+//        performSegue(withIdentifier: "segue_back", sender: self)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -88,7 +89,6 @@ class FormViewController: UIViewController, UITextFieldDelegate {
      */
     public func setStudentID(id: String) {
         m_studentID = id
-        print("Successfully passed student id to FormViewController!")
     }
     
     public func setDelegate(delegate: FormViewProtocol) {
