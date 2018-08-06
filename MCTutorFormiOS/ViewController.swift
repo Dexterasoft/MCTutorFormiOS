@@ -25,6 +25,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
     
+    private var m_path: String?
+    private var m_mcLookup: MCLookup?
+    private var m_queryResults: [KeyData] = []
+    
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
             studentID = studentIDTextField.text!
@@ -69,8 +73,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
+        m_path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
+        
         // Read data from csv and/or database
-        readData()
+        m_queryResults = readData(studentID: "20859287")
     }
     
     func getDocumentsDirectory() -> URL {
@@ -135,17 +141,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
+    /**
+     Initialize the database when necessary
+     NB: The file path is for the CSV data, not the database path
+     */
+    public func initializeDB() {
+        if !(m_path?.isEmpty)! {
+            do {
+                m_mcLookup = try MCLookup(file: m_path!)
+                try m_mcLookup?.initDatabase()
+            } catch {
+                print("Database request failed")
+            }
+        }
+    }
+    
     //MARK: Data import/querying
-    func readData() {
+    func readData(studentID: String) -> [KeyData] {
         // TEST CODE vvvvv
-        if let path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") {
+        if !(m_path?.isEmpty)! {
             do {
                 let timer = ParkBenchTimer()
-                let mcLookup = try MCLookup(file: path) // vBanner1.txt
+                let mcLookup = try MCLookup(file: m_path!)
                 
-                // try mcLookup.initDatabase()
+                // Return results
+                // return mcLookup.getKeyDataByStudentID(id: studentID)
                 
-                let results = mcLookup.getKeyDataByStudentID(id: "20859287")
+                let results = mcLookup.getKeyDataByStudentID(id: studentID)
                 
                 // Display all results
                 for result in results {
@@ -163,8 +185,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 print("Database request failed")
             }
         } else {
-            print("\(Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? "unparsable file path")")
+            print("Path was not set for CSV data")
         }
+        
+        return []
     }
     
     /**
