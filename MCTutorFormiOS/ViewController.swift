@@ -9,13 +9,7 @@
 import UIKit
 import Foundation
 
-//Global variables for testing and passing to other ViewControllers
-var studentID = ""
-var stuFName = ""
-var stuLName = ""
-
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
-    
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FormViewProtocol {
     // Key values for dictionary
     let STUDENT_ID = "student_id"
     let COURSE = "course"
@@ -31,6 +25,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
     
+    private var m_path: String?
+    private var m_mcLookup: MCLookup?
+    private var m_queryResults: [KeyData] = []
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -76,8 +73,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        // Read data from csv and/or database
-        readData()
+        m_path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
     }
     
     func getDocumentsDirectory() -> URL {
@@ -128,43 +124,65 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //MARK: Actions
     @IBAction func submitAction(_ sender: Any) {
-        if (studentIDTextField.text != nil){
-            studentID = studentIDTextField.text!
-            performSegue(withIdentifier: "segue", sender: self)
+        if (!(studentIDTextField.text?.isEmpty)!){
+            // Instantiate FormViewController
+            let formViewController = self.storyboard?.instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
+            
+            // Set delegate to enable ability to receive data back if necessary
+            formViewController.setDelegate(delegate: self)
+            
+            // Read data from csv and/or database
+            let queryTimer = ParkBenchTimer()
+            m_queryResults = readData(studentID: studentIDTextField.text!) // Test Case: "20859287"
+            print("\nDone.\nQuery took \(queryTimer.stop()) seconds.")
+            
+            // Pass query results to FormViewController
+            formViewController.setQueryResults(queryResults: self.m_queryResults)
+            
+            // Navigate to the FormViewController through the NagivationController
+            self.navigationController?.pushViewController(formViewController, animated: true)
+        } else {
+            print("You must enter the student ID!")
         }
-        
+    }
+    
+    /**
+     Initialize the database when necessary
+     NB: The file path is for the CSV data, not the database path
+     */
+    public func initializeDB() {
+        if !(m_path?.isEmpty)! {
+            do {
+                m_mcLookup = try MCLookup(file: m_path!)
+                try m_mcLookup?.initDatabase()
+            } catch {
+                print("Database request failed")
+            }
+        }
     }
     
     //MARK: Data import/querying
-    func readData() {
-        // TEST CODE vvvvv
-        if let path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") {
+    func readData(studentID: String) -> [KeyData] {
+        if !(m_path?.isEmpty)! {
             do {
-                let timer = ParkBenchTimer()
-                let mcLookup = try MCLookup(file: path) // vBanner1.txt
+                let mcLookup = try MCLookup(file: m_path!)
                 
-                // try mcLookup.initDatabase()
-                
-                let results = mcLookup.getKeyDataByStudentID(id: "20859287")
-                
-                // Display all results
-                for result in results {
-                    print("Student's First Name: \(result.stuFName) \tLast Name: \(result.stuLName)")
-                    print("MC# M\(result.stuID)")
-                    print("Course (E.g., ENGL101A): \(result.course) \tSection: \(result.section)")
-                    print("Professor (LAST NAME, First name): \(result.profName)")
-                    print("Campus: \(result.mcCampus)")
-                    print()
-                }
-                
-                print("\nDone.")
-                print("Took \(timer.stop()) seconds.")
+                // Return results
+                return mcLookup.getKeyDataByStudentID(id: studentID)
             } catch {
                 print("Database request failed")
             }
         } else {
-            print("\(Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? "unparsable file path")")
+            print("Path was not set for CSV data")
         }
+        
+        return []
     }
+    
+    /**
+     Protocol Function:
+     Conform to FormViewProtocol to get data back from FormViewController if necessary
+     */
+    func getData(data: String) {}
 }
 

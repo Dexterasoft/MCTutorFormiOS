@@ -9,7 +9,13 @@
 import UIKit
 import Foundation
 
+protocol FormViewProtocol {
+    func getData(data: String)
+}
+
 class FormViewController: UIViewController, UITextFieldDelegate {
+    
+    public let DEBUG_MODE = true
     
     //MARK: Properties
     @IBOutlet weak var studentIDTextField2: UITextField!
@@ -25,6 +31,9 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
     
+    private var m_delegate: FormViewProtocol?
+
+    private var m_queryResults: [KeyData] = []
     
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
@@ -37,15 +46,15 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     @IBAction func backButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "segue_back", sender: self)
+//        performSegue(withIdentifier: "segue_back", sender: self)
+        dismiss(animated: true, completion: nil)
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
@@ -61,17 +70,48 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         
         btnCheckBox.setImage(UIImage(named:"CheckMarkEmpty"), for: .normal)
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        studentIDTextField2.text = studentID
-        //performSegue(withIdentifier: "segue", sender: self)
+        // Use first row in query results as a start
+        studentFNameTextField.text = m_queryResults[0].stuFName as String
+        studentLNameTextField.text = m_queryResults[0].stuLName as String
+        studentIDTextField2.text = m_queryResults[0].stuID as String
+        courseNameTextField.text = m_queryResults[0].course as String
+        courseSectionTextField.text = m_queryResults[0].section as String
+        professorNameTextField.text = m_queryResults[0].profName as String
+        
+        if DEBUG_MODE {
+            print("Using query results from ViewController in FormViewController")
+            
+            // Display all results
+            for result in self.m_queryResults {
+                print("Student's First Name: \(result.stuFName) \tLast Name: \(result.stuLName)")
+                print("MC# M\(result.stuID)")
+                print("Course (E.g., ENGL101A): \(result.course) \tSection: \(result.section)")
+                print("Professor (LAST NAME, First name): \(result.profName)")
+                print("Campus: \(result.mcCampus)")
+                print()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     Set the query results returned in the ViewController to the query results of the FormViewController
+     
+     @param queryResults the returned query results in the ViewController
+     */
+    public func setQueryResults(queryResults: [KeyData]) {
+        self.m_queryResults = queryResults
+    }
+    
+    public func setDelegate(delegate: FormViewProtocol) {
+        m_delegate = delegate
     }
     
     //MARK:- checkMarkTapped
