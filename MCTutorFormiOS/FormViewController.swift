@@ -13,8 +13,7 @@ protocol FormViewProtocol {
     func getData(data: String)
 }
 
-class FormViewController: UIViewController, UITextFieldDelegate {
-    
+class FormViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     public let DEBUG_MODE = true
     
     //MARK: Properties
@@ -31,9 +30,14 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
     
+    @IBOutlet weak var btnCoursesDropDownToggle: UIButton!
+    @IBOutlet weak var tbvCourses: UITableView!
+    
     private var m_delegate: FormViewProtocol?
 
     private var m_queryResults: [KeyData] = []
+    
+    private let tempCourses = ["course1", "course2", "course3"]
     
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
@@ -54,7 +58,10 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        btnCoursesDropDownToggle.setTitle(m_queryResults[0].course as String, for: .normal)
         
+        // Load all respective fields with query results data
+        loadFields()
         
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
@@ -72,7 +79,9 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {}
+    
+    func loadFields() {
         // Use first row in query results as a start
         studentFNameTextField.text = m_queryResults[0].stuFName as String
         studentLNameTextField.text = m_queryResults[0].stuLName as String
@@ -99,6 +108,34 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     Toggle the drop-down view options when the course button is clicked
+     The course button is designed to give the look and feel of a text box
+     */
+    @IBAction func changeCourse(_ sender: Any) {
+        self.tbvCourses.isHidden = !self.tbvCourses.isHidden
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return m_queryResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "course_cell", for: indexPath)
+        cell.textLabel?.text = m_queryResults[indexPath.row].course as String
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        btnCoursesDropDownToggle.setTitle(cell?.textLabel?.text, for: .normal)
+        self.tbvCourses.isHidden = true
     }
     
     /**

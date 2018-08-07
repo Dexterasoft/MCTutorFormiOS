@@ -323,12 +323,43 @@
                                     <action selector="checkMarkTapped:" destination="yUa-09-zV9" eventType="touchUpInside" id="iMK-Bb-o7q"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.45000000000000001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpB-uh-UTX" userLabel="btnCourses">
+                                <rect key="frame" x="148" y="628" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Drop-Down">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeCourse:" destination="yUa-09-zV9" eventType="touchUpInside" id="rWr-eo-GVY"/>
+                                </connections>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZoJ-Ni-uad" userLabel="tbvCourses">
+                                <rect key="frame" x="148" y="658" width="168" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="course_cell" id="puD-Pe-eDF">
+                                        <rect key="frame" x="0.0" y="28" width="168" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="puD-Pe-eDF" id="fRz-xp-P5I">
+                                            <rect key="frame" x="0.0" y="0.0" width="168" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="yUa-09-zV9" id="FgG-Vb-63l"/>
+                                    <outlet property="delegate" destination="yUa-09-zV9" id="b6x-GP-8VF"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="maf-ef-tu7"/>
                     </view>
                     <connections>
                         <outlet property="btnCheckBox" destination="XE1-oN-m97" id="mQz-at-V1H"/>
+                        <outlet property="btnCoursesDropDownToggle" destination="EpB-uh-UTX" id="ak4-VN-6lT"/>
                         <outlet property="courseNameTextField" destination="ifA-Am-git" id="GUL-o0-UwD"/>
                         <outlet property="courseSectionTextField" destination="mPy-3G-Vwo" id="BzU-lk-gCx"/>
                         <outlet property="dateTextField" destination="ylN-PD-s2J" id="cWg-Vz-eS2"/>
@@ -336,6 +367,7 @@
                         <outlet property="studentFNameTextField" destination="5xf-Kg-h8v" id="MWu-uH-nvr"/>
                         <outlet property="studentIDTextField2" destination="tvg-g5-Mwi" id="tpX-db-Rf9"/>
                         <outlet property="studentLNameTextField" destination="Kqi-3p-4cs" id="b8j-jh-jSb"/>
+                        <outlet property="tbvCourses" destination="ZoJ-Ni-uad" id="GXv-6J-qDN"/>
                         <outlet property="tutorNameTextField" destination="CHA-Nq-KtL" id="VE3-zE-8Od"/>
                     </connections>
                 </viewController>
