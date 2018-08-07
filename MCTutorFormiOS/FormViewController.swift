@@ -77,6 +77,9 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         btnCheckBox.setImage(UIImage(named:"CheckMarkEmpty"), for: .normal)
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
+        
+        // Make sure the course text field cannot be edited so it can remain a silhouette
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {}
@@ -86,7 +89,6 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         studentFNameTextField.text = m_queryResults[0].stuFName as String
         studentLNameTextField.text = m_queryResults[0].stuLName as String
         studentIDTextField2.text = m_queryResults[0].stuID as String
-        courseNameTextField.text = m_queryResults[0].course as String
         courseSectionTextField.text = m_queryResults[0].section as String
         professorNameTextField.text = m_queryResults[0].profName as String
         
