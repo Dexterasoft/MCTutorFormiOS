@@ -74,9 +74,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
         m_path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
-        
-        // Read data from csv and/or database
-        m_queryResults = readData(studentID: "20859287")
     }
     
     func getDocumentsDirectory() -> URL {
@@ -131,10 +128,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             // Instantiate FormViewController
             let formViewController = self.storyboard?.instantiateViewController(withIdentifier: "FormViewController") as! FormViewController
             
-            // Set student ID variable in the FormViewController to student ID value in the studentIDTextField of this view controller
-            formViewController.setStudentID(id: studentIDTextField.text!)
+            // Set delegate to enable ability to receive data back if necessary
             formViewController.setDelegate(delegate: self)
             
+            // Read data from csv and/or database
+            let queryTimer = ParkBenchTimer()
+            m_queryResults = readData(studentID: studentIDTextField.text!) // Test Case: "20859287"
+            print("\nDone.\nQuery took \(queryTimer.stop()) seconds.")
+            
+            // Pass query results to FormViewController
+            formViewController.setQueryResults(queryResults: self.m_queryResults)
+            
+            // Navigate to the FormViewController through the NagivationController
             self.navigationController?.pushViewController(formViewController, animated: true)
         } else {
             print("You must enter the student ID!")
@@ -158,29 +163,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     //MARK: Data import/querying
     func readData(studentID: String) -> [KeyData] {
-        // TEST CODE vvvvv
         if !(m_path?.isEmpty)! {
             do {
-                let timer = ParkBenchTimer()
                 let mcLookup = try MCLookup(file: m_path!)
                 
                 // Return results
-                // return mcLookup.getKeyDataByStudentID(id: studentID)
-                
-                let results = mcLookup.getKeyDataByStudentID(id: studentID)
-                
-                // Display all results
-                for result in results {
-                    print("Student's First Name: \(result.stuFName) \tLast Name: \(result.stuLName)")
-                    print("MC# M\(result.stuID)")
-                    print("Course (E.g., ENGL101A): \(result.course) \tSection: \(result.section)")
-                    print("Professor (LAST NAME, First name): \(result.profName)")
-                    print("Campus: \(result.mcCampus)")
-                    print()
-                }
-                
-                print("\nDone.")
-                print("Took \(timer.stop()) seconds.")
+                return mcLookup.getKeyDataByStudentID(id: studentID)
             } catch {
                 print("Database request failed")
             }
