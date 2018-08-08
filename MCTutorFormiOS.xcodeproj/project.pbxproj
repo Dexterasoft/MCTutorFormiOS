@@ -18,6 +18,7 @@
 		7BA05AD920E5791300724470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA05AD820E5791300724470 /* Assets.xcassets */; };
 		7BA05ADC20E5791300724470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA05ADA20E5791300724470 /* LaunchScreen.storyboard */; };
 		7BA05AE720E5791300724470 /* MCTutorFormiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA05AE620E5791300724470 /* MCTutorFormiOSTests.swift */; };
+		8B0715DB211B78540065AC2D /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */; };
 		8BACC739210E83AB009FC24E /* MCLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BACC738210E83AB009FC24E /* MCLookup.swift */; };
 		8BB5D13321156C2D00F55DEA /* MCDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8BB5D13221156C2D00F55DEA /* MCDatabase.sqlite */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		7BA05AE220E5791300724470 /* MCTutorFormiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCTutorFormiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA05AE620E5791300724470 /* MCTutorFormiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTutorFormiOSTests.swift; sourceTree = "<group>"; };
 		7BA05AE820E5791400724470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8BACC738210E83AB009FC24E /* MCLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLookup.swift; sourceTree = "<group>"; };
 		8BB5D13221156C2D00F55DEA /* MCDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = MCDatabase.sqlite; path = "ipad-project/MCDatabase.sqlite"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 		7BA05AD020E5791200724470 /* MCTutorFormiOS */ = {
 			isa = PBXGroup;
 			children = (
+				8B0715D9211B78310065AC2D /* Utils */,
 				8BB5D13221156C2D00F55DEA /* MCDatabase.sqlite */,
 				7B5A43F42102CABC003A1B2E /* vBanner1.txt */,
 				7B2C3C1F211A70C90081A2A5 /* TutorNames.txt */,
@@ -115,6 +118,14 @@
 				7BA05AE820E5791400724470 /* Info.plist */,
 			);
 			path = MCTutorFormiOSTests;
+			sourceTree = "<group>";
+		};
+		8B0715D9211B78310065AC2D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 				7B5A43F72102D618003A1B2E /* FormViewController.swift in Sources */,
 				7BA05AD420E5791200724470 /* ViewController.swift in Sources */,
 				7BA05AD220E5791200724470 /* AppDelegate.swift in Sources */,
+				8B0715DB211B78540065AC2D /* UserDefaultsManager.swift in Sources */,
 				8BACC739210E83AB009FC24E /* MCLookup.swift in Sources */,
 				7B321C0A210E006E00932559 /* RadioButton.swift in Sources */,
 				7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */,
