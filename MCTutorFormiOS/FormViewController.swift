@@ -13,8 +13,7 @@ protocol FormViewProtocol {
     func getData(data: String)
 }
 
-class FormViewController: UIViewController, UITextFieldDelegate {
-    
+class FormViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     public let DEBUG_MODE = true
     
     //MARK: Properties
@@ -30,6 +29,9 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
+    
+    @IBOutlet weak var btnCoursesDropDownToggle: UIButton!
+    @IBOutlet weak var tbvCourses: UITableView!
     
     private var m_delegate: FormViewProtocol?
 
@@ -54,7 +56,10 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        btnCoursesDropDownToggle.setTitle(m_queryResults[0].course as String, for: .normal)
         
+        // Initialy load data based on the first row in the query results
+        loadFields(forQueryRow: 0)
         
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
@@ -70,16 +75,25 @@ class FormViewController: UIViewController, UITextFieldDelegate {
         
         btnCheckBox.setImage(UIImage(named:"CheckMarkEmpty"), for: .normal)
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
+        
+        // Make sure the course text field cannot be edited so it can remain a silhouette
+        courseNameTextField.isUserInteractionEnabled = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {}
+    
+    /**
+     Load all respective fields with query results data at a specified query row.
+     
+     @param forQueryRow the row in the query results list to extract data from
+     */
+    func loadFields(forQueryRow: Int) {
         // Use first row in query results as a start
-        studentFNameTextField.text = m_queryResults[0].stuFName as String
-        studentLNameTextField.text = m_queryResults[0].stuLName as String
-        studentIDTextField2.text = m_queryResults[0].stuID as String
-        courseNameTextField.text = m_queryResults[0].course as String
-        courseSectionTextField.text = m_queryResults[0].section as String
-        professorNameTextField.text = m_queryResults[0].profName as String
+        studentFNameTextField.text = m_queryResults[forQueryRow].stuFName as String
+        studentLNameTextField.text = m_queryResults[forQueryRow].stuLName as String
+        studentIDTextField2.text = m_queryResults[forQueryRow].stuID as String
+        courseSectionTextField.text = m_queryResults[forQueryRow].section as String
+        professorNameTextField.text = m_queryResults[forQueryRow].profName as String
         
         if DEBUG_MODE {
             print("Using query results from ViewController in FormViewController")
@@ -99,6 +113,38 @@ class FormViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /**
+     Toggle the drop-down view options when the course button is clicked
+     The course button is designed to give the look and feel of a text box
+     */
+    @IBAction func changeCourse(_ sender: Any) {
+        self.tbvCourses.isHidden = !self.tbvCourses.isHidden
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return m_queryResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "course_cell", for: indexPath)
+        cell.textLabel?.text = m_queryResults[indexPath.row].course as String
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        
+        // Load all data from query results with respect to the selected course
+        btnCoursesDropDownToggle.setTitle(cell?.textLabel?.text, for: .normal)
+        loadFields(forQueryRow: indexPath.row)
+        
+        self.tbvCourses.isHidden = true
     }
     
     /**
