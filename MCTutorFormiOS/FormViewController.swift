@@ -37,8 +37,6 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
 
     private var m_queryResults: [KeyData] = []
     
-    private let tempCourses = ["course1", "course2", "course3"]
-    
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
     
@@ -60,8 +58,8 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         // Do any additional setup after loading the view.
         btnCoursesDropDownToggle.setTitle(m_queryResults[0].course as String, for: .normal)
         
-        // Load all respective fields with query results data
-        loadFields()
+        // Initialy load data based on the first row in the query results
+        loadFields(forQueryRow: 0)
         
         //Will restrict user interaction
         studentIDTextField2.isUserInteractionEnabled = false
@@ -79,18 +77,23 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
         
         // Make sure the course text field cannot be edited so it can remain a silhouette
-        
+        courseNameTextField.isUserInteractionEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool) {}
     
-    func loadFields() {
+    /**
+     Load all respective fields with query results data at a specified query row.
+     
+     @param forQueryRow the row in the query results list to extract data from
+     */
+    func loadFields(forQueryRow: Int) {
         // Use first row in query results as a start
-        studentFNameTextField.text = m_queryResults[0].stuFName as String
-        studentLNameTextField.text = m_queryResults[0].stuLName as String
-        studentIDTextField2.text = m_queryResults[0].stuID as String
-        courseSectionTextField.text = m_queryResults[0].section as String
-        professorNameTextField.text = m_queryResults[0].profName as String
+        studentFNameTextField.text = m_queryResults[forQueryRow].stuFName as String
+        studentLNameTextField.text = m_queryResults[forQueryRow].stuLName as String
+        studentIDTextField2.text = m_queryResults[forQueryRow].stuID as String
+        courseSectionTextField.text = m_queryResults[forQueryRow].section as String
+        professorNameTextField.text = m_queryResults[forQueryRow].profName as String
         
         if DEBUG_MODE {
             print("Using query results from ViewController in FormViewController")
@@ -136,7 +139,11 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
+        
+        // Load all data from query results with respect to the selected course
         btnCoursesDropDownToggle.setTitle(cell?.textLabel?.text, for: .normal)
+        loadFields(forQueryRow: indexPath.row)
+        
         self.tbvCourses.isHidden = true
     }
     
