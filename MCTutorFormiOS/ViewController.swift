@@ -45,6 +45,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
+    private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
+    
     //Should read in from text file 
     var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
@@ -79,6 +81,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         addTutorTextField.isHidden = true;
         
+        readTutorData(path: TUTORS_PATH)
     }
     
     func getDocumentsDirectory() -> URL {
@@ -141,14 +144,32 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             m_queryResults = readData(studentID: studentIDTextField.text!) // Test Case: "20859287"
             print("\nDone.\nQuery took \(queryTimer.stop()) seconds.")
             
-            // Pass query results to FormViewController
-            formViewController.setQueryResults(queryResults: self.m_queryResults)
+            // Only pass data to FormViewController and navigate if there were query results returned
+            if !m_queryResults.isEmpty {
+                // Pass query results to FormViewController
+                formViewController.setQueryResults(queryResults: self.m_queryResults)
+                
+                // Navigate to the FormViewController through the NagivationController
+                self.navigationController?.pushViewController(formViewController, animated: true)
+            } else {
+                let msg = "The provided Student ID could not be found in the database. Please try again."
+                displayAlertDialog(title: "No Query Results Found", message: msg)
+            }
             
-            // Navigate to the FormViewController through the NagivationController
-            self.navigationController?.pushViewController(formViewController, animated: true)
+           
         } else {
             print("You must enter the student ID!")
         }
+    }
+    
+    /**
+     Display an alert dialog box with a provided title and message
+     */
+    private func displayAlertDialog(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func addTutorAction(_ sender: UIButton) {
@@ -156,11 +177,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             addTutorTextField.isHidden = false
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
+            print("Call write function")
             writeToFile(value: addTutorTextField.text!)
            // tutors.append(addTutorTextField.text!)
         }
-        
-        
     }
     
     /*Write data to existing text file TutorNames.txt
@@ -179,27 +199,28 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         catch let error as NSError {
             print("Ooops! Something went wrong: \(error)")
         }*/
-        let fileName = "TutorNames.txt"
-        var filePath = ""
+//        let fileName = "TutorNames"
+//        var filePath = ""
+//        let filePath = Bundle.main.path(forResource: fileName, ofType: "txt")!
         
         // Fine documents directory on device
-        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
-        
-        if dirs.count > 0 {
-            let dir = dirs[0] //documents directory
-            filePath = dir.appending("/" + fileName)
-            print("Local path = \(filePath)")
-        } else {
-            print("Could not find local directory to store file")
-            return
-        }
+//        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+//
+//        if dirs.count > 0 {
+//            let dir = dirs[0] //documents directory
+//            filePath = dir.appending("/" + fileName)
+//            print("Local path = \(filePath)")
+//        } else {
+//            print("Could not find local directory to store file")
+//            return
+//        }
         
         // Set the Tutor names
         let tutorNameToWrite = addTutorTextField.text!
         
         do {
             // Write contents to file
-            try tutorNameToWrite.write(toFile: filePath, atomically: false, encoding: String.Encoding.utf8)
+            try tutorNameToWrite.write(toFile: TUTORS_PATH, atomically: false, encoding: String.Encoding.utf8)
             //Will add file contents to tutors array.
             tutors.append(tutorNameToWrite)
             
@@ -208,11 +229,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             print("An error took place: \(error)")
         }
         
+        // Test if it works
+        readTutorData(path: TUTORS_PATH)
+    }
+    
+    /**
+     
+     */
+    public func readTutorData(path: String) {
+        print("Reading tutor data...")
         
         // Read file content.
         do {
             // Read file content
-            let contentFromFile = try NSString(contentsOfFile: filePath, encoding: String.Encoding.utf8.rawValue)
+            let contentFromFile = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
             print(contentFromFile)
         }
         catch let error as NSError {
