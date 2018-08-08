@@ -30,6 +30,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     private var m_mcLookup: MCLookup?
     private var m_queryResults: [KeyData] = []
     
+    // Used to store list of tutor names
+    private var m_tutorsFile: UserDefaults = UserDefaults.standard
+    private var m_tutorsSet: NSMutableSet?
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -48,11 +51,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
     
     //Should read in from text file 
-    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
+//    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        //        readTutorData(path: TUTORS_PATH)
+        loadTutors()
         
         let tutorPickerView = UIPickerView()
         tutorPickerView.delegate = self
@@ -80,8 +86,50 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
+    }
+    
+    /**
+     Save the tutors from the tutors mutable set (hash set) to the UserDefaults tutors file
+     */
+    private func saveTutors() {
+        print("Saving...")
         
-        readTutorData(path: TUTORS_PATH)
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: m_tutorsSet ?? NSMutableSet())
+        m_tutorsFile.set(encodedData, forKey: UserDefaultsManager.TUTORS_KEY)
+        m_tutorsFile.synchronize()
+        
+        print("Save Successful.")
+    }
+    
+    /**
+     Load all the tutors into the tutors mutable set (hash set)
+     */
+    private func loadTutors() {
+        print("Loading tutors...")
+        
+        if let key = m_tutorsFile.object(forKey: UserDefaultsManager.TUTORS_KEY){
+            
+            let decoded: Data = key as! Data
+            
+            print("Decoded data: \(decoded)")
+            
+            let decodedItems = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! NSMutableSet
+            
+            m_tutorsSet = decodedItems
+            
+            if(m_tutorsSet?.count != 0){
+                print("Successfully loaded tutors.")
+            }else{
+                print("No tutors to load.")
+                m_tutorsSet = NSMutableSet()
+            }
+            
+        }else{
+            print("No tutors to load.")
+            m_tutorsSet = NSMutableSet()
+        }
+        
+        print("Loading complete.")
     }
     
     func getDocumentsDirectory() -> URL {
@@ -95,18 +143,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return tutors.count
+        return (m_tutorsSet?.count)!
     }
     
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return tutors[row]
+        return Array(m_tutorsSet!)[row] as? String
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tutorNameTextField.text = tutors[row]
+        tutorNameTextField.text = Array(m_tutorsSet!)[row] as? String
     }
 
     override func didReceiveMemoryWarning() {
@@ -177,9 +225,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             addTutorTextField.isHidden = false
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
-            print("Call write function")
-            writeToFile(value: addTutorTextField.text!)
+//            print("Call write function")
+//            writeToFile(value: addTutorTextField.text!)
            // tutors.append(addTutorTextField.text!)
+            if !(m_tutorsSet?.contains(addTutorTextField.text!))! {
+                m_tutorsSet?.add(addTutorTextField.text!)
+                saveTutors()
+            } else {
+                let msg = "The tutor that was entered already exists on file. Please enter a different tutor name."
+                displayAlertDialog(title: "Tutor Already Exists", message: msg)
+            }
+            
         }
     }
     
@@ -216,38 +272,38 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //        }
         
         // Set the Tutor names
-        let tutorNameToWrite = addTutorTextField.text!
-        
-        do {
-            // Write contents to file
-            try tutorNameToWrite.write(toFile: TUTORS_PATH, atomically: false, encoding: String.Encoding.utf8)
-            //Will add file contents to tutors array.
-            tutors.append(tutorNameToWrite)
-            
-        }
-        catch let error as NSError {
-            print("An error took place: \(error)")
-        }
-        
-        // Test if it works
-        readTutorData(path: TUTORS_PATH)
+//        let tutorNameToWrite = addTutorTextField.text!
+//
+//        do {
+//            // Write contents to file
+//            try tutorNameToWrite.write(toFile: TUTORS_PATH, atomically: false, encoding: String.Encoding.utf8)
+//            //Will add file contents to tutors array.
+//            tutors.append(tutorNameToWrite)
+//
+//        }
+//        catch let error as NSError {
+//            print("An error took place: \(error)")
+//        }
+//
+//        // Test if it works
+//        readTutorData(path: TUTORS_PATH)
     }
     
     /**
      
      */
     public func readTutorData(path: String) {
-        print("Reading tutor data...")
-        
-        // Read file content.
-        do {
-            // Read file content
-            let contentFromFile = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
-            print(contentFromFile)
-        }
-        catch let error as NSError {
-            print("An error took place: \(error)")
-        }
+//        print("Reading tutor data...")
+//
+//        // Read file content.
+//        do {
+//            // Read file content
+//            let contentFromFile = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
+//            print(contentFromFile)
+//        }
+//        catch let error as NSError {
+//            print("An error took place: \(error)")
+//        }
     }
     
     
