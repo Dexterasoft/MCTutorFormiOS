@@ -157,33 +157,66 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
             writeToFile(value: addTutorTextField.text!)
-            tutors.append(addTutorTextField.text!)
+           // tutors.append(addTutorTextField.text!)
         }
         
         
     }
     
-    //Write data to existing text file TutorNames.txt
+    /*Write data to existing text file TutorNames.txt
+     located within the dopcuments directory.
+ */
     func writeToFile(value: String){
-        let file = "TutorNames.txt" //this is the file. we will write to and read from it
+        /*let path = "TutorNames.txt"
         
-        let text = addTutorTextField.text //just a text
+        // Set the contents
+        let contents = addTutorTextField.text!
         
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        do {
+            // Write contents to file
+            try contents.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }*/
+        let fileName = "TutorNames.txt"
+        var filePath = ""
+        
+        // Fine documents directory on device
+        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        
+        if dirs.count > 0 {
+            let dir = dirs[0] //documents directory
+            filePath = dir.appending("/" + fileName)
+            print("Local path = \(filePath)")
+        } else {
+            print("Could not find local directory to store file")
+            return
+        }
+        
+        // Set the Tutor names
+        let tutorNameToWrite = addTutorTextField.text!
+        
+        do {
+            // Write contents to file
+            try tutorNameToWrite.write(toFile: filePath, atomically: false, encoding: String.Encoding.utf8)
+            //Will add file contents to tutors array.
+            tutors.append(tutorNameToWrite)
             
-            let fileURL = dir.appendingPathComponent(file)
-            
-            //writing
-            do {
-                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
-            }
-            catch {/* error handling here */}
-            
-            //reading
-            do {
-                _ = try String(contentsOf: fileURL, encoding: .utf8)
-            }
-            catch {/* error handling here */}
+        }
+        catch let error as NSError {
+            print("An error took place: \(error)")
+        }
+        
+        
+        // Read file content.
+        do {
+            // Read file content
+            let contentFromFile = try NSString(contentsOfFile: filePath, encoding: String.Encoding.utf8.rawValue)
+            print(contentFromFile)
+        }
+        catch let error as NSError {
+            print("An error took place: \(error)")
         }
     }
     
