@@ -24,10 +24,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var tutorNameLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var studentIDTextField: UITextField!
+    @IBOutlet weak var addTutorTextField: UITextField!
     
     private var m_path: String?
     private var m_mcLookup: MCLookup?
     private var m_queryResults: [KeyData] = []
+    
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -44,7 +46,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }*/
     
     //Should read in from text file 
-    let tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
+    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +76,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
         m_path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
+        
+        addTutorTextField.isHidden = true;
+        
     }
     
     func getDocumentsDirectory() -> URL {
@@ -145,6 +150,43 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             print("You must enter the student ID!")
         }
     }
+    
+    @IBAction func addTutorAction(_ sender: UIButton) {
+        if(tutorNameTextField.text?.isEmpty)!{
+            addTutorTextField.isHidden = false
+        }
+        if(!((addTutorTextField.text?.isEmpty)!)){
+            writeToFile(value: addTutorTextField.text!)
+            tutors.append(addTutorTextField.text!)
+        }
+        
+        
+    }
+    
+    //Write data to existing text file TutorNames.txt
+    func writeToFile(value: String){
+        let file = "TutorNames.txt" //this is the file. we will write to and read from it
+        
+        let text = addTutorTextField.text //just a text
+        
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(file)
+            
+            //writing
+            do {
+                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+            
+            //reading
+            do {
+                _ = try String(contentsOf: fileURL, encoding: .utf8)
+            }
+            catch {/* error handling here */}
+        }
+    }
+    
     
     /**
      Initialize the database when necessary

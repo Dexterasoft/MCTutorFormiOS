@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B2C3C20211A70CA0081A2A5 /* TutorNames.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2C3C1F211A70C90081A2A5 /* TutorNames.txt */; };
 		7B321C0A210E006E00932559 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C09210E006E00932559 /* RadioButton.swift */; };
 		7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C0B210E1BEB00932559 /* CheckBox.swift */; };
 		7B5A43F52102CABC003A1B2E /* vBanner1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A43F42102CABC003A1B2E /* vBanner1.txt */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B2C3C1F211A70C90081A2A5 /* TutorNames.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TutorNames.txt; path = "ipad-project/TutorNames.txt"; sourceTree = SOURCE_ROOT; };
 		7B321C09210E006E00932559 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		7B321C0B210E1BEB00932559 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		7B5A43F42102CABC003A1B2E /* vBanner1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner1.txt; path = "ipad-project/vBanner1.txt"; sourceTree = SOURCE_ROOT; };
@@ -91,6 +93,7 @@
 			children = (
 				8BB5D13221156C2D00F55DEA /* MCDatabase.sqlite */,
 				7B5A43F42102CABC003A1B2E /* vBanner1.txt */,
+				7B2C3C1F211A70C90081A2A5 /* TutorNames.txt */,
 				7BA05AD120E5791200724470 /* AppDelegate.swift */,
 				7BA05AD320E5791200724470 /* ViewController.swift */,
 				7B5A43F62102D618003A1B2E /* FormViewController.swift */,
@@ -197,6 +200,7 @@
 			files = (
 				7BA05ADC20E5791300724470 /* LaunchScreen.storyboard in Resources */,
 				7BA05AD920E5791300724470 /* Assets.xcassets in Resources */,
+				7B2C3C20211A70CA0081A2A5 /* TutorNames.txt in Resources */,
 				7BA05AD720E5791200724470 /* Main.storyboard in Resources */,
 				7B5A43F52102CABC003A1B2E /* vBanner1.txt in Resources */,
 				8BB5D13321156C2D00F55DEA /* MCDatabase.sqlite in Resources */,
