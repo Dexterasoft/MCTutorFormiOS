@@ -151,6 +151,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
+    //Used to execute the action of adding a tutor
     @IBAction func addTutorAction(_ sender: UIButton) {
         if(tutorNameTextField.text?.isEmpty)!{
             addTutorTextField.isHidden = false
