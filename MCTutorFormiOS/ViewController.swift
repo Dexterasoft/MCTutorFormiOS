@@ -26,10 +26,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var studentIDTextField: UITextField!
     @IBOutlet weak var addTutorTextField: UITextField!
     
-    private var m_path: String?
+    private var m_csvPath: String?
     private var m_mcLookup: MCLookup?
     private var m_queryResults: [KeyData] = []
     
+    // Used to store list of tutor names
+    private var m_tutorsFile: UserDefaults = UserDefaults.standard
+    private var m_tutorsSet: NSMutableSet?
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -45,12 +48,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
+    private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
+    
     //Should read in from text file 
-    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
+//    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+        //        readTutorData(path: TUTORS_PATH)
+        loadTutors()
         
         let tutorPickerView = UIPickerView()
         tutorPickerView.delegate = self
@@ -75,10 +83,53 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        m_path = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
+        m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
+    }
+    
+    /**
+     Save the tutors from the tutors mutable set (hash set) to the UserDefaults tutors file
+     */
+    private func saveTutors() {
+        print("Saving...")
         
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: m_tutorsSet ?? NSMutableSet())
+        m_tutorsFile.set(encodedData, forKey: UserDefaultsManager.TUTORS_KEY)
+        m_tutorsFile.synchronize()
+        
+        print("Save Successful.")
+    }
+    
+    /**
+     Load all the tutors into the tutors mutable set (hash set)
+     */
+    private func loadTutors() {
+        print("Loading tutors...")
+        
+        if let key = m_tutorsFile.object(forKey: UserDefaultsManager.TUTORS_KEY){
+            
+            let decoded: Data = key as! Data
+            
+            print("Decoded data: \(decoded)")
+            
+            let decodedItems = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! NSMutableSet
+            
+            m_tutorsSet = decodedItems
+            
+            if(m_tutorsSet?.count != 0){
+                print("Successfully loaded tutors.")
+            }else{
+                print("No tutors to load.")
+                m_tutorsSet = NSMutableSet()
+            }
+            
+        }else{
+            print("No tutors to load.")
+            m_tutorsSet = NSMutableSet()
+        }
+        
+        print("Loading complete.")
     }
     
     func getDocumentsDirectory() -> URL {
@@ -92,18 +143,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return tutors.count
+        return (m_tutorsSet?.count)!
     }
     
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return tutors[row]
+        return Array(m_tutorsSet!)[row] as? String
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tutorNameTextField.text = tutors[row]
+        tutorNameTextField.text = Array(m_tutorsSet!)[row] as? String
     }
 
     override func didReceiveMemoryWarning() {
@@ -141,27 +192,55 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             m_queryResults = readData(studentID: studentIDTextField.text!) // Test Case: "20859287"
             print("\nDone.\nQuery took \(queryTimer.stop()) seconds.")
             
-            // Pass query results to FormViewController
-            formViewController.setQueryResults(queryResults: self.m_queryResults)
+            // Only pass data to FormViewController and navigate if there were query results returned
+            if !m_queryResults.isEmpty {
+                // Pass query results to FormViewController
+                formViewController.setQueryResults(queryResults: self.m_queryResults)
+                
+                // Navigate to the FormViewController through the NagivationController
+                self.navigationController?.pushViewController(formViewController, animated: true)
+            } else {
+                let msg = "The provided Student ID could not be found in the database. Please try again."
+                displayAlertDialog(title: "No Query Results Found", message: msg)
+            }
             
-            // Navigate to the FormViewController through the NagivationController
-            self.navigationController?.pushViewController(formViewController, animated: true)
+           
         } else {
             print("You must enter the student ID!")
         }
     }
     
+<<<<<<< HEAD
     //Used to execute the action of adding a tutor
+=======
+    /**
+     Display an alert dialog box with a provided title and message
+     */
+    private func displayAlertDialog(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+>>>>>>> 8fd2bc157fe3a8825f2ac2e41c45365159e2881b
     @IBAction func addTutorAction(_ sender: UIButton) {
         if(tutorNameTextField.text?.isEmpty)!{
             addTutorTextField.isHidden = false
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
-            writeToFile(value: addTutorTextField.text!)
+//            print("Call write function")
+//            writeToFile(value: addTutorTextField.text!)
            // tutors.append(addTutorTextField.text!)
+            if !(m_tutorsSet?.contains(addTutorTextField.text!))! {
+                m_tutorsSet?.add(addTutorTextField.text!)
+                saveTutors()
+            } else {
+                let msg = "The tutor that was entered already exists on file. Please enter a different tutor name."
+                displayAlertDialog(title: "Tutor Already Exists", message: msg)
+            }
+            
         }
-        
-        
     }
     
     /*Write data to existing text file TutorNames.txt
@@ -180,45 +259,55 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         catch let error as NSError {
             print("Ooops! Something went wrong: \(error)")
         }*/
-        let fileName = "TutorNames.txt"
-        var filePath = ""
+//        let fileName = "TutorNames"
+//        var filePath = ""
+//        let filePath = Bundle.main.path(forResource: fileName, ofType: "txt")!
         
         // Fine documents directory on device
-        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
-        
-        if dirs.count > 0 {
-            let dir = dirs[0] //documents directory
-            filePath = dir.appending("/" + fileName)
-            print("Local path = \(filePath)")
-        } else {
-            print("Could not find local directory to store file")
-            return
-        }
+//        let dirs : [String] = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+//
+//        if dirs.count > 0 {
+//            let dir = dirs[0] //documents directory
+//            filePath = dir.appending("/" + fileName)
+//            print("Local path = \(filePath)")
+//        } else {
+//            print("Could not find local directory to store file")
+//            return
+//        }
         
         // Set the Tutor names
-        let tutorNameToWrite = addTutorTextField.text!
-        
-        do {
-            // Write contents to file
-            try tutorNameToWrite.write(toFile: filePath, atomically: false, encoding: String.Encoding.utf8)
-            //Will add file contents to tutors array.
-            tutors.append(tutorNameToWrite)
-            
-        }
-        catch let error as NSError {
-            print("An error took place: \(error)")
-        }
-        
-        
-        // Read file content.
-        do {
-            // Read file content
-            let contentFromFile = try NSString(contentsOfFile: filePath, encoding: String.Encoding.utf8.rawValue)
-            print(contentFromFile)
-        }
-        catch let error as NSError {
-            print("An error took place: \(error)")
-        }
+//        let tutorNameToWrite = addTutorTextField.text!
+//
+//        do {
+//            // Write contents to file
+//            try tutorNameToWrite.write(toFile: TUTORS_PATH, atomically: false, encoding: String.Encoding.utf8)
+//            //Will add file contents to tutors array.
+//            tutors.append(tutorNameToWrite)
+//
+//        }
+//        catch let error as NSError {
+//            print("An error took place: \(error)")
+//        }
+//
+//        // Test if it works
+//        readTutorData(path: TUTORS_PATH)
+    }
+    
+    /**
+     
+     */
+    public func readTutorData(path: String) {
+//        print("Reading tutor data...")
+//
+//        // Read file content.
+//        do {
+//            // Read file content
+//            let contentFromFile = try NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue)
+//            print(contentFromFile)
+//        }
+//        catch let error as NSError {
+//            print("An error took place: \(error)")
+//        }
     }
     
     
@@ -227,21 +316,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      NB: The file path is for the CSV data, not the database path
      */
     public func initializeDB() {
-        if !(m_path?.isEmpty)! {
+        if !(m_csvPath?.isEmpty)! {
             do {
-                m_mcLookup = try MCLookup(file: m_path!)
-                try m_mcLookup?.initDatabase()
+                let initTimer = ParkBenchTimer()
+                let mcLookup = try MCLookup(file: m_csvPath!)
+                
+                print("Initializing database...")
+                try mcLookup.initDatabase()
+                print("Done. Database initialization took \(initTimer.stop()) seconds.")
             } catch {
-                print("Database request failed")
+                print("Database Initialization Error: Database request failed")
             }
+        } else {
+            print("Database Initialization Error: Path was not set for CSV data")
         }
     }
     
     //MARK: Data import/querying
     func readData(studentID: String) -> [KeyData] {
-        if !(m_path?.isEmpty)! {
+        if !(m_csvPath?.isEmpty)! {
             do {
-                let mcLookup = try MCLookup(file: m_path!)
+                let mcLookup = try MCLookup(file: m_csvPath!)
                 
                 // Return results
                 return mcLookup.getKeyDataByStudentID(id: studentID)
