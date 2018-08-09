@@ -48,6 +48,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let data = Data()
+        if let ViewController = segue.destination as? FormViewController {
+            ViewController.data = data
+            
+        }
+        
+    }
+    
     private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
     
     //Should read in from text file 
@@ -196,6 +205,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             if !m_queryResults.isEmpty {
                 // Pass query results to FormViewController
                 formViewController.setQueryResults(queryResults: self.m_queryResults)
+                formViewController.setTutor(tutorName: tutorNameTextField.text!)
                 
                 // Navigate to the FormViewController through the NagivationController
                 self.navigationController?.pushViewController(formViewController, animated: true)
@@ -210,9 +220,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }
     
-<<<<<<< HEAD
+
     //Used to execute the action of adding a tutor
-=======
     /**
      Display an alert dialog box with a provided title and message
      */
@@ -222,8 +231,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         self.present(alertController, animated: true, completion: nil)
     }
-    
->>>>>>> 8fd2bc157fe3a8825f2ac2e41c45365159e2881b
+
     @IBAction func addTutorAction(_ sender: UIButton) {
         if(tutorNameTextField.text?.isEmpty)!{
             addTutorTextField.isHidden = false
