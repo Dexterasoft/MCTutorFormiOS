@@ -48,6 +48,14 @@ extension String {
     }
 }
 
+// Allow tables to be created
+// Add DDL commands here, i.e., CREATE, DROP, ALTER
+protocol SQLTable {
+    static var createStatement: String { get }
+    
+    // Add any aditional operations to give all tables different abilities, i.e., dropStatement
+}
+
 enum SQLiteError: Error {
     case OpenDatabase(message: String)
     case Prepare(message: String)
@@ -111,10 +119,8 @@ class SQLiteDatabase {
             return "No error message provided from sqlite."
         }
     }
-}
-
-extension SQLiteDatabase {
-    func prepareStatement(sql: String) throws -> OpaquePointer? {
+    
+    public func prepareStatement(sql: String) throws -> OpaquePointer? {
         var statement: OpaquePointer? = nil
         guard sqlite3_prepare_v2(dbPointer, sql, -1, &statement, nil) == SQLITE_OK else {
             throw SQLiteError.Prepare(message: errorMessage)
@@ -122,19 +128,9 @@ extension SQLiteDatabase {
         
         return statement
     }
-}
-
-// Allow tables to be created
-// Add DDL commands here, i.e., CREATE, DROP, ALTER
-protocol SQLTable {
-    static var createStatement: String { get }
     
-    // Add any aditional operations to give all tables different abilities, i.e., dropStatement
-}
-
-// Table creation
-extension SQLiteDatabase {
-    func createTable(table: SQLTable.Type) throws {
+    // Table creation
+    public func createTable(table: SQLTable.Type) throws {
         // 1
         let createTableStatement = try prepareStatement(sql: table.createStatement)
         // 2 ensure that your statements are always finalized
@@ -147,10 +143,8 @@ extension SQLiteDatabase {
         }
         print("\(table) table created.")
     }
-}
-
-// Wrapping Insertions
-extension SQLiteDatabase {
+    
+    //MARK Wrapping Insertions
     /**
      Insert course info into the database. CourseInfo table has the following fields:
      section CHAR(6) PRIMARY KEY NOT NULL,
@@ -158,7 +152,7 @@ extension SQLiteDatabase {
      
      @param courseInfo the course information from the CourseInfo table to be inserted into the CourseInfo Table
      */
-    func insertCourseInfo(courseInfo: CourseInfo) throws {
+    public func insertCourseInfo(courseInfo: CourseInfo) throws {
         let insertSql = """
         INSERT INTO CourseInfo (section, course)
         VALUES (?, ?);
@@ -202,7 +196,7 @@ extension SQLiteDatabase {
      
      @param course the course to inserted into the Course table
      */
-    func insertCourse(course: Course) throws {
+    public func insertCourse(course: Course) throws {
         let insertSql = """
         INSERT INTO Course (stuID, section, profName, mcCampus)
         VALUES (?, ?, ?, ?);
@@ -245,7 +239,7 @@ extension SQLiteDatabase {
      
      @param student the student to inserted into the Student table
      */
-    func insertStudent(student: Student) throws {
+    public func insertStudent(student: Student) throws {
         let insertSql = """
         INSERT INTO Student (stuID, stuFName, stuLName)
         VALUES (?, ?, ?);
@@ -277,10 +271,8 @@ extension SQLiteDatabase {
             print("Successfully inserted student.")
         }
     }
-}
-
-// Allow database querying
-extension SQLiteDatabase {
+    
+    //MARK - Allow database querying
     /**
      A general query that will act as the default call to extract all the necessary information for
      the output.
@@ -292,7 +284,7 @@ extension SQLiteDatabase {
      of this function. Multiple rows can be returned with a variable number of columns. It is dependant on the
      invoker to perform any remaining parsing on the returned query results.
      */
-    func query(querySql: String) -> [[NSString : NSString]] {
+    public func query(querySql: String) -> [[NSString : NSString]] {
         var results: [[NSString : NSString]] = []
         let queryStatement = try? prepareStatement(sql: querySql)
         
@@ -337,7 +329,7 @@ extension SQLiteDatabase {
      @param selectClause the table fields to be displayed, i.e., selected
      @return the query results with the type of the specified Student table
      */
-    func getStudentById(id: String) -> Student? {
+    public func getStudentById(id: String) -> Student? {
         let querySql = "SELECT * FROM Student WHERE stuID = ?;"
         
         guard let queryStatement = try? prepareStatement(sql: querySql) else {
