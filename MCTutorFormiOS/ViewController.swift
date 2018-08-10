@@ -57,7 +57,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
+//    private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
     
     //Should read in from text file 
 //    var tutors = ["", "John Smith", "Mary Washington", "Benjamin Early"]
@@ -120,7 +120,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
             let decoded: Data = key as! Data
             
-            print("Decoded data: \(decoded)")
+            print("Decoded tutor data: \(decoded)")
             
             let decodedItems = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! NSMutableSet
             
