@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner1" //vBanner1
+    let TARGET_CSV_NAME = "vBanner_100" //vBanner1
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -95,6 +95,44 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
+        
+        let fileName = "HelloFromBrett"
+        
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(paths[0])
+
+        let file = "\(paths[0])/\(fileName).txt"
+
+        do {
+            let data = try String(contentsOfFile: file, encoding: .utf8)
+            print(data)
+        } catch {
+            print(error)
+        }
+        
+        // Save data to file
+        
+//        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+//
+//        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+//        print("FilePath: \(fileURL.path)")
+//
+//        let writeString = "Hello world from Brett!"
+//        do {
+//            // Write to the file
+//            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+//        } catch let error as NSError {
+//            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+//        }
+//
+//        var readString = "" // Used to store the file contents
+//        do {
+//            // Read the file contents
+//            readString = try String(contentsOf: fileURL)
+//        } catch let error as NSError {
+//            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
+//        }
+//        print("File Text: \(readString)")
     }
     
     /**
@@ -213,8 +251,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 let msg = "The provided Student ID could not be found in the database. Please try again."
                 displayAlertDialog(title: "No Query Results Found", message: msg)
             }
-            
-           
         } else {
             print("You must enter the student ID!")
         }
