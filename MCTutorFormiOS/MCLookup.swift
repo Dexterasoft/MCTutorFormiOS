@@ -447,7 +447,7 @@ class MCLookup {
     private let PROF_NAME = "professor_name"
     private let CAMPUS_CODE = "campus_code"
     
-    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite")!
+    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite") ?? "NONE"
     
     private var m_db: SQLiteDatabase
     
@@ -469,12 +469,26 @@ class MCLookup {
         m_currentDate = formatter.string(from: date)
         
         // Attempt to connect to specified database
-        do {
-            m_db = try SQLiteDatabase.open(path: TARGET_DB)
-            print("Successfully opened connection to database.")
-        } catch SQLiteError.OpenDatabase( _) {
-            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
-            m_db = SQLiteDatabase(dbPointer: nil)
+//        do {
+//            m_db = try SQLiteDatabase.open(path: TARGET_DB)
+//            print("Successfully opened connection to database.")
+//        } catch SQLiteError.OpenDatabase( _) {
+//            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
+//            m_db = SQLiteDatabase(dbPointer: nil)
+//        }
+        m_db = SQLiteDatabase(dbPointer: nil)
+        
+        // TEST CODE VVVV
+        // Determining if the sqlite database file exists (need to initialize database if not)
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
+        
+        let filePath = "\(path)/MCDatabase.sqlite"
+        
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            print("FILE AVAILABLE")
+        } else {
+            print("FILE NOT AVAILABLE")
         }
     }
     

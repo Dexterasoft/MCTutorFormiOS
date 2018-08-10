@@ -17,7 +17,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_100" //vBanner1
+    let TARGET_CSV_NAME = "vBanner_100" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -96,19 +97,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         addTutorTextField.isHidden = true;
         
-        let fileName = "HelloFromBrett"
-        
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print(paths[0])
-
-        let file = "\(paths[0])/\(fileName).txt"
-
-        do {
-            let data = try String(contentsOfFile: file, encoding: .utf8)
-            print(data)
-        } catch {
-            print(error)
-        }
+        // TEST CODE VVVV
+//        let fileName = "HelloFromBrett.txt"
+//
+//        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
+//
+//        let file = "\(path)/\(fileName)"
+//        print("Using file: \(file)")
+//
+//        do {
+//            let data = try String(contentsOfFile: file, encoding: .utf8)
+//            print(data)
+//        } catch {
+//            print(error)
+//        }
         
         // Save data to file
         
@@ -117,7 +119,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
 //        print("FilePath: \(fileURL.path)")
 //
-//        let writeString = "Hello world from Brett!"
+//        let writeString = "This is a new message from Brett!"
 //        do {
 //            // Write to the file
 //            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
@@ -133,6 +135,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
 //        }
 //        print("File Text: \(readString)")
+        
+        do {
+            m_mcLookup = try MCLookup(file: m_csvPath!)
+        } catch {
+            print("An error occured when instantiating MCLookup class.")
+        }
     }
     
     /**
