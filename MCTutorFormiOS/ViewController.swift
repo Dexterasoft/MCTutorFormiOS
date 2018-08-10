@@ -220,6 +220,25 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.present(alertController, animated: true, completion: nil)
     }
     
+    /**
+     Display loading dialog when a background task is running.
+     */
+    private func getLoadingDialog(message: String) -> UIAlertController{
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let spinnerIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
+        
+        spinnerIndicator.center = CGPoint(x: 135.0, y: 90)
+        spinnerIndicator.color = UIColor.black
+        spinnerIndicator.startAnimating()
+        
+        alertController.view.addSubview(spinnerIndicator)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        return alertController
+    }
+    
     @IBAction func addTutorAction(_ sender: UIButton) {
         if(tutorNameTextField.text?.isEmpty)!{
             addTutorTextField.isHidden = false
