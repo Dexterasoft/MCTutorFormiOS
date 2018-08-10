@@ -37,6 +37,10 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
 
     private var m_queryResults: [KeyData] = []
     
+    private var m_tutorData: String = ""
+    
+    var data: Data?
+    
     let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
     
@@ -78,6 +82,8 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         // Make sure the course text field cannot be edited so it can remain a silhouette
         courseNameTextField.isUserInteractionEnabled = false
+        
+        tutorNameTextField.text = m_tutorData
     }
     
     override func viewDidAppear(_ animated: Bool) {}
@@ -154,6 +160,10 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
      */
     public func setQueryResults(queryResults: [KeyData]) {
         self.m_queryResults = queryResults
+    }
+    
+    public func setTutor(tutorName: String){
+        m_tutorData = tutorName
     }
     
     public func setDelegate(delegate: FormViewProtocol) {

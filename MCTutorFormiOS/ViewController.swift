@@ -48,6 +48,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
     }*/
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let data = Data()
+        if let ViewController = segue.destination as? FormViewController {
+            ViewController.data = data
+            
+        }
+        
+    }
+    
     private let TUTORS_PATH = Bundle.main.path(forResource: "TutorNames", ofType: "txt")!
     
     //Should read in from text file 
@@ -196,6 +205,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             if !m_queryResults.isEmpty {
                 // Pass query results to FormViewController
                 formViewController.setQueryResults(queryResults: self.m_queryResults)
+                formViewController.setTutor(tutorName: tutorNameTextField.text!)
                 
                 // Navigate to the FormViewController through the NagivationController
                 self.navigationController?.pushViewController(formViewController, animated: true)
@@ -209,7 +219,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             print("You must enter the student ID!")
         }
     }
-    
+
     /**
      Display an alert dialog box with a provided title and message
      */
@@ -260,7 +270,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     /*Write data to existing text file TutorNames.txt
      located within the dopcuments directory.
- */
+     */
     func writeToFile(value: String){
         /*let path = "TutorNames.txt"
         
