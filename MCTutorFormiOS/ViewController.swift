@@ -135,12 +135,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
 //        }
 //        print("File Text: \(readString)")
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         do {
             m_mcLookup = try MCLookup(file: m_csvPath!)
         } catch {
             print("An error occured when instantiating MCLookup class.")
         }
+        
+//        let loadingDialog = getLoadingDialog(message: "Loading database, please wait...\n\n")
+//        loadingDialog.dismiss(animated: true, completion: nil)
     }
     
     /**

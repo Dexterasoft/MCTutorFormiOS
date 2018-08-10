@@ -11,6 +11,7 @@ import SQLite3
 
 let DEBUG_MODE = false
 let DATABASE_NAME = "MCDatabase"
+let DATABASE_FILE = "MCDatabase.sqlite"
 
 /*
  dictBannerData[“StuID”] = “\(vBanner1[0])”
@@ -483,8 +484,9 @@ class MCLookup {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
         
         let filePath = "\(path)/MCDatabase.sqlite"
-        
         let fileManager = FileManager.default
+        
+        // Determine if the database file exists and take the necessary course of action
         if fileManager.fileExists(atPath: filePath) {
             print("FILE AVAILABLE")
         } else {
