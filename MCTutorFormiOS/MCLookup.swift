@@ -11,7 +11,7 @@ import SQLite3
 
 let DEBUG_MODE = false
 let DATABASE_NAME = "MCDatabase"
-let DATABASE_FILE = "MCDatabase.sqlite"
+let DATABASE_FILE = "\(DATABASE_NAME).sqlite"
 
 /*
  dictBannerData[“StuID”] = “\(vBanner1[0])”
@@ -469,29 +469,30 @@ class MCLookup {
         formatter.dateFormat = "MM/dd/yyyy"
         m_currentDate = formatter.string(from: date)
         
-        // Attempt to connect to specified database
-//        do {
-//            m_db = try SQLiteDatabase.open(path: TARGET_DB)
-//            print("Successfully opened connection to database.")
-//        } catch SQLiteError.OpenDatabase( _) {
-//            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
-//            m_db = SQLiteDatabase(dbPointer: nil)
-//        }
-        m_db = SQLiteDatabase(dbPointer: nil)
-        
         // TEST CODE VVVV
         // Determining if the sqlite database file exists (need to initialize database if not)
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
         
-        let filePath = "\(path)/MCDatabase.sqlite"
-        let fileManager = FileManager.default
+        let targetDB = "\(path)/\(DATABASE_FILE)"
+//        let fileManager = FileManager.default
+        
+        // Attempt to connect to specified database
+        do {
+            m_db = try SQLiteDatabase.open(path: targetDB)
+            print("Successfully opened connection to database.")
+        } catch SQLiteError.OpenDatabase( _) {
+            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
+            m_db = SQLiteDatabase(dbPointer: nil)
+        }
+        
+        // m_db = SQLiteDatabase(dbPointer: nil)
         
         // Determine if the database file exists and take the necessary course of action
-        if fileManager.fileExists(atPath: filePath) {
-            print("FILE AVAILABLE")
-        } else {
-            print("FILE NOT AVAILABLE")
-        }
+//        if fileManager.fileExists(atPath: targetDB) {
+//            print("Successfully obtained database file at \(targetDB)")
+//        } else {
+//            print("Could not load database at \(targetDB)")
+//        }
     }
     
     /**

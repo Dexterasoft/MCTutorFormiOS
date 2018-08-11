@@ -98,11 +98,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         addTutorTextField.isHidden = true;
         
         // TEST CODE VVVV
-//        let fileName = "HelloFromBrett.txt"
+//        let fileName = "HelloFromBrett"
 //
 //        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
 //
-//        let file = "\(path)/\(fileName)"
+//        let file = "\(path)/\(fileName).txt"
 //        print("Using file: \(file)")
 //
 //        do {
@@ -140,12 +140,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     override func viewDidAppear(_ animated: Bool) {
         do {
             m_mcLookup = try MCLookup(file: m_csvPath!)
+//            let loadingDialog = getLoadingDialog(message: "Loading database, please wait...\n\n")
+//            initializeDB()
+//            loadingDialog.dismiss(animated: true, completion: nil)
         } catch {
             print("An error occured when instantiating MCLookup class.")
         }
-        
-//        let loadingDialog = getLoadingDialog(message: "Loading database, please wait...\n\n")
-//        loadingDialog.dismiss(animated: true, completion: nil)
     }
     
     /**
@@ -393,10 +393,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if !(m_csvPath?.isEmpty)! {
             do {
                 let initTimer = ParkBenchTimer()
-                let mcLookup = try MCLookup(file: m_csvPath!)
                 
                 print("Initializing database...")
-                try mcLookup.initDatabase()
+                try m_mcLookup?.initDatabase()
                 print("Done. Database initialization took \(initTimer.stop()) seconds.")
             } catch {
                 print("Database Initialization Error: Database request failed")
