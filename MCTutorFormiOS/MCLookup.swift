@@ -462,7 +462,7 @@ class MCLookup {
     private var m_targetDB: String = ""
     
     init(file: String) throws {
-        m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_FNAME, STUDENT_LNAME, PROF_NAME, CAMPUS_CODE]
+        m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_LNAME, STUDENT_FNAME, PROF_NAME, CAMPUS_CODE]
         
         m_csvFile = file
         
@@ -542,6 +542,8 @@ class MCLookup {
         var studentPKSet = Set<NSString>()
         var courseInfoPKSet = Set<NSString>()
         
+        print("Parsing CSV data...")
+        
         for row in rows {
             // Handle corner case when CSV data has extra spaces at the end of it when spliting on newline characters by skipping that line
             // This case will result in empty rows, i.e., ""
@@ -583,6 +585,8 @@ class MCLookup {
                 keyIndex = (keyIndex + 1) % m_keys.count
             }
             
+            print("CSV parsing complete.")
+            
             // Get the NSString version of csv data
             let stuID = rowDict[STUDENT_ID]!
             let stuFName = rowDict[STUDENT_FNAME]!
@@ -591,6 +595,8 @@ class MCLookup {
             let course = rowDict[COURSE]!
             let profName = rowDict[PROF_NAME]!
             let mcCampus = rowDict[CAMPUS_CODE]!
+            
+            print("Performing database insertions...")
             
             // Database insertions
             // NB: ensure that any primary data that foreign keys are relying on exist before inserting foreign key data
