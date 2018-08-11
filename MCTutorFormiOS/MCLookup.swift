@@ -481,7 +481,7 @@ class MCLookup {
         // Attempt to connect to specified database
         do {
             m_db = try SQLiteDatabase.open(path: m_targetDB)
-            print("Successfully opened connection to database.")
+            print("Successfully opened connection to database \(m_targetDB).")
         } catch SQLiteError.OpenDatabase( _) {
             print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
             m_db = SQLiteDatabase(dbPointer: nil)
