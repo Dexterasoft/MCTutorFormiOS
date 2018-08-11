@@ -448,7 +448,7 @@ class MCLookup {
     private let PROF_NAME = "professor_name"
     private let CAMPUS_CODE = "campus_code"
     
-    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite") ?? "NONE"
+//    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite") ?? "NONE"
     
     private var m_db: SQLiteDatabase
     
@@ -458,6 +458,8 @@ class MCLookup {
     private var m_currentDate: String = ""
     
     private var m_csvFile: String = ""
+    
+    private var m_targetDB: String = ""
     
     init(file: String) throws {
         m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_FNAME, STUDENT_LNAME, PROF_NAME, CAMPUS_CODE]
@@ -473,12 +475,12 @@ class MCLookup {
         // Determining if the sqlite database file exists (need to initialize database if not)
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
         
-        let targetDB = "\(path)/\(DATABASE_FILE)"
+        m_targetDB = "\(path)/\(DATABASE_FILE)"
 //        let fileManager = FileManager.default
         
         // Attempt to connect to specified database
         do {
-            m_db = try SQLiteDatabase.open(path: targetDB)
+            m_db = try SQLiteDatabase.open(path: m_targetDB)
             print("Successfully opened connection to database.")
         } catch SQLiteError.OpenDatabase( _) {
             print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
@@ -500,11 +502,11 @@ class MCLookup {
      */
     public func initDatabase() throws {
         // Initialize database
-        SQLiteDatabase.destroyDatabase(path: TARGET_DB)
+        SQLiteDatabase.destroyDatabase(path: m_targetDB)
         
         // Attempt to connect to specified database
         do {
-            m_db = try SQLiteDatabase.open(path: TARGET_DB)
+            m_db = try SQLiteDatabase.open(path: m_targetDB)
             print("Successfully opened connection to database.")
         } catch SQLiteError.OpenDatabase( _) {
             print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
