@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_100" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -34,6 +34,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // Used to store list of tutor names
     private var m_tutorsFile: UserDefaults = UserDefaults.standard
     private var m_tutorsSet: NSMutableSet?
+    
+    private var m_loadingDialog: UIAlertController?
     
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
@@ -135,17 +137,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
 //        }
 //        print("File Text: \(readString)")
+        m_loadingDialog = getLoadingDialog(message: "Loading database, please wait...\n\n")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        do {
-            m_mcLookup = try MCLookup(file: m_csvPath!)
-//            let loadingDialog = getLoadingDialog(message: "Loading database, please wait...\n\n")
-//            initializeDB()
-//            loadingDialog.dismiss(animated: true, completion: nil)
-        } catch {
-            print("An error occured when instantiating MCLookup class.")
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            do {
+                self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
+                self.initializeDB()
+            } catch {
+                print("An error occured when instantiating MCLookup class.")
+            }
         }
+        
+        m_loadingDialog?.dismiss(animated: true, completion: nil)
     }
     
     /**
