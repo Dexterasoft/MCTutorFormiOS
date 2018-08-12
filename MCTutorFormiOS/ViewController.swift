@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner_10000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -137,26 +137,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
 //        }
 //        print("File Text: \(readString)")
-        
     }
     
-    override func viewDidAppear(_ animated: Bool) {}
-    
-    @IBAction func InitializeTest(_ sender: UIButton) {
-        self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
+    override func viewDidAppear(_ animated: Bool) {
+        // Instantiate MCLookup object first to determine if the database needs to be initialized
+        do {
+            self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
+        } catch {
+            print("An error occured when instantiating MCLookup class.")
+        }
         
-        // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
-        let delay = 0.01 // one-hundredth of a second delay
-        let when = DispatchTime.now() + delay
-        DispatchQueue.main.asyncAfter(deadline: when){
-            do {
-                self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
-                self.initializeDB()
-            } catch {
-                print("An error occured when instantiating MCLookup class.")
-            }
+        // Only initialize database if necessary
+        if !(m_mcLookup?.isDBInitialized())! {
+            self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
             
-            self.m_loadingDialog?.dismiss(animated: true, completion: nil)
+            // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
+            let delay = 0.01 // one-hundredth of a second delay
+            let when = DispatchTime.now() + delay
+            DispatchQueue.main.asyncAfter(deadline: when){
+                self.initializeDB()
+                self.m_loadingDialog?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

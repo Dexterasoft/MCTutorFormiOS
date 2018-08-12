@@ -461,6 +461,8 @@ class MCLookup {
     
     private var m_targetDB: String = ""
     
+    private var m_dbInitialzed: Bool = false
+    
     init(file: String) throws {
         m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_LNAME, STUDENT_FNAME, PROF_NAME, CAMPUS_CODE]
         
@@ -476,25 +478,32 @@ class MCLookup {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
         
         m_targetDB = "\(path)/\(DATABASE_FILE)"
-//        let fileManager = FileManager.default
+        let fileManager = FileManager.default
         
-        // Attempt to connect to specified database
-        do {
-            m_db = try SQLiteDatabase.open(path: m_targetDB)
-            print("Successfully opened connection to database \(m_targetDB).")
-        } catch SQLiteError.OpenDatabase( _) {
-            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
-            m_db = SQLiteDatabase(dbPointer: nil)
-        }
-        
-        // m_db = SQLiteDatabase(dbPointer: nil)
+         m_db = SQLiteDatabase(dbPointer: nil)
         
         // Determine if the database file exists and take the necessary course of action
-//        if fileManager.fileExists(atPath: targetDB) {
-//            print("Successfully obtained database file at \(targetDB)")
-//        } else {
-//            print("Could not load database at \(targetDB)")
-//        }
+        if fileManager.fileExists(atPath: m_targetDB) {
+            print("Successfully obtained database file at \(m_targetDB)")
+            
+            // Attempt to connect to specified database
+            do {
+                m_db = try SQLiteDatabase.open(path: m_targetDB)
+                print("Successfully opened connection to database \(m_targetDB).")
+                
+                // Set initialized flag to true (this may cause a logic bug when attempting to init db when csv file is changed
+                m_dbInitialzed = true
+            } catch SQLiteError.OpenDatabase( _) {
+                print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
+                m_db = SQLiteDatabase(dbPointer: nil)
+            }
+        } else {
+            print("Could not load database at \(m_targetDB)")
+        }
+    }
+    
+    public func isDBInitialized() -> Bool {
+        return m_dbInitialzed
     }
     
     /**
