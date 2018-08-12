@@ -11,6 +11,7 @@ import SQLite3
 
 let DEBUG_MODE = false
 let DATABASE_NAME = "MCDatabase"
+let DATABASE_FILE = "\(DATABASE_NAME).sqlite"
 
 /*
  dictBannerData[“StuID”] = “\(vBanner1[0])”
@@ -46,6 +47,14 @@ extension String {
             }
         }
     }
+}
+
+// Allow tables to be created
+// Add DDL commands here, i.e., CREATE, DROP, ALTER
+protocol SQLTable {
+    static var createStatement: String { get }
+    
+    // Add any aditional operations to give all tables different abilities, i.e., dropStatement
 }
 
 enum SQLiteError: Error {
@@ -111,10 +120,8 @@ class SQLiteDatabase {
             return "No error message provided from sqlite."
         }
     }
-}
-
-extension SQLiteDatabase {
-    func prepareStatement(sql: String) throws -> OpaquePointer? {
+    
+    public func prepareStatement(sql: String) throws -> OpaquePointer? {
         var statement: OpaquePointer? = nil
         guard sqlite3_prepare_v2(dbPointer, sql, -1, &statement, nil) == SQLITE_OK else {
             throw SQLiteError.Prepare(message: errorMessage)
@@ -122,19 +129,9 @@ extension SQLiteDatabase {
         
         return statement
     }
-}
-
-// Allow tables to be created
-// Add DDL commands here, i.e., CREATE, DROP, ALTER
-protocol SQLTable {
-    static var createStatement: String { get }
     
-    // Add any aditional operations to give all tables different abilities, i.e., dropStatement
-}
-
-// Table creation
-extension SQLiteDatabase {
-    func createTable(table: SQLTable.Type) throws {
+    // Table creation
+    public func createTable(table: SQLTable.Type) throws {
         // 1
         let createTableStatement = try prepareStatement(sql: table.createStatement)
         // 2 ensure that your statements are always finalized
@@ -147,10 +144,8 @@ extension SQLiteDatabase {
         }
         print("\(table) table created.")
     }
-}
-
-// Wrapping Insertions
-extension SQLiteDatabase {
+    
+    //MARK Wrapping Insertions
     /**
      Insert course info into the database. CourseInfo table has the following fields:
      section CHAR(6) PRIMARY KEY NOT NULL,
@@ -158,7 +153,7 @@ extension SQLiteDatabase {
      
      @param courseInfo the course information from the CourseInfo table to be inserted into the CourseInfo Table
      */
-    func insertCourseInfo(courseInfo: CourseInfo) throws {
+    public func insertCourseInfo(courseInfo: CourseInfo) throws {
         let insertSql = """
         INSERT INTO CourseInfo (section, course)
         VALUES (?, ?);
@@ -202,7 +197,7 @@ extension SQLiteDatabase {
      
      @param course the course to inserted into the Course table
      */
-    func insertCourse(course: Course) throws {
+    public func insertCourse(course: Course) throws {
         let insertSql = """
         INSERT INTO Course (stuID, section, profName, mcCampus)
         VALUES (?, ?, ?, ?);
@@ -245,7 +240,7 @@ extension SQLiteDatabase {
      
      @param student the student to inserted into the Student table
      */
-    func insertStudent(student: Student) throws {
+    public func insertStudent(student: Student) throws {
         let insertSql = """
         INSERT INTO Student (stuID, stuFName, stuLName)
         VALUES (?, ?, ?);
@@ -277,10 +272,8 @@ extension SQLiteDatabase {
             print("Successfully inserted student.")
         }
     }
-}
-
-// Allow database querying
-extension SQLiteDatabase {
+    
+    //MARK - Allow database querying
     /**
      A general query that will act as the default call to extract all the necessary information for
      the output.
@@ -292,7 +285,7 @@ extension SQLiteDatabase {
      of this function. Multiple rows can be returned with a variable number of columns. It is dependant on the
      invoker to perform any remaining parsing on the returned query results.
      */
-    func query(querySql: String) -> [[NSString : NSString]] {
+    public func query(querySql: String) -> [[NSString : NSString]] {
         var results: [[NSString : NSString]] = []
         let queryStatement = try? prepareStatement(sql: querySql)
         
@@ -337,7 +330,7 @@ extension SQLiteDatabase {
      @param selectClause the table fields to be displayed, i.e., selected
      @return the query results with the type of the specified Student table
      */
-    func getStudentById(id: String) -> Student? {
+    public func getStudentById(id: String) -> Student? {
         let querySql = "SELECT * FROM Student WHERE stuID = ?;"
         
         guard let queryStatement = try? prepareStatement(sql: querySql) else {
@@ -455,7 +448,7 @@ class MCLookup {
     private let PROF_NAME = "professor_name"
     private let CAMPUS_CODE = "campus_code"
     
-    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite")!
+//    public let TARGET_DB = Bundle.main.path(forResource: DATABASE_NAME, ofType: "sqlite") ?? "NONE"
     
     private var m_db: SQLiteDatabase
     
@@ -466,8 +459,12 @@ class MCLookup {
     
     private var m_csvFile: String = ""
     
+    private var m_targetDB: String = ""
+    
+    private var m_dbInitialzed: Bool = false
+    
     init(file: String) throws {
-        m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_FNAME, STUDENT_LNAME, PROF_NAME, CAMPUS_CODE]
+        m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_LNAME, STUDENT_FNAME, PROF_NAME, CAMPUS_CODE]
         
         m_csvFile = file
         
@@ -476,14 +473,37 @@ class MCLookup {
         formatter.dateFormat = "MM/dd/yyyy"
         m_currentDate = formatter.string(from: date)
         
-        // Attempt to connect to specified database
-        do {
-            m_db = try SQLiteDatabase.open(path: TARGET_DB)
-            print("Successfully opened connection to database.")
-        } catch SQLiteError.OpenDatabase( _) {
-            print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
-            m_db = SQLiteDatabase(dbPointer: nil)
+        // TEST CODE VVVV
+        // Determining if the sqlite database file exists (need to initialize database if not)
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
+        
+        m_targetDB = "\(path)/\(DATABASE_FILE)"
+        let fileManager = FileManager.default
+        
+         m_db = SQLiteDatabase(dbPointer: nil)
+        
+        // Determine if the database file exists and take the necessary course of action
+        if fileManager.fileExists(atPath: m_targetDB) {
+            print("Successfully obtained database file at \(m_targetDB)")
+            
+            // Attempt to connect to specified database
+            do {
+                m_db = try SQLiteDatabase.open(path: m_targetDB)
+                print("Successfully opened connection to database \(m_targetDB).")
+                
+                // Set initialized flag to true (this may cause a logic bug when attempting to init db when csv file is changed
+                m_dbInitialzed = true
+            } catch SQLiteError.OpenDatabase( _) {
+                print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
+                m_db = SQLiteDatabase(dbPointer: nil)
+            }
+        } else {
+            print("Could not load database at \(m_targetDB)")
         }
+    }
+    
+    public func isDBInitialized() -> Bool {
+        return m_dbInitialzed
     }
     
     /**
@@ -491,11 +511,11 @@ class MCLookup {
      */
     public func initDatabase() throws {
         // Initialize database
-        SQLiteDatabase.destroyDatabase(path: TARGET_DB)
+        SQLiteDatabase.destroyDatabase(path: m_targetDB)
         
         // Attempt to connect to specified database
         do {
-            m_db = try SQLiteDatabase.open(path: TARGET_DB)
+            m_db = try SQLiteDatabase.open(path: m_targetDB)
             print("Successfully opened connection to database.")
         } catch SQLiteError.OpenDatabase( _) {
             print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
@@ -530,6 +550,8 @@ class MCLookup {
         // A hash set to keep track of student keys; used to prevent inserting duplicates into student table
         var studentPKSet = Set<NSString>()
         var courseInfoPKSet = Set<NSString>()
+        
+        print("Parsing CSV data and performing database insertions...")
         
         for row in rows {
             // Handle corner case when CSV data has extra spaces at the end of it when spliting on newline characters by skipping that line
