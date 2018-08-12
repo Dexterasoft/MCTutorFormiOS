@@ -20,6 +20,8 @@
 		8B0715DB211B78540065AC2D /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */; };
 		8B1D2EF1211E1E650008516E /* vBanner_100.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D2EF0211E1E650008516E /* vBanner_100.txt */; };
 		8BACC739210E83AB009FC24E /* MCLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BACC738210E83AB009FC24E /* MCLookup.swift */; };
+		8BC0D2502120A39D002B36F1 /* vBanner_10000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0D24F2120A39D002B36F1 /* vBanner_10000.txt */; };
+		8BC0D2522120A3A7002B36F1 /* vBanner_1000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8BC0D2512120A3A7002B36F1 /* vBanner_1000.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8B1D2EF0211E1E650008516E /* vBanner_100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner_100.txt; path = "ipad-project/vBanner_100.txt"; sourceTree = SOURCE_ROOT; };
 		8BACC738210E83AB009FC24E /* MCLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLookup.swift; sourceTree = "<group>"; };
+		8BC0D24F2120A39D002B36F1 /* vBanner_10000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner_10000.txt; path = "ipad-project/vBanner_10000.txt"; sourceTree = SOURCE_ROOT; };
+		8BC0D2512120A3A7002B36F1 /* vBanner_1000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner_1000.txt; path = "ipad-project/vBanner_1000.txt"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 		7BA05AD020E5791200724470 /* MCTutorFormiOS */ = {
 			isa = PBXGroup;
 			children = (
+				8BC0D2512120A3A7002B36F1 /* vBanner_1000.txt */,
+				8BC0D24F2120A39D002B36F1 /* vBanner_10000.txt */,
 				8B1D2EF0211E1E650008516E /* vBanner_100.txt */,
 				8B0715D9211B78310065AC2D /* Utils */,
 				7B5A43F42102CABC003A1B2E /* vBanner1.txt */,
@@ -207,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1D2EF1211E1E650008516E /* vBanner_100.txt in Resources */,
+				8BC0D2502120A39D002B36F1 /* vBanner_10000.txt in Resources */,
+				8BC0D2522120A3A7002B36F1 /* vBanner_1000.txt in Resources */,
 				7BA05ADC20E5791300724470 /* LaunchScreen.storyboard in Resources */,
 				7BA05AD920E5791300724470 /* Assets.xcassets in Resources */,
 				7BA05AD720E5791200724470 /* Main.storyboard in Resources */,
