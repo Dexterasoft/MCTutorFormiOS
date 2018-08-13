@@ -140,11 +140,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // Instantiate MCLookup object first to determine if the database needs to be initialized
-        do {
-            self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
-        } catch {
-            print("An error occured when instantiating MCLookup class.")
+        if m_mcLookup == nil {
+            // Instantiate MCLookup object first to determine if the database needs to be initialized
+            print("Instantiating MCLookup object")
+            do {
+                self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
+            } catch {
+                print("An error occured when instantiating MCLookup class.")
+            }
         }
         
         // Only initialize database if necessary

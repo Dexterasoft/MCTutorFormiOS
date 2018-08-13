@@ -10,6 +10,8 @@ import Foundation
 import SQLite3
 
 let DEBUG_MODE = false
+let CSV_COPY_NAME = "CSVCopy"
+let CSV_COPY_FILE = "\(CSV_COPY_NAME).csv"
 let DATABASE_NAME = "MCDatabase"
 let DATABASE_FILE = "\(DATABASE_NAME).sqlite"
 
@@ -458,40 +460,93 @@ class MCLookup {
     private var m_currentDate: String = ""
     
     private var m_csvFile: String = ""
+    private var m_csvCopy: String = ""
     
     private var m_targetDB: String = ""
     
     private var m_dbInitialzed: Bool = false
     
+    private var m_csvDataChangeDetected: Bool = false
+    
+    private var m_fileManager = FileManager.default
+    
     init(file: String) throws {
         m_keys = [STUDENT_ID, COURSE, SECTION, STUDENT_LNAME, STUDENT_FNAME, PROF_NAME, CAMPUS_CODE]
-        
-        m_csvFile = file
         
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "MM/dd/yyyy"
         m_currentDate = formatter.string(from: date)
         
-        // TEST CODE VVVV
-        // Determining if the sqlite database file exists (need to initialize database if not)
+        // Get the path of the documents directory on iOS device
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
         
-        m_targetDB = "\(path)/\(DATABASE_FILE)"
-        let fileManager = FileManager.default
+        m_csvFile = file
+        m_csvCopy = "\(path)/\(CSV_COPY_FILE)"
         
-         m_db = SQLiteDatabase(dbPointer: nil)
+        m_db = SQLiteDatabase(dbPointer: nil)
+        
+        detectCSVDataChange(path: path)
+        try openDB(path: path)
+    }
+    
+    /**
+     
+     */
+    private func detectCSVDataChange(path: String) {
+        // Determine if the database file exists and take the necessary course of action
+        if m_fileManager.fileExists(atPath: m_csvCopy) {
+            print("Found CSV copy: \(m_csvCopy)")
+            
+            // Now detect if there is any difference between the current csv file and that copy
+            if !m_fileManager.contentsEqual(atPath: m_csvFile, andPath: m_csvCopy) {
+                print("Detected change in input CSV file!")
+                m_csvDataChangeDetected = true
+            } else {
+                print("No changes in CSV data detected.")
+            }
+            
+        } else {
+            print("No CSV copy exists yet.")
+            createCSVCopy()
+        }
+    }
+    
+    /**
+     
+     */
+    private func createCSVCopy() {
+        print("Creating CSV copy (\(CSV_COPY_FILE))...")
+        
+        do {
+            try m_fileManager.copyItem(atPath: m_csvFile, toPath: m_csvCopy)
+            print("Created CSV copy at \(m_csvCopy)")
+        } catch let error as NSError {
+            print("Failed copying csv data, Error: " + error.localizedDescription)
+        }
+    }
+    
+    /**
+     
+     */
+    public func isCSVDataChanged() -> Bool {
+        return m_csvDataChangeDetected
+    }
+    
+    /**
+     
+     */
+    private func openDB(path: String) throws {
+        m_targetDB = "\(path)/\(DATABASE_FILE)"
         
         // Determine if the database file exists and take the necessary course of action
-        if fileManager.fileExists(atPath: m_targetDB) {
-            print("Successfully obtained database file at \(m_targetDB)")
-            
+        if m_fileManager.fileExists(atPath: m_targetDB) {
             // Attempt to connect to specified database
             do {
                 m_db = try SQLiteDatabase.open(path: m_targetDB)
                 print("Successfully opened connection to database \(m_targetDB).")
                 
-                // Set initialized flag to true (this may cause a logic bug when attempting to init db when csv file is changed
+                // Set initialized flag to true (this may cause a logic bug when attempting to init db when csv file is changed)
                 m_dbInitialzed = true
             } catch SQLiteError.OpenDatabase( _) {
                 print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
@@ -502,6 +557,9 @@ class MCLookup {
         }
     }
     
+    /**
+     
+     */
     public func isDBInitialized() -> Bool {
         return m_dbInitialzed
     }
