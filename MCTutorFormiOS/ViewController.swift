@@ -150,6 +150,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
         }
         
+        // Detect it there was a change in the input CSV data.
+        if (m_mcLookup?.isCSVDataChanged())! {
+            // Notify the user and prompt to initialize the database
+            print("Detected change in CSV data!")
+            notifyCSVChanged()
+        } else {
+            print("No change detected in CSV data.")
+        }
+        
         // Only initialize database if necessary
         if !(m_mcLookup?.isDBInitialized())! {
             self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
@@ -162,6 +171,30 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 self.m_loadingDialog?.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    /**
+     Notify the user that the CSV data has been changed and initialized database if desired by user.
+     */
+    private func notifyCSVChanged() {
+        let title = "Detected change in CSV data"
+        let msg = "A change has been detected in the input CSV file. Would you like to initialize the database?"
+        let dialogMessage = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "Yes", style: .default, handler: {
+            (action) -> Void in
+            print("Yes button tapped!")
+        })
+        
+        let no = UIAlertAction(title: "No", style: .cancel, handler: {
+            (action) -> Void in
+            print("No button tapped!")
+        })
+        
+        dialogMessage.addAction(yes)
+        dialogMessage.addAction(no)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     /**

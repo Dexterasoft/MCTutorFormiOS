@@ -499,13 +499,7 @@ class MCLookup {
             print("Found CSV copy: \(m_csvCopy)")
             
             // Now detect if there is any difference between the current csv file and that copy
-            if !m_fileManager.contentsEqual(atPath: m_csvFile, andPath: m_csvCopy) {
-                print("Detected change in input CSV file!")
-                m_csvDataChangeDetected = true
-            } else {
-                print("No changes in CSV data detected.")
-            }
-            
+            m_csvDataChangeDetected = !m_fileManager.contentsEqual(atPath: m_csvFile, andPath: m_csvCopy)
         } else {
             print("No CSV copy exists yet.")
             createCSVCopy()
