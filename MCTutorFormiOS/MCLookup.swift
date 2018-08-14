@@ -486,14 +486,15 @@ class MCLookup {
         
         m_db = SQLiteDatabase(dbPointer: nil)
         
-        detectCSVDataChange(path: path)
+        detectCSVDataChange()
         try openDB(path: path)
     }
     
     /**
-     
+     Detect when there is a change in the input CSV data loaded from Bundle.main.path by
+     comparing the current target CSV file to the current copy CSV file if it exists
      */
-    private func detectCSVDataChange(path: String) {
+    private func detectCSVDataChange() {
         // Determine if the database file exists and take the necessary course of action
         if m_fileManager.fileExists(atPath: m_csvCopy) {
             print("Found CSV copy: \(m_csvCopy)")
@@ -506,7 +507,8 @@ class MCLookup {
     }
     
     /**
-     
+     Create a copy of the current input CSV file. If there is already an existing CSV file copy then it will
+     be deleted first before copying a new CSV file.
      */
     private func createCSVCopy() {
         print("Creating CSV copy (\(CSV_COPY_FILE))...")
@@ -533,14 +535,16 @@ class MCLookup {
     }
     
     /**
-     
+     Used to determine if a change in the input CSV file has been detected
      */
     public func isCSVDataChanged() -> Bool {
         return m_csvDataChangeDetected
     }
     
     /**
+     Attempt to open the database at the provided path
      
+     @param path the path where the database file will be located (does not include the database file name)
      */
     private func openDB(path: String) throws {
         m_targetDB = "\(path)/\(DATABASE_FILE)"
@@ -552,7 +556,7 @@ class MCLookup {
                 m_db = try SQLiteDatabase.open(path: m_targetDB)
                 print("Successfully opened connection to database \(m_targetDB).")
                 
-                // Set initialized flag to true (this may cause a logic bug when attempting to init db when csv file is changed)
+                // Set initialized flag to true
                 m_dbInitialzed = true
             } catch SQLiteError.OpenDatabase( _) {
                 print("Unable to open database. Verify that you created the directory described in the Getting Started section.")
@@ -564,7 +568,7 @@ class MCLookup {
     }
     
     /**
-     
+     Used to determine if the database has been initialized
      */
     public func isDBInitialized() -> Bool {
         return m_dbInitialzed

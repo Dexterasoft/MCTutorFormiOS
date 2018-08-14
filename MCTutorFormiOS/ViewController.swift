@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_10000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -98,45 +98,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
-        
-        // TEST CODE VVVV
-//        let fileName = "HelloFromBrett"
-//
-//        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
-//
-//        let file = "\(path)/\(fileName).txt"
-//        print("Using file: \(file)")
-//
-//        do {
-//            let data = try String(contentsOfFile: file, encoding: .utf8)
-//            print(data)
-//        } catch {
-//            print(error)
-//        }
-        
-        // Save data to file
-        
-//        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//
-//        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-//        print("FilePath: \(fileURL.path)")
-//
-//        let writeString = "This is a new message from Brett!"
-//        do {
-//            // Write to the file
-//            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
-//        } catch let error as NSError {
-//            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
-//        }
-//
-//        var readString = "" // Used to store the file contents
-//        do {
-//            // Read the file contents
-//            readString = try String(contentsOf: fileURL)
-//        } catch let error as NSError {
-//            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-//        }
-//        print("File Text: \(readString)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -344,9 +305,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             addTutorTextField.isHidden = false
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
-//            print("Call write function")
-//            writeToFile(value: addTutorTextField.text!)
-           // tutors.append(addTutorTextField.text!)
             if !(m_tutorsSet?.contains(addTutorTextField.text!))! {
                 m_tutorsSet?.add(addTutorTextField.text!)
                 saveTutors()
