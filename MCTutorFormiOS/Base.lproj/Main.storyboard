@@ -114,7 +114,7 @@
         <!--Form View Controller-->
         <scene sceneID="cNa-hG-9oY">
             <objects>
-                <viewController storyboardIdentifier="FormViewController" id="yUa-09-zV9" customClass="FormViewController" customModule="MCTutorFormiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormViewController" modalTransitionStyle="flipHorizontal" id="yUa-09-zV9" customClass="FormViewController" customModule="MCTutorFormiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n7I-Nx-KDl">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -401,7 +401,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Uqa-SP-PKP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jZV-Kx-XfB" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="jZV-Kx-XfB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kkw-A6-bRf">
                         <rect key="frame" x="0.0" y="20" width="768" height="44"/>

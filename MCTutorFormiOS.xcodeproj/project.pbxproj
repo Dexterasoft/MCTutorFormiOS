@@ -17,6 +17,7 @@
 		7BA05AD920E5791300724470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA05AD820E5791300724470 /* Assets.xcassets */; };
 		7BA05ADC20E5791300724470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA05ADA20E5791300724470 /* LaunchScreen.storyboard */; };
 		7BA05AE720E5791300724470 /* MCTutorFormiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA05AE620E5791300724470 /* MCTutorFormiOSTests.swift */; };
+		7BB3079B21235C3F0057D36F /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB3079A21235C3F0057D36F /* DLRadioButton.m */; };
 		8B0715DB211B78540065AC2D /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */; };
 		8B1D2EF1211E1E650008516E /* vBanner_100.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D2EF0211E1E650008516E /* vBanner_100.txt */; };
 		8BACC739210E83AB009FC24E /* MCLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BACC738210E83AB009FC24E /* MCLookup.swift */; };
@@ -49,6 +50,9 @@
 		7BA05AE220E5791300724470 /* MCTutorFormiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCTutorFormiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA05AE620E5791300724470 /* MCTutorFormiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTutorFormiOSTests.swift; sourceTree = "<group>"; };
 		7BA05AE820E5791400724470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BB3079821235C300057D36F /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		7BB3079921235C3E0057D36F /* MCTutorFormiOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MCTutorFormiOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BB3079A21235C3F0057D36F /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		8B0715DA211B78540065AC2D /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8B1D2EF0211E1E650008516E /* vBanner_100.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner_100.txt; path = "ipad-project/vBanner_100.txt"; sourceTree = SOURCE_ROOT; };
 		8BACC738210E83AB009FC24E /* MCLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCLookup.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 				8B1D2EF0211E1E650008516E /* vBanner_100.txt */,
 				8B0715D9211B78310065AC2D /* Utils */,
 				7B5A43F42102CABC003A1B2E /* vBanner1.txt */,
+				7BB3079A21235C3F0057D36F /* DLRadioButton.m */,
+				7BB3079821235C300057D36F /* DLRadioButton.h */,
 				7BA05AD120E5791200724470 /* AppDelegate.swift */,
 				7BA05AD320E5791200724470 /* ViewController.swift */,
 				7B5A43F62102D618003A1B2E /* FormViewController.swift */,
@@ -110,6 +116,7 @@
 				7BA05ADA20E5791300724470 /* LaunchScreen.storyboard */,
 				7BA05ADD20E5791300724470 /* Info.plist */,
 				8BACC738210E83AB009FC24E /* MCLookup.swift */,
+				7BB3079921235C3E0057D36F /* MCTutorFormiOS-Bridging-Header.h */,
 			);
 			path = MCTutorFormiOS;
 			sourceTree = "<group>";
@@ -181,6 +188,7 @@
 				TargetAttributes = {
 					7BA05ACD20E5791200724470 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					7BA05AE120E5791300724470 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -241,6 +249,7 @@
 				7BA05AD220E5791200724470 /* AppDelegate.swift in Sources */,
 				8B0715DB211B78540065AC2D /* UserDefaultsManager.swift in Sources */,
 				8BACC739210E83AB009FC24E /* MCLookup.swift in Sources */,
+				7BB3079B21235C3F0057D36F /* DLRadioButton.m in Sources */,
 				7B321C0A210E006E00932559 /* RadioButton.swift in Sources */,
 				7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */,
 			);
@@ -402,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLJW2NSBY5;
 				INFOPLIST_FILE = MCTutorFormiOS/Info.plist;
@@ -411,6 +421,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexterasoft.MCTutorFormiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MCTutorFormiOS/MCTutorFormiOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HLJW2NSBY5;
 				INFOPLIST_FILE = MCTutorFormiOS/Info.plist;
@@ -429,6 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dexterasoft.MCTutorFormiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MCTutorFormiOS/MCTutorFormiOS-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
