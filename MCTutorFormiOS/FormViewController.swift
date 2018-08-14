@@ -41,9 +41,9 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     var data: Data?
     
-    let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
+   /* let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
-    
+    */
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -71,11 +71,12 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         dateTextField.isUserInteractionEnabled = false
         dateTextField.text = convertDateFormatter()
         
-        button.addTarget(self, action: #selector(manualAction(sender:)), for: .touchUpInside)
+      /*  button.addTarget(self, action: #selector(manualAction(sender:)), for: .touchUpInside)
         button.innerCircleCircleColor = UIColor.red
         self.view.addSubview(button)
         label2.text = "Not Selected"
         self.view.addSubview(label2)
+        */
         
         btnCheckBox.setImage(UIImage(named:"CheckMarkEmpty"), for: .normal)
         btnCheckBox.setImage(UIImage(named:"CheckMark"), for: .selected)
@@ -184,7 +185,7 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
     }
     
-    @objc func manualAction (sender: RadioButton) {
+   /* @objc func manualAction (sender: RadioButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
             label2.text = "Selected"
@@ -192,7 +193,7 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
             label2.text = "Not Selected"
         }
     }
-    
+    */
     @IBAction func didPressButton(_ sender: RadioButton) {
         
         
