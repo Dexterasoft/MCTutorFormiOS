@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner_1000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -389,7 +389,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      NB: The file path is for the CSV data, not the database path
      */
     public func initializeDB() {
-        self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
+        self.m_loadingDialog = self.getLoadingDialog(message: "Initializing database, please wait...\n\n")
         
         // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
         let delay = 0.01 // one-hundredth of a second delay
