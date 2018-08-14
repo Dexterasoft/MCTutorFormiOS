@@ -502,7 +502,6 @@ class MCLookup {
             m_csvDataChangeDetected = !m_fileManager.contentsEqual(atPath: m_csvFile, andPath: m_csvCopy)
         } else {
             print("No CSV copy exists yet.")
-            createCSVCopy()
         }
     }
     
@@ -578,6 +577,9 @@ class MCLookup {
         
         // Read csv and load data into database
         readCSV(file: m_csvFile)
+        
+        // Make a copy of the csv file located in bundle.main.path
+        createCSVCopy()
     }
     
     /**

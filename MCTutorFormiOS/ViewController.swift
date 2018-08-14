@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_10000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner_1000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -150,6 +150,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             }
         }
         
+        // Only initialize database if necessary
+        if !(m_mcLookup?.isDBInitialized())! {
+            initializeDB()
+        }
+        
         // Detect it there was a change in the input CSV data.
         if (m_mcLookup?.isCSVDataChanged())! {
             // Notify the user and prompt to initialize the database
@@ -157,19 +162,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             notifyCSVChanged()
         } else {
             print("No change detected in CSV data.")
-        }
-        
-        // Only initialize database if necessary
-        if !(m_mcLookup?.isDBInitialized())! {
-            self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
-            
-            // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
-            let delay = 0.01 // one-hundredth of a second delay
-            let when = DispatchTime.now() + delay
-            DispatchQueue.main.asyncAfter(deadline: when){
-                self.initializeDB()
-                self.m_loadingDialog?.dismiss(animated: true, completion: nil)
-            }
         }
     }
     
@@ -183,12 +175,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let yes = UIAlertAction(title: "Yes", style: .default, handler: {
             (action) -> Void in
-            print("Yes button tapped!")
+            self.initializeDB()
         })
         
         let no = UIAlertAction(title: "No", style: .cancel, handler: {
             (action) -> Void in
-            print("No button tapped!")
+            print("User chose not to intialize the database despite a detection of a change in the CSV data.")
         })
         
         dialogMessage.addAction(yes)
@@ -439,18 +431,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      NB: The file path is for the CSV data, not the database path
      */
     public func initializeDB() {
-        if !(m_csvPath?.isEmpty)! {
-            do {
-                let initTimer = ParkBenchTimer()
-                
-                print("Initializing database...")
-                try m_mcLookup?.initDatabase()
-                print("Done. Database initialization took \(initTimer.stop()) seconds.")
-            } catch {
-                print("Database Initialization Error: Database request failed")
+        self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
+        
+        // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
+        let delay = 0.01 // one-hundredth of a second delay
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when){
+            if !(self.m_csvPath?.isEmpty)! {
+                do {
+                    let initTimer = ParkBenchTimer()
+                    
+                    print("Initializing database...")
+                    try self.m_mcLookup?.initDatabase()
+                    print("Done. Database initialization took \(initTimer.stop()) seconds.")
+                } catch {
+                    print("Database Initialization Error: Database request failed")
+                }
+            } else {
+                print("Database Initialization Error: Path was not set for CSV data")
             }
-        } else {
-            print("Database Initialization Error: Path was not set for CSV data")
+            
+            self.m_loadingDialog?.dismiss(animated: true, completion: nil)
         }
     }
     
