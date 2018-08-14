@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_10000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner_1000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
@@ -98,67 +98,56 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
-        
-        // TEST CODE VVVV
-//        let fileName = "HelloFromBrett"
-//
-//        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
-//
-//        let file = "\(path)/\(fileName).txt"
-//        print("Using file: \(file)")
-//
-//        do {
-//            let data = try String(contentsOfFile: file, encoding: .utf8)
-//            print(data)
-//        } catch {
-//            print(error)
-//        }
-        
-        // Save data to file
-        
-//        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-//
-//        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
-//        print("FilePath: \(fileURL.path)")
-//
-//        let writeString = "This is a new message from Brett!"
-//        do {
-//            // Write to the file
-//            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
-//        } catch let error as NSError {
-//            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
-//        }
-//
-//        var readString = "" // Used to store the file contents
-//        do {
-//            // Read the file contents
-//            readString = try String(contentsOf: fileURL)
-//        } catch let error as NSError {
-//            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
-//        }
-//        print("File Text: \(readString)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        // Instantiate MCLookup object first to determine if the database needs to be initialized
-        do {
-            self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
-        } catch {
-            print("An error occured when instantiating MCLookup class.")
+        if m_mcLookup == nil {
+            // Instantiate MCLookup object first to determine if the database needs to be initialized
+            print("Instantiating MCLookup object")
+            do {
+                self.m_mcLookup = try MCLookup(file: self.m_csvPath!)
+            } catch {
+                print("An error occured when instantiating MCLookup class.")
+            }
         }
         
         // Only initialize database if necessary
         if !(m_mcLookup?.isDBInitialized())! {
-            self.m_loadingDialog = self.getLoadingDialog(message: "Loading database, please wait...\n\n")
-            
-            // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
-            let delay = 0.01 // one-hundredth of a second delay
-            let when = DispatchTime.now() + delay
-            DispatchQueue.main.asyncAfter(deadline: when){
-                self.initializeDB()
-                self.m_loadingDialog?.dismiss(animated: true, completion: nil)
-            }
+            initializeDB()
         }
+        
+        // Detect it there was a change in the input CSV data.
+        if (m_mcLookup?.isCSVDataChanged())! {
+            // Notify the user and prompt to initialize the database
+            print("Detected change in CSV data!")
+            notifyCSVChanged()
+        } else {
+            print("No change detected in CSV data.")
+        }
+    }
+    
+    /**
+     Notify the user that the CSV data has been changed and initialized database if desired by user.
+     */
+    private func notifyCSVChanged() {
+        let title = "Detected change in CSV data"
+        let msg = "A change has been detected in the input CSV file. Would you like to initialize the database?"
+        let dialogMessage = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        
+        let yes = UIAlertAction(title: "Yes", style: .default, handler: {
+            (action) -> Void in
+            self.initializeDB()
+        })
+        
+        let no = UIAlertAction(title: "No", style: .cancel, handler: {
+            (action) -> Void in
+            print("User chose not to intialize the database despite a detection of a change in the CSV data.")
+        })
+        
+        dialogMessage.addAction(yes)
+        dialogMessage.addAction(no)
+        
+        self.present(dialogMessage, animated: true, completion: nil)
     }
     
     /**
@@ -316,9 +305,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             addTutorTextField.isHidden = false
         }
         if(!((addTutorTextField.text?.isEmpty)!)){
-//            print("Call write function")
-//            writeToFile(value: addTutorTextField.text!)
-           // tutors.append(addTutorTextField.text!)
             if !(m_tutorsSet?.contains(addTutorTextField.text!))! {
                 m_tutorsSet?.add(addTutorTextField.text!)
                 saveTutors()
@@ -403,18 +389,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      NB: The file path is for the CSV data, not the database path
      */
     public func initializeDB() {
-        if !(m_csvPath?.isEmpty)! {
-            do {
-                let initTimer = ParkBenchTimer()
-                
-                print("Initializing database...")
-                try m_mcLookup?.initDatabase()
-                print("Done. Database initialization took \(initTimer.stop()) seconds.")
-            } catch {
-                print("Database Initialization Error: Database request failed")
+        self.m_loadingDialog = self.getLoadingDialog(message: "Initializing database, please wait...\n\n")
+        
+        // Load database on different thread asyncronously with delay to ensure the loading dialog animation displays
+        let delay = 0.01 // one-hundredth of a second delay
+        let when = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: when){
+            if !(self.m_csvPath?.isEmpty)! {
+                do {
+                    let initTimer = ParkBenchTimer()
+                    
+                    print("Initializing database...")
+                    try self.m_mcLookup?.initDatabase()
+                    print("Done. Database initialization took \(initTimer.stop()) seconds.")
+                } catch {
+                    print("Database Initialization Error: Database request failed")
+                }
+            } else {
+                print("Database Initialization Error: Path was not set for CSV data")
             }
-        } else {
-            print("Database Initialization Error: Path was not set for CSV data")
+            
+            self.m_loadingDialog?.dismiss(animated: true, completion: nil)
         }
     }
     
