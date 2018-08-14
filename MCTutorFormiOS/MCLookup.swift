@@ -511,11 +511,24 @@ class MCLookup {
     private func createCSVCopy() {
         print("Creating CSV copy (\(CSV_COPY_FILE))...")
         
+        // Must delete existing csv copy since copyItem function will not handle overwriting
+        if m_fileManager.fileExists(atPath: m_csvCopy) {
+            // Delete existing csv copy
+            do {
+                print("Detected already existing CSV copy. Attempting to delete...")
+                try m_fileManager.removeItem(atPath: m_csvCopy)
+                print("Successfully deleted CSV copy.")
+            } catch let error as NSError {
+                print("Could not delete CSV copy, Error: " + error.localizedDescription)
+            }
+        }
+        
         do {
+            print("Copying file \(m_csvFile) to \(m_csvCopy)")
             try m_fileManager.copyItem(atPath: m_csvFile, toPath: m_csvCopy)
             print("Created CSV copy at \(m_csvCopy)")
         } catch let error as NSError {
-            print("Failed copying csv data, Error: " + error.localizedDescription)
+            print("Failed copying CSV data, Error: " + error.localizedDescription)
         }
     }
     

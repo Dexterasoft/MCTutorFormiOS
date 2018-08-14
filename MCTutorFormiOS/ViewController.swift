@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let TUTOR_NAME = "tutor_name"
     let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner_1000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    let TARGET_CSV_NAME = "vBanner_10000" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
     let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
