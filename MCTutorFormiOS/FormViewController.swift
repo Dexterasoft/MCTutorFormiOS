@@ -29,6 +29,8 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var tutorNameTextField: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
+    @IBOutlet weak var timeCalledTextField: UITextField!
+    @IBOutlet weak var timeFinishedTextField: UITextField!
     
     @IBOutlet weak var btnCoursesDropDownToggle: UIButton!
     @IBOutlet weak var tbvCourses: UITableView!
@@ -85,6 +87,10 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         courseNameTextField.isUserInteractionEnabled = false
         
         tutorNameTextField.text = m_tutorData
+        tutorNameTextField.isUserInteractionEnabled = false
+        
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {}
