@@ -15,16 +15,6 @@ let CSV_COPY_FILE = "\(CSV_COPY_NAME).csv"
 let DATABASE_NAME = "MCDatabase"
 let DATABASE_FILE = "\(DATABASE_NAME).sqlite"
 
-/*
- dictBannerData[“StuID”] = “\(vBanner1[0])”
- dictBannerData[“course”] = “\(vBanner1[1])”
- dictBannerData[“Section”] = “\(vBanner1[2])”
- dictBannerData[“stuFName”] = “\(vBanner1[3])”
- dictBannerData[“stuLName”] = “\(vBanner1[4])”
- dictBannerData[“profName”] = “\(vBanner1[5])”
- dictBannerData[“mcCaMpus”] = “\(vBanner1[6])”
- */
-
 extension String {
     func indicesOf(string: String) -> [Int] {
         var indices = [Int]()

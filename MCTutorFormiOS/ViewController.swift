@@ -11,14 +11,14 @@ import Foundation
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, FormViewProtocol {
     // Key values for dictionary
-    let STUDENT_ID = "student_id"
-    let COURSE = "course"
-    let TUTOR_ID = "tutor_id"
-    let TUTOR_NAME = "tutor_name"
-    let STUDENT_NAME = "student_name"
+    public static let STUDENT_ID = "student_id"
+    public static let COURSE = "course"
+    public static let TUTOR_ID = "tutor_id"
+    public static let TUTOR_NAME = "tutor_name"
+    public static let STUDENT_NAME = "student_name"
     
-    let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
-    let TARGET_DB_NAME = "MCDatabase"
+    public static let TARGET_CSV_NAME = "vBanner1" //vBanner1 (NB: anticipating ability to load in csv file from file_chooser menu in future)
+    public static let TARGET_DB_NAME = "MCDatabase"
     
     //MARK: Properties
     @IBOutlet weak var tutorNameTextField: UITextField!
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         studentIDTextField.keyboardType = UIKeyboardType.asciiCapableNumberPad
         studentIDTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
         
-        m_csvPath = Bundle.main.path(forResource: TARGET_CSV_NAME, ofType: "txt") ?? ""
+        m_csvPath = Bundle.main.path(forResource: ViewController.TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
     }
@@ -271,8 +271,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                 formViewController.setQueryResults(queryResults: self.m_queryResults)
                 formViewController.setTutor(tutorName: tutorNameTextField.text!)
                 
-                // Navigate to the FormViewController through the NagivationController
-                self.navigationController?.pushViewController(formViewController, animated: true)
+                // Present the form view controller to prevent from disposing of this view controller
+                // This ensures that all data currently present remains persistent throughout session (text fields do not clear)
+                self.present(formViewController, animated: true, completion: nil)
             } else {
                 let msg = "The provided Student ID could not be found in the database. Please try again."
                 displayAlertDialog(title: "No Query Results Found", message: msg)
@@ -455,8 +456,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     /**
      Protocol Function:
-     Conform to FormViewProtocol to get data back from FormViewController if necessary
+     Conform to FormViewProtocol to get data back from FormViewController
      */
-    func getData(data: String) {}
+    func getData(data: [String : String]) {}
 }
 

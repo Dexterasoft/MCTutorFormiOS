@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 protocol FormViewProtocol {
-    func getData(data: String)
+    func getData(data: [String : String])
 }
 
 class FormViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
@@ -56,7 +56,12 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     //MARK: Actions
     @IBAction func backButton(_ sender: UIButton) {
-//        performSegue(withIdentifier: "segue_back", sender: self)
+        // To pass back data:
+        // Create dictionary containing any data (key-value pairs) to be sent back to the initial view controller
+        
+        // Pass back the data (invoke m_delegate?.getData(data: [String : String])
+        
+        // Go back to initial view controller
         dismiss(animated: true, completion: nil)
     }
     
