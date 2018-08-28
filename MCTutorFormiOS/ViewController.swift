@@ -218,21 +218,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tutorNameTextField.text = Array(m_tutorsSet!)[row] as? String
         
-        //ToolBar
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(ViewController.doneTutorPicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(ViewController.cancelTutorPicker))
-        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
     }
     
-    
+    //To terminate the pickerView on completion
     @objc func doneTutorPicker(){
         self.view.endEditing(true)
     }
     
+    //To terminate the pickerView on cancelation
     @objc func cancelTutorPicker(){
         self.view.endEditing(true)
     }
