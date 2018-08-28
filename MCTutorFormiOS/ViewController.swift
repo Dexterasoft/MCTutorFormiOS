@@ -37,6 +37,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     private var m_loadingDialog: UIAlertController?
     
+    var employeeArray:[Dictionary<String, AnyObject>] =  Array()
+    
     /*@IBAction func submitButtonAction(_ sender: UIButton) {
         if (studentIDTextField.text != nil){
             studentID = studentIDTextField.text!
@@ -98,7 +100,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         m_csvPath = Bundle.main.path(forResource: ViewController.TARGET_CSV_NAME, ofType: "txt") ?? ""
         
         addTutorTextField.isHidden = true;
+        
+        for i in 1...10 {
+            var dct = Dictionary<String, AnyObject>()
+            dct.updateValue(i as AnyObject, forKey: "EmpID")
+            dct.updateValue("NameForEmplyee id = \(i)" as AnyObject, forKey: "EmpName")
+            employeeArray.append(dct)
+        }
+        
+        createCSV(from: employeeArray)
+        
+        //Traditional Text Method
+        
+        
+        
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if m_mcLookup == nil {
@@ -202,6 +220,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func numberOfComponents(in tutorPickerView: UIPickerView) -> Int {
         return 1
+    }
+    
+    func createCSV(from recArray:[Dictionary<String, AnyObject>]) {
+        var csvString = "\("Student First Name"),\("MC ID Number")\n\n"
+        for dct in recArray {
+            csvString = csvString.appending("\(String(describing: dct["EmpID"]!)) ,\(String(describing: dct["EmpName"]!))\n")
+        }
+        
+        let fileManager = FileManager.default
+        do {
+            let path = try fileManager.url(for: .documentDirectory, in: .allDomainsMask, appropriateFor: nil, create: false)
+            let fileURL = path.appendingPathComponent("CSVRec.csv")
+            try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("error creating file")
+        }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

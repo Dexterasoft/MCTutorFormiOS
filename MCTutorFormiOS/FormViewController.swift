@@ -109,6 +109,49 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         
         showDatePicker()
         
+        //Traditional Text Method
+        // Save data to file
+        let fileName = "1stViewIpadOut"
+        let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+        print("FilePath: \(fileURL.path)")
+        
+        let writeString = studentFNameTextField.text! + ", " + studentLNameTextField.text! + ", " + studentIDTextField2.text! + ", " + tutorNameTextField.text! + ", " + timeCalledTextField.text! + "\n"
+        do {
+            // Write to the file
+            try writeString.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+        
+        var readString = "" // Used to store the file contents
+        do {
+            // Read the file contents
+            readString = try String(contentsOf: fileURL)
+        } catch let error as NSError {
+            print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
+        }
+        print("File Text: \(readString)")
+        /*
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            .appendingPathComponent("test.txt")
+        
+        if let outputStream = OutputStream(url: fileURL, append: true) {
+            outputStream.open()
+            let text = studentFNameTextField.text! + ", " + studentLNameTextField.text! + ", " + studentIDTextField2.text! + ", " + tutorNameTextField.text! + ", " + timeCalledTextField.text! + "\n"
+            let bytesWritten = outputStream.write(text, maxLength: 100)
+            if bytesWritten < 0 { print("write failure") }
+            outputStream.close()
+        } else {
+            print("Unable to open file")
+        }
+ */
+        
+        /*FilePath: Optional("/Users/jxman4000/Library/Developer/CoreSimulator/Devices/25069C88-495A-4EB2-951E-38433DD464F2/data/Containers/Data/Application/EF638483-4CD3-4395-AE69-9DB56F4AAFC5/Documents/1stViewIpadOut.text")
+        File Text: Write this text to the fileURL as text in iOS using Swift
+        */
+        
     }
     
     func getCurrTime() -> String{
@@ -277,7 +320,42 @@ func showDatePicker(){
     @objc func cancelDatePicker(){
         self.view.endEditing(true)
     }
-}
+    
+    @IBAction func export(sender: AnyObject) {
+        
+        let fileName = "studentTutotData.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        
+        let csvText = "First Name, Last Name, MC ID,Tutor Name, Appointment Date,Start Time, End Time, Walk-in/Drop-in, Focus,Course Name, Number, and CRN, Non-Class or COnfidential?, Referred By, Preparation, Assignment, Comments, Suggested Next Steps\n\(studentFNameTextField.text!),\(studentLNameTextField.text!),\(studentIDTextField2.text!),\(tutorNameTextField.text!),\(dateTextField.text!),\(courseNameTextField.text!)\n\n\n"
+        
+            
+            do {
+                try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
+                
+                let vc = UIActivityViewController(activityItems: [path!], applicationActivities: [])
+                vc.excludedActivityTypes = [
+                    UIActivityType.assignToContact,
+                    UIActivityType.saveToCameraRoll,
+                    UIActivityType.postToFlickr,
+                    UIActivityType.postToVimeo,
+                    UIActivityType.postToTencentWeibo,
+                    UIActivityType.postToTwitter,
+                    UIActivityType.postToFacebook,
+                    UIActivityType.openInIBooks
+                ]
+                present(vc, animated: true, completion: nil)
+                
+            } catch {
+                
+                print("Failed to create file")
+                print("\(error)")
+            }
+            
+    }/* else {
+            showErrorAlert("Error", msg: "There is no data to export")
+        }
+    */}
+
 
 
 
