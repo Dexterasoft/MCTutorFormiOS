@@ -65,6 +65,13 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         dismiss(animated: true, completion: nil)
     }
     
+    // Navigate to the SecondFormViewController
+    @IBAction func next(_ sender: UIButton) {
+        let secondFormViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondFormViewController") as! SecondFormViewController
+        
+        self.present(secondFormViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

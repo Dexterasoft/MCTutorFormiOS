@@ -21,7 +21,11 @@ class FinalFormViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // Go back to SecondFormViewController
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

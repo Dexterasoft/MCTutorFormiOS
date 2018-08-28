@@ -21,6 +21,16 @@ class SecondFormViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Go to FinalFormViewController
+    @IBAction func next(_ sender: UIButton) {
+        let finalFormViewController = self.storyboard?.instantiateViewController(withIdentifier: "FinalFormViewController") as! FinalFormViewController
+        
+        self.present(finalFormViewController, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
