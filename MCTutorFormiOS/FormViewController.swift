@@ -43,6 +43,8 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
     
     var data: Data?
     
+    let datePicker = UIDatePicker()
+    
    /* let button = RadioButton(frame: CGRect(x: 20, y: 170, width: 50, height: 50))
     let label2 = UILabel(frame: CGRect(x: 90, y: 160, width: 200, height: 70))
     */
@@ -89,8 +91,19 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         tutorNameTextField.text = m_tutorData
         tutorNameTextField.isUserInteractionEnabled = false
         
+        //Will set current time that view loads
+        timeCalledTextField.text = getCurrTime()
+        timeCalledTextField.isUserInteractionEnabled = false
         
+        showDatePicker()
         
+    }
+    
+    func getCurrTime() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        let str = formatter.string(from: Date())
+        return str
     }
     
     override func viewDidAppear(_ animated: Bool) {}
@@ -220,8 +233,41 @@ class FormViewController: UIViewController, UITextFieldDelegate, UITableViewData
         let result = formatter.string(from: date)
         return result
     }
-}
+
+func showDatePicker(){
+    //let datePicker = UIDatePicker()
+    //Formate Date
+    datePicker.datePickerMode = .time
     
+    //ToolBar
+    let toolbar = UIToolbar();
+    toolbar.sizeToFit()
+    
+    
+    let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(FormViewController.donedatePicker))
+    let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+    let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(FormViewController.cancelDatePicker))
+    toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+    
+    timeFinishedTextField.inputAccessoryView = toolbar
+    timeFinishedTextField.inputView = datePicker
+    
+}
+
+    @objc func donedatePicker(){
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        timeFinishedTextField.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelDatePicker(){
+        self.view.endEditing(true)
+    }
+}
+
+
 
     /*
     // MARK: - Navigation

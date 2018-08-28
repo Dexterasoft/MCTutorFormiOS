@@ -217,6 +217,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         tutorNameTextField.text = Array(m_tutorsSet!)[row] as? String
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(ViewController.doneTutorPicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: #selector(ViewController.cancelTutorPicker))
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+    }
+    
+    
+    @objc func doneTutorPicker(){
+        self.view.endEditing(true)
+    }
+    
+    @objc func cancelTutorPicker(){
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -278,6 +296,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBAction func removeTutorButton(_ sender: Any) {
         m_tutorsSet?.removeAllObjects()
         tutorNameTextField.text = ""
+        addTutorTextField.isHidden = true
     }
     
 
