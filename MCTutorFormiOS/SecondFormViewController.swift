@@ -8,12 +8,79 @@
 
 import UIKit
 
-class SecondFormViewController: UIViewController {
-
+class SecondFormViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+   
+    
+    
+    //MARK: properties
+    @IBOutlet weak var commentsTextView: UITextView!
+    @IBOutlet weak var nextStepsTextView: UITextView!
+    @IBOutlet weak var marginFontTextField: UITextField!
+    @IBOutlet weak var contentOrgPickerView: UIPickerView!
+    @IBOutlet weak var outliningPickerView: UIPickerView!
+    
+    
+    @IBOutlet weak var numPickerView: UIPickerView!
+    @IBOutlet weak var introductionPickerView: UIPickerView!
+    @IBOutlet weak var thesisPickerView: UIPickerView!
+    @IBOutlet weak var supportPickerView: UIPickerView!
+    @IBOutlet weak var conclusionPickerView: UIPickerView!
+    @IBOutlet weak var transitionsPickerView: UIPickerView!
+    @IBOutlet weak var documentationPickerView: UIPickerView!
+    @IBOutlet weak var logicPickerView: UIPickerView!
+    
+    let numbers = ["1", "2", "3", "4"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        marginFontTextField.clearButtonMode = .whileEditing
+        
+        numPickerView.delegate = self
+        numPickerView.dataSource = self
+        
+        contentOrgPickerView.delegate =  self
+        contentOrgPickerView.dataSource = self
+        
+        outliningPickerView.delegate = self
+        outliningPickerView.dataSource = self
+        
+        introductionPickerView.delegate = self
+        introductionPickerView.dataSource = self
+        
+        thesisPickerView.delegate = self
+        thesisPickerView.dataSource = self
+        
+        supportPickerView.delegate = self
+        supportPickerView.dataSource = self
+        
+        conclusionPickerView.delegate = self
+        conclusionPickerView.dataSource = self
+        
+        transitionsPickerView.delegate = self
+        transitionsPickerView.dataSource = self
+        
+        documentationPickerView.delegate = self
+        documentationPickerView.dataSource = self
+        
+        outliningPickerView.delegate = self
+        outliningPickerView.dataSource = self
+        
+        
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return numbers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return numbers[row]
     }
 
     override func didReceiveMemoryWarning() {
