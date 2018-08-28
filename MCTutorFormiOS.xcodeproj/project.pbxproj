@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1F22372134DDF4006159F5 /* SecondFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1F22362134DDF4006159F5 /* SecondFormViewController.swift */; };
 		7B321C0A210E006E00932559 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C09210E006E00932559 /* RadioButton.swift */; };
 		7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B321C0B210E1BEB00932559 /* CheckBox.swift */; };
 		7B5A43F52102CABC003A1B2E /* vBanner1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A43F42102CABC003A1B2E /* vBanner1.txt */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B1F22362134DDF4006159F5 /* SecondFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFormViewController.swift; sourceTree = "<group>"; };
 		7B321C09210E006E00932559 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		7B321C0B210E1BEB00932559 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		7B5A43F42102CABC003A1B2E /* vBanner1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = vBanner1.txt; path = "ipad-project/vBanner1.txt"; sourceTree = SOURCE_ROOT; };
@@ -109,6 +111,7 @@
 				7BA05AD120E5791200724470 /* AppDelegate.swift */,
 				7BA05AD320E5791200724470 /* ViewController.swift */,
 				7B5A43F62102D618003A1B2E /* FormViewController.swift */,
+				7B1F22362134DDF4006159F5 /* SecondFormViewController.swift */,
 				7B321C09210E006E00932559 /* RadioButton.swift */,
 				7B321C0B210E1BEB00932559 /* CheckBox.swift */,
 				7BA05AD520E5791200724470 /* Main.storyboard */,
@@ -252,6 +255,7 @@
 				7BB3079B21235C3F0057D36F /* DLRadioButton.m in Sources */,
 				7B321C0A210E006E00932559 /* RadioButton.swift in Sources */,
 				7B321C0C210E1BEB00932559 /* CheckBox.swift in Sources */,
+				7B1F22372134DDF4006159F5 /* SecondFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

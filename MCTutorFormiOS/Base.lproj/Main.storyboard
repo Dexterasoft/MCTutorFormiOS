@@ -150,25 +150,6 @@
                                     <segue destination="jZV-Kx-XfB" kind="presentation" identifier="segue_back" modalTransitionStyle="flipHorizontal" id="oPS-fc-aI2"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iag-Hd-Ppz">
-                                <rect key="frame" x="46" y="41" width="300" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JyW-Zk-DdE">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1iz-eL-iF7">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="100" image="MCLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YDZ-ER-7yx">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
-                                                    </imageView>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutoring Session Sheet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdg-IA-Scp">
                                 <rect key="frame" x="400" y="72" width="315" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -408,33 +389,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DN-j2-gx6">
-                                <rect key="frame" x="46" y="720" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-X5-Ezt">
-                                <rect key="frame" x="450" y="720" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHG-vg-pqN">
-                                <rect key="frame" x="46" y="797" width="95" height="21"/>
+                                <rect key="frame" x="46" y="720" width="47" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K4B-8D-diX">
-                                <rect key="frame" x="166" y="797" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0G-0i-5Yp" customClass="DLRadioButton">
                                 <rect key="frame" x="374" y="398" width="106" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -468,6 +428,226 @@
                                     <outletCollection property="otherButtons" destination="m0G-0i-5Yp" id="bu5-tK-BgH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gup-oX-99L" customClass="DLRadioButton">
+                                <rect key="frame" x="107" y="715" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Exercise">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="1dX-aT-rmw"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="vqI-HJ-XWW"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="EYc-EW-vhH"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="WpI-pY-Gnn"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="a1k-Ax-Lha"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="bdC-pH-Qab"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="9TS-pr-Tfc"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="JEv-BO-Nbs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m14-Vh-7XL" customClass="DLRadioButton">
+                                <rect key="frame" x="250" y="791" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Paragraph">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="AmC-Hf-BF1"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="epw-Dm-m21"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="WUo-JN-sOa"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="a5j-cq-Sqr"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="uoE-F3-Oh2"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="NJI-yK-0jq"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="8LS-ne-CUO"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="NV7-wE-0XX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSn-Ue-ktE" customClass="DLRadioButton">
+                                <rect key="frame" x="107" y="791" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Essay">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="GKB-u5-Sre"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="HhW-ng-djo"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="KEQ-Ul-DmE"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="cig-Vf-u4I"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="G3H-ux-mqq"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="VVr-gC-1Qh"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="IUi-aQ-uaA"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="bvr-ft-gmA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbq-vg-Qot" customClass="DLRadioButton">
+                                <rect key="frame" x="465" y="715" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Lab Report">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="T2j-uY-dyJ"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="DcF-HH-hkc"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="TrI-DN-rAE"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="YeN-yc-N9v"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="auE-Rd-tps"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="eEq-dC-O1J"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="cEt-J5-XQL"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="op4-fs-UDv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crY-ql-28A" customClass="DLRadioButton">
+                                <rect key="frame" x="99" y="753" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clinical Writting">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="HfE-pt-Ur1"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="lmp-I0-pKJ"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="UPU-3R-LdD"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="eQX-Lb-il2"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="lAu-EI-zdf"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="a0I-Wb-gLT"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="rhK-D1-mWy"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="KtP-cV-3YZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1v-6Z-Y6d" customClass="DLRadioButton">
+                                <rect key="frame" x="271" y="753" width="171" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reflective Writting">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="Mo6-ad-VS7"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="1tC-EU-cQU"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="dRP-IG-AIH"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="U33-ia-HZj"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="tg6-XO-3gI"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="GXG-5k-kaE"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="Bm3-eI-0Nw"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="xkN-7T-P1Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPM-DT-iHR" customClass="DLRadioButton">
+                                <rect key="frame" x="471" y="753" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Study Skills">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="cjM-yW-Chp"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="nlf-HL-c9Z"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="eZl-Vs-7b7"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="Hzu-h0-edO"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="o8F-m1-YUC"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="2Za-E6-Vqu"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="cYW-xc-Lje"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="k3C-er-Bmu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6y-ZA-ykW" customClass="DLRadioButton">
+                                <rect key="frame" x="471" y="791" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Other">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="Sx5-i3-4IW"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="N4b-Oe-rbg"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="tm3-al-W4d"/>
+                                    <outletCollection property="otherButtons" destination="ctv-8d-38a" id="H2l-fC-qMG"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="n0c-4B-Xso"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="yqP-KV-zA2"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="JB8-0K-IEq"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="5cM-9D-CPP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6O-X5-Ezt">
+                                <rect key="frame" x="46" y="856" width="88" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e20-0M-97p" customClass="DLRadioButton">
+                                <rect key="frame" x="312" y="853" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Draft">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0uO-ZL-cdw" customClass="DLRadioButton">
+                                <rect key="frame" x="450" y="853" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Rewrite">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nh-gi-ghv" customClass="DLRadioButton">
+                                <rect key="frame" x="80" y="902" width="215" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Specific Question">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKx-87-vS1" customClass="DLRadioButton">
+                                <rect key="frame" x="383" y="902" width="264" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Portfolio/Examination">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctv-8d-38a" customClass="DLRadioButton">
+                                <rect key="frame" x="276" y="715" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Research Paper">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="gup-oX-99L" id="4rp-pa-p4G"/>
+                                    <outletCollection property="otherButtons" destination="m14-Vh-7XL" id="j79-nD-OBs"/>
+                                    <outletCollection property="otherButtons" destination="cSn-Ue-ktE" id="IIQ-B3-gNY"/>
+                                    <outletCollection property="otherButtons" destination="qbq-vg-Qot" id="LRN-9T-vcC"/>
+                                    <outletCollection property="otherButtons" destination="crY-ql-28A" id="gFK-8T-7um"/>
+                                    <outletCollection property="otherButtons" destination="e1v-6Z-Y6d" id="KI8-qK-e5q"/>
+                                    <outletCollection property="otherButtons" destination="GPM-DT-iHR" id="cBo-nl-jbZ"/>
+                                    <outletCollection property="otherButtons" destination="f6y-ZA-ykW" id="KMa-6h-HEd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwR-bw-rtX" customClass="DLRadioButton">
+                                <rect key="frame" x="116" y="853" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Plan">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="otherButtons" destination="e20-0M-97p" id="72C-q2-mpX"/>
+                                    <outletCollection property="otherButtons" destination="0uO-ZL-cdw" id="t32-sQ-fKT"/>
+                                    <outletCollection property="otherButtons" destination="7Nh-gi-ghv" id="WSa-ws-5fj"/>
+                                    <outletCollection property="otherButtons" destination="yKx-87-vS1" id="w1t-z8-fEv"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iag-Hd-Ppz">
+                                <rect key="frame" x="46" y="31" width="300" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JyW-Zk-DdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1iz-eL-iF7">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="100" image="MCLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YDZ-ER-7yx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="maf-ef-tu7"/>
@@ -492,6 +672,61 @@
                 <exit id="HPX-iT-EPm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1385.15625" y="133.59375"/>
+        </scene>
+        <!--Second Form View Controller-->
+        <scene sceneID="khW-b9-dmB">
+            <objects>
+                <viewController id="5n3-Oa-kV7" customClass="SecondFormViewController" customModule="MCTutorFormiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TAs-bY-Sob">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHG-vg-pqN">
+                                <rect key="frame" x="20" y="187" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K4B-8D-diX">
+                                <rect key="frame" x="140" y="187" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.71486398963730569" green="0.71486398963730569" blue="0.71486398963730569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ra-ja-jTY">
+                                <rect key="frame" x="46" y="31" width="300" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="100" image="MCLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-kU-grr">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Writing, Reading, and Language Center(WRL Center) Takoma Park/Silver Spring Campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StV-wD-29D">
+                                <rect key="frame" x="46" y="139" width="605" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutoring Session Sheet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbv-yU-cUz">
+                                <rect key="frame" x="415" y="62" width="315" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pTV-1p-Wxl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Pd-PX-C47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104.6875" y="133.59375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uqa-SP-PKP">
